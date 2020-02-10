@@ -14,6 +14,9 @@
 		53F8C43023F16AF60024CED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8C42E23F16AF60024CED4 /* LaunchScreen.storyboard */; };
 		53F8C43B23F16AF60024CED4 /* iOS_truformsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C43A23F16AF60024CED4 /* iOS_truformsTests.swift */; };
 		53F8C44623F16AF60024CED4 /* iOS_truformsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C44523F16AF60024CED4 /* iOS_truformsUITests.swift */; };
+		892D6161A1C02D742B404E8E /* Pods_iOS_truforms_iOS_truformsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */; };
+		949E4C9B78F4091871125B70 /* Pods_iOS_truformsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */; };
+		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truforms_iOS_truformsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F8C42023F16AF30024CED4 /* iOS-truforms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-truforms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F8C42323F16AF30024CED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F8C42723F16AF30024CED4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		53F8C44123F16AF60024CED4 /* iOS-truformsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-truformsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F8C44523F16AF60024CED4 /* iOS_truformsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_truformsUITests.swift; sourceTree = "<group>"; };
 		53F8C44723F16AF60024CED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C6593395A17F7DEF6C3D399 /* Pods-iOS-truforms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms.debug.xcconfig"; path = "Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms.debug.xcconfig"; sourceTree = "<group>"; };
+		68C6EC4C1D956D07AB2764A0 /* Pods-iOS-truforms-iOS-truformsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms-iOS-truformsUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-truforms-iOS-truformsUITests/Pods-iOS-truforms-iOS-truformsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A29DF3D7388AE27845534756 /* Pods-iOS-truforms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms.release.xcconfig"; path = "Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms.release.xcconfig"; sourceTree = "<group>"; };
+		AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truformsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.release.xcconfig"; sourceTree = "<group>"; };
+		B210C041D679CBCA06908573 /* Pods-iOS-truformsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3304A18BB96EB9FABA3A7C9 /* Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-truforms-iOS-truformsUITests/Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truforms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949E4C9B78F4091871125B70 /* Pods_iOS_truformsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892D6161A1C02D742B404E8E /* Pods_iOS_truforms_iOS_truformsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17CDFF2E41C84F5724CA8EA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C6593395A17F7DEF6C3D399 /* Pods-iOS-truforms.debug.xcconfig */,
+				A29DF3D7388AE27845534756 /* Pods-iOS-truforms.release.xcconfig */,
+				C3304A18BB96EB9FABA3A7C9 /* Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig */,
+				68C6EC4C1D956D07AB2764A0 /* Pods-iOS-truforms-iOS-truformsUITests.release.xcconfig */,
+				B210C041D679CBCA06908573 /* Pods-iOS-truformsTests.debug.xcconfig */,
+				AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		53F8C41723F16AF30024CED4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +110,8 @@
 				53F8C43923F16AF60024CED4 /* iOS-truformsTests */,
 				53F8C44423F16AF60024CED4 /* iOS-truformsUITests */,
 				53F8C42123F16AF30024CED4 /* Products */,
+				17CDFF2E41C84F5724CA8EA3 /* Pods */,
+				5C2FE7269D7068CF489A93C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +156,16 @@
 			path = "iOS-truformsUITests";
 			sourceTree = "<group>";
 		};
+		5C2FE7269D7068CF489A93C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */,
+				3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */,
+				AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F8C44A23F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truforms" */;
 			buildPhases = (
+				217105A8C80B5FC11BE6E6A7 /* [CP] Check Pods Manifest.lock */,
 				53F8C41C23F16AF30024CED4 /* Sources */,
 				53F8C41D23F16AF30024CED4 /* Frameworks */,
 				53F8C41E23F16AF30024CED4 /* Resources */,
+				7B14AA3C284A7537E25F2B27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F8C44D23F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truformsTests" */;
 			buildPhases = (
+				19D94BAFC93247FECF3C9C38 /* [CP] Check Pods Manifest.lock */,
 				53F8C43223F16AF60024CED4 /* Sources */,
 				53F8C43323F16AF60024CED4 /* Frameworks */,
 				53F8C43423F16AF60024CED4 /* Resources */,
+				48CD1EFCF61B9E60D454015C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F8C45023F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truformsUITests" */;
 			buildPhases = (
+				6E7A4F30A48BD270795656B3 /* [CP] Check Pods Manifest.lock */,
 				53F8C43D23F16AF60024CED4 /* Sources */,
 				53F8C43E23F16AF60024CED4 /* Frameworks */,
 				53F8C43F23F16AF60024CED4 /* Resources */,
+				7CEB6E1F7A8D2A4753F8C437 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +297,126 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19D94BAFC93247FECF3C9C38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-truformsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		217105A8C80B5FC11BE6E6A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-truforms-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48CD1EFCF61B9E60D454015C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E7A4F30A48BD270795656B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-truforms-iOS-truformsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B14AA3C284A7537E25F2B27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CEB6E1F7A8D2A4753F8C437 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-truforms-iOS-truformsUITests/Pods-iOS-truforms-iOS-truformsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-truforms-iOS-truformsUITests/Pods-iOS-truforms-iOS-truformsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-truforms-iOS-truformsUITests/Pods-iOS-truforms-iOS-truformsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53F8C41C23F16AF30024CED4 /* Sources */ = {
@@ -428,6 +595,7 @@
 		};
 		53F8C44B23F16AF60024CED4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C6593395A17F7DEF6C3D399 /* Pods-iOS-truforms.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +614,7 @@
 		};
 		53F8C44C23F16AF60024CED4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A29DF3D7388AE27845534756 /* Pods-iOS-truforms.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +633,7 @@
 		};
 		53F8C44E23F16AF60024CED4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B210C041D679CBCA06908573 /* Pods-iOS-truformsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +656,7 @@
 		};
 		53F8C44F23F16AF60024CED4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +679,7 @@
 		};
 		53F8C45123F16AF60024CED4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3304A18BB96EB9FABA3A7C9 /* Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +700,7 @@
 		};
 		53F8C45223F16AF60024CED4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68C6EC4C1D956D07AB2764A0 /* Pods-iOS-truforms-iOS-truformsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

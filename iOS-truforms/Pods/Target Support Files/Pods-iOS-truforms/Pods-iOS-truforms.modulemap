@@ -1,0 +1,6 @@
+framework module Pods_iOS_truforms {
+  umbrella header "Pods-iOS-truforms-umbrella.h"
+
+  export *
+  module * { export * }
+}
