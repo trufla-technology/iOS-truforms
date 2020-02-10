@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42323F16AF30024CED4 /* AppDelegate.swift */; };
+		53F8C42623F16AF30024CED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42523F16AF30024CED4 /* SceneDelegate.swift */; };
+		53F8C42823F16AF30024CED4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42723F16AF30024CED4 /* ViewController.swift */; };
+		53F8C42B23F16AF30024CED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8C42923F16AF30024CED4 /* Main.storyboard */; };
+		53F8C42D23F16AF60024CED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F8C42C23F16AF60024CED4 /* Assets.xcassets */; };
+		53F8C43023F16AF60024CED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8C42E23F16AF60024CED4 /* LaunchScreen.storyboard */; };
+		53F8C43B23F16AF60024CED4 /* iOS_truformsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C43A23F16AF60024CED4 /* iOS_truformsTests.swift */; };
+		53F8C44623F16AF60024CED4 /* iOS_truformsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C44523F16AF60024CED4 /* iOS_truformsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53F8C43723F16AF60024CED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53F8C41823F16AF30024CED4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53F8C41F23F16AF30024CED4;
+			remoteInfo = "iOS-truforms";
+		};
+		53F8C44223F16AF60024CED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53F8C41823F16AF30024CED4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53F8C41F23F16AF30024CED4;
+			remoteInfo = "iOS-truforms";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		53F8C42023F16AF30024CED4 /* iOS-truforms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-truforms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F8C42323F16AF30024CED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53F8C42523F16AF30024CED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		53F8C42723F16AF30024CED4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53F8C42A23F16AF30024CED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53F8C42C23F16AF60024CED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53F8C42F23F16AF60024CED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53F8C43123F16AF60024CED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F8C43623F16AF60024CED4 /* iOS-truformsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-truformsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F8C43A23F16AF60024CED4 /* iOS_truformsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_truformsTests.swift; sourceTree = "<group>"; };
+		53F8C43C23F16AF60024CED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F8C44123F16AF60024CED4 /* iOS-truformsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-truformsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F8C44523F16AF60024CED4 /* iOS_truformsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_truformsUITests.swift; sourceTree = "<group>"; };
+		53F8C44723F16AF60024CED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53F8C41D23F16AF30024CED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F8C43323F16AF60024CED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F8C43E23F16AF60024CED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53F8C41723F16AF30024CED4 = {
+			isa = PBXGroup;
+			children = (
+				53F8C42223F16AF30024CED4 /* iOS-truforms */,
+				53F8C43923F16AF60024CED4 /* iOS-truformsTests */,
+				53F8C44423F16AF60024CED4 /* iOS-truformsUITests */,
+				53F8C42123F16AF30024CED4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53F8C42123F16AF30024CED4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C42023F16AF30024CED4 /* iOS-truforms.app */,
+				53F8C43623F16AF60024CED4 /* iOS-truformsTests.xctest */,
+				53F8C44123F16AF60024CED4 /* iOS-truformsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53F8C42223F16AF30024CED4 /* iOS-truforms */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C42323F16AF30024CED4 /* AppDelegate.swift */,
+				53F8C42523F16AF30024CED4 /* SceneDelegate.swift */,
+				53F8C42723F16AF30024CED4 /* ViewController.swift */,
+				53F8C42923F16AF30024CED4 /* Main.storyboard */,
+				53F8C42C23F16AF60024CED4 /* Assets.xcassets */,
+				53F8C42E23F16AF60024CED4 /* LaunchScreen.storyboard */,
+				53F8C43123F16AF60024CED4 /* Info.plist */,
+			);
+			path = "iOS-truforms";
+			sourceTree = "<group>";
+		};
+		53F8C43923F16AF60024CED4 /* iOS-truformsTests */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C43A23F16AF60024CED4 /* iOS_truformsTests.swift */,
+				53F8C43C23F16AF60024CED4 /* Info.plist */,
+			);
+			path = "iOS-truformsTests";
+			sourceTree = "<group>";
+		};
+		53F8C44423F16AF60024CED4 /* iOS-truformsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53F8C44523F16AF60024CED4 /* iOS_truformsUITests.swift */,
+				53F8C44723F16AF60024CED4 /* Info.plist */,
+			);
+			path = "iOS-truformsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53F8C41F23F16AF30024CED4 /* iOS-truforms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F8C44A23F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truforms" */;
+			buildPhases = (
+				53F8C41C23F16AF30024CED4 /* Sources */,
+				53F8C41D23F16AF30024CED4 /* Frameworks */,
+				53F8C41E23F16AF30024CED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-truforms";
+			productName = "iOS-truforms";
+			productReference = 53F8C42023F16AF30024CED4 /* iOS-truforms.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53F8C43523F16AF60024CED4 /* iOS-truformsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F8C44D23F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truformsTests" */;
+			buildPhases = (
+				53F8C43223F16AF60024CED4 /* Sources */,
+				53F8C43323F16AF60024CED4 /* Frameworks */,
+				53F8C43423F16AF60024CED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53F8C43823F16AF60024CED4 /* PBXTargetDependency */,
+			);
+			name = "iOS-truformsTests";
+			productName = "iOS-truformsTests";
+			productReference = 53F8C43623F16AF60024CED4 /* iOS-truformsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53F8C44023F16AF60024CED4 /* iOS-truformsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F8C45023F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truformsUITests" */;
+			buildPhases = (
+				53F8C43D23F16AF60024CED4 /* Sources */,
+				53F8C43E23F16AF60024CED4 /* Frameworks */,
+				53F8C43F23F16AF60024CED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53F8C44323F16AF60024CED4 /* PBXTargetDependency */,
+			);
+			name = "iOS-truformsUITests";
+			productName = "iOS-truformsUITests";
+			productReference = 53F8C44123F16AF60024CED4 /* iOS-truformsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53F8C41823F16AF30024CED4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Trufla;
+				TargetAttributes = {
+					53F8C41F23F16AF30024CED4 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					53F8C43523F16AF60024CED4 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 53F8C41F23F16AF30024CED4;
+					};
+					53F8C44023F16AF60024CED4 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 53F8C41F23F16AF30024CED4;
+					};
+				};
+			};
+			buildConfigurationList = 53F8C41B23F16AF30024CED4 /* Build configuration list for PBXProject "iOS-truforms" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53F8C41723F16AF30024CED4;
+			productRefGroup = 53F8C42123F16AF30024CED4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53F8C41F23F16AF30024CED4 /* iOS-truforms */,
+				53F8C43523F16AF60024CED4 /* iOS-truformsTests */,
+				53F8C44023F16AF60024CED4 /* iOS-truformsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53F8C41E23F16AF30024CED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F8C43023F16AF60024CED4 /* LaunchScreen.storyboard in Resources */,
+				53F8C42D23F16AF60024CED4 /* Assets.xcassets in Resources */,
+				53F8C42B23F16AF30024CED4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F8C43423F16AF60024CED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F8C43F23F16AF60024CED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53F8C41C23F16AF30024CED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F8C42823F16AF30024CED4 /* ViewController.swift in Sources */,
+				53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */,
+				53F8C42623F16AF30024CED4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F8C43223F16AF60024CED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F8C43B23F16AF60024CED4 /* iOS_truformsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F8C43D23F16AF60024CED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F8C44623F16AF60024CED4 /* iOS_truformsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53F8C43823F16AF60024CED4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53F8C41F23F16AF30024CED4 /* iOS-truforms */;
+			targetProxy = 53F8C43723F16AF60024CED4 /* PBXContainerItemProxy */;
+		};
+		53F8C44323F16AF60024CED4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53F8C41F23F16AF30024CED4 /* iOS-truforms */;
+			targetProxy = 53F8C44223F16AF60024CED4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53F8C42923F16AF30024CED4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53F8C42A23F16AF30024CED4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53F8C42E23F16AF60024CED4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53F8C42F23F16AF60024CED4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53F8C44823F16AF60024CED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53F8C44923F16AF60024CED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53F8C44B23F16AF60024CED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JM6375DKHS;
+				INFOPLIST_FILE = "iOS-truforms/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truforms";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53F8C44C23F16AF60024CED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JM6375DKHS;
+				INFOPLIST_FILE = "iOS-truforms/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truforms";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53F8C44E23F16AF60024CED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JM6375DKHS;
+				INFOPLIST_FILE = "iOS-truformsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truformsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-truforms.app/iOS-truforms";
+			};
+			name = Debug;
+		};
+		53F8C44F23F16AF60024CED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JM6375DKHS;
+				INFOPLIST_FILE = "iOS-truformsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truformsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-truforms.app/iOS-truforms";
+			};
+			name = Release;
+		};
+		53F8C45123F16AF60024CED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JM6375DKHS;
+				INFOPLIST_FILE = "iOS-truformsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truformsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS-truforms";
+			};
+			name = Debug;
+		};
+		53F8C45223F16AF60024CED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JM6375DKHS;
+				INFOPLIST_FILE = "iOS-truformsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truformsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS-truforms";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53F8C41B23F16AF30024CED4 /* Build configuration list for PBXProject "iOS-truforms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F8C44823F16AF60024CED4 /* Debug */,
+				53F8C44923F16AF60024CED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F8C44A23F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truforms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F8C44B23F16AF60024CED4 /* Debug */,
+				53F8C44C23F16AF60024CED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F8C44D23F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truformsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F8C44E23F16AF60024CED4 /* Debug */,
+				53F8C44F23F16AF60024CED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F8C45023F16AF60024CED4 /* Build configuration list for PBXNativeTarget "iOS-truformsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F8C45123F16AF60024CED4 /* Debug */,
+				53F8C45223F16AF60024CED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53F8C41823F16AF30024CED4 /* Project object */;
+}
