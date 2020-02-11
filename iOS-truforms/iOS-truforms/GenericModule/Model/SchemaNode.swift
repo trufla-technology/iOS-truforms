@@ -12,8 +12,13 @@ struct SchemaNode {
     var title: String?
     var description: String?
     var type: String
+    var format: String?
+    var href: String?
     var properties: [String: SchemaNode]?
+    var enumuration: [String]?
+    var enumNames: [String]?
     var required: [String]?
+    var oneOf: [OneOfProperty]?
 }
 
 extension SchemaNode: Decodable {
@@ -21,7 +26,13 @@ extension SchemaNode: Decodable {
         case title
         case description
         case type
+        case format
+        case href
+        case enumuration = "enum"
+        case enumNames
         case properties
+        case required
+        case oneOf
     }
     
     init(from decoder: Decoder) throws {
@@ -29,6 +40,12 @@ extension SchemaNode: Decodable {
         title = try container.decodeWrapper(key: .title, defaultValue: "")
         description = try container.decodeWrapper(key: .description, defaultValue: "")
         type = try container.decodeWrapper(key: .type, defaultValue: "")
+        format = try container.decodeWrapper(key: .format, defaultValue: "")
+        href = try container.decodeWrapper(key: .href, defaultValue: "")
         properties = try container.decodeWrapper(key: .properties, defaultValue: [:])
+        enumuration = try container.decodeWrapper(key: .enumuration, defaultValue: [])
+        enumNames = try container.decodeWrapper(key: .enumNames, defaultValue: [])
+        required = try container.decodeWrapper(key: .required, defaultValue: [])
+        oneOf = try container.decodeWrapper(key: .oneOf, defaultValue: [])
     }
 }

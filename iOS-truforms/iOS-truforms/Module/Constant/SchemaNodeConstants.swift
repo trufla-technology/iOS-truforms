@@ -16,42 +16,98 @@ enum SchemaNodeConstants {
     }
     static let sampleData = """
 {
-    \"title\": \"Multi Nested\",
-    \"description\": \"Nesting can go as far as needed to achieve structure\",
+    \"title\": \"Multiple Conditional Control\",
+    \"description\": \"Add multiple conditional controls\",
     \"type\": \"object\",
     \"properties\": {
-        \"employee_information\": {
-            \"type\": \"object\",
-            \"title\": \"Employee Information\",
-            \"description\": \"Test\",
+        \"food_like\": {
+            \"type\": \"string\",
+            \"enum\": [
+                \"Hot Dog\",
+                \"Pizza\",
+                \"Hamburger\"
+            ]
+        },
+        \"pizza_type\": {
+            \"type\": \"string\",
+            \"enum\": [
+                \"Marinara\",
+                \"Margherita\",
+                \"Vegetarian\"
+            ]
+        },
+        \"hamburger_meat\": {
+            \"type\": \"string\",
+            \"enum\": [
+                \"Chicken\",
+                \"Beef\",
+                \"Lamb\",
+                \"Vegetarian\"
+            ]
+        },
+        \"vegetable_choice\": {
+            \"type\": \"string\",
+            \"enum\": [
+                \"yes\",
+                \"no\"
+            ],
+            \"enumNames\": [
+                \"Yes\",
+                \"No\"
+            ],
+            \"format\": \"radiogroup\"
+        },
+        \"vegetables\": {
+            \"type\": \"string\",
+            \"enum\": [
+                \"Mushrooms\",
+                \"Tomatoes\",
+                \"Lettuce\"
+            ]
+        }
+    },
+    \"required\": [
+        \"food_like\",
+        \"vegetable_choice\"
+    ],
+    \"oneOf\": [
+        {
             \"properties\": {
-                \"personal\": {
-                    \"type\": \"object\",
-                    \"title\": \"Personal Information\",
-                    \"properties\": {
-                        \"first_name\": {
-                            \"type\": \"string\"
-                        },
-                        \"last_name\": {
-                            \"type\": \"string\"
-                        }
-                    }
-                },
-                \"location\": {
-                    \"type\": \"object\",
-                    \"title\": \"Location\",
-                    \"properties\": {
-                        \"phone_number\": {
-                            \"type\": \"string\"
-                        },
-                        \"email\": {
-                            \"type\": \"string\"
-                        }
-                    }
+                \"food_like\": {
+                    \"enum\": [
+                        \"Pizza\"
+                    ],
+                    \"required\": [
+                        \"pizza_type\"
+                    ]
+                }
+            }
+        },
+        {
+            \"properties\": {
+                \"food_like\": {
+                    \"enum\": [
+                        \"Hamburger\"
+                    ],
+                    \"required\": [
+                        \"hamburger_meat\"
+                    ]
+                }
+            }
+        },
+        {
+            \"properties\": {
+                \"vegetable_choice\": {
+                    \"enum\": [
+                        \"yes\"
+                    ],
+                    \"required\": [
+                        \"vegetables\"
+                    ]
                 }
             }
         }
-    }
+    ]
 }
 """
 }
