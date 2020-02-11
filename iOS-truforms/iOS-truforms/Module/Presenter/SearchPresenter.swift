@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol SearchPresenterProtocol {
-    func present(response: BaseResponse)
+protocol SchemaNodePresenterProtocol {
+    func present(response: SchemaNode)
 }
 
-class SearchPresenter: CustomStringConvertible {
+class SchemaNodePresenter: CustomStringConvertible {
     // weak to break the retain cycle
-    weak var view: SearchViewProtocol?
+    weak var view: SchemaNodeViewProtocol?
     
     var description: String {
-        return String(describing: SearchPresenter.self)
+        return String(describing: SchemaNodePresenter.self)
     }
     
     deinit {
@@ -25,8 +25,8 @@ class SearchPresenter: CustomStringConvertible {
     }
 }
 
-extension SearchPresenter: SearchPresenterProtocol {
-    func present(response: BaseResponse) {
+extension SchemaNodePresenter: SchemaNodePresenterProtocol {
+    func present(response: SchemaNode) {
         // let presentationList = response.map {SearchPresentationModel(model: $0)}
         // view?.display(list: presentationList)
     }

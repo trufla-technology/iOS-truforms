@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct BaseResponse {
+struct SchemaNode {
     var title: String?
     var description: String?
     var type: String
-    var properties: [String: BaseResponse]?
+    var properties: [String: SchemaNode]?
     var required: [String]?
 }
 
-extension BaseResponse: Decodable {
-    enum BaseResponseCodingKeys: String, CodingKey {
+extension SchemaNode: Decodable {
+    enum SchemaNodeCodingKeys: String, CodingKey {
         case title
         case description
         case type
@@ -25,7 +25,7 @@ extension BaseResponse: Decodable {
     }
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: BaseResponseCodingKeys.self)
+        let container = try decoder.container(keyedBy: SchemaNodeCodingKeys.self)
         title = try container.decodeWrapper(key: .title, defaultValue: "")
         description = try container.decodeWrapper(key: .description, defaultValue: "")
         type = try container.decodeWrapper(key: .type, defaultValue: "")

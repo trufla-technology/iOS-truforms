@@ -8,27 +8,27 @@
 
 import UIKit
 // Now I will create Swift Clean Arch ... VIP Cycle (and I will break a retain cycle)
-protocol SearchViewProtocol: class {
+protocol SchemaNodeViewProtocol: class {
     // back to write something here
-    func display(list: [SearchPresentationModel])
+    func display(list: String)
 }
-class SearchViewController: BaseViewController {
-    var interactor: SearchInteractorProtocol?
+class SchemaNodeViewController: BaseViewController {
+    var interactor: SchemaNodeInteractorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let module = SearchConfig()
+        let module = SchemaNodeConfig()
         module.createModule(view: self)
-        interactor?.search(keywords: "Search")
+        interactor?.fetch(id: "11")
     }
     deinit {
-        print("\(SearchViewController.self) go away")
+        print("\(SchemaNodeViewController.self) go away")
     }
 }
 
-extension SearchViewController: SearchViewProtocol {
-    func display(list: [SearchPresentationModel]) {
+extension SchemaNodeViewController: SchemaNodeViewProtocol {
+    func display(list: String) {
         print(list.count)
     }
 }

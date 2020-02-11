@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SearchConstants {
+enum SchemaNodeConstants {
     static let baseUrl = "https://itunes.apple.com/"
     static let endPoint = "search"
     enum params {

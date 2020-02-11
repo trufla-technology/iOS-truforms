@@ -8,11 +8,11 @@
 
 import Foundation
 
-class SearchConfig: BaseConfig {
-    func createModule(view: SearchViewController) {
-        let presenter = SearchPresenter()
+class SchemaNodeConfig: BaseConfig {
+    func createModule(view: SchemaNodeViewController) {
+        let presenter = SchemaNodePresenter()
         presenter.view = view
-        let interactor = SearchInteractor()
+        let interactor = SchemaNodeInteractor()
         interactor.presenter = presenter
         interactor.basePresenter = handleBasePresenter(baseView: view)
         view.interactor = interactor
