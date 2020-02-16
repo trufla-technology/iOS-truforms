@@ -6,7 +6,7 @@ target 'iOS-truforms' do
   use_frameworks!
 
   # Pods for iOS-truforms
-  pod 'Moya'
+  pod 'Moya-ObjectMapper'
 
   target 'iOS-truformsTests' do
     inherit! :search_paths

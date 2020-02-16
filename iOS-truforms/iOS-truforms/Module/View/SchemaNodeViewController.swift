@@ -21,10 +21,27 @@ class SchemaNodeViewController: BaseViewController {
         let module = SchemaNodeConfig()
         module.createModule(view: self)
         interactor?.fetch(id: "11")
+        
+        let data = convertToDictionary(text: SchemaNodeConstants.sampleData)
+        // print("data: ", data)
+        
     }
     deinit {
         print("\(SchemaNodeViewController.self) go away")
     }
+    
+
+    func convertToDictionary(text: String) -> Dictionary<String, Any>? {
+          if let data = text.data(using: .utf8) {
+              do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? Dictionary<String, Any>
+              } catch {
+                  print(error.localizedDescription)
+              }
+          }
+          return nil
+      }
+
 }
 
 extension SchemaNodeViewController: SchemaNodeViewProtocol {

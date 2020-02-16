@@ -6,39 +6,28 @@
 //  Copyright © 2020 Trufla. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-
-struct OneOf {
+struct OneOf: Mappable {
     var enumuration: [String]?
     var required: [String]?
-}
-
-extension OneOf: Decodable {
-    enum OneOfCodingKeys: String, CodingKey {
-        case enumuration = "enum"
-        case required
-    }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: OneOfCodingKeys.self)
-        enumuration = try container.decodeWrapper(key: .enumuration, defaultValue: [])
-        required = try container.decodeWrapper(key: .required, defaultValue: [])
+    // MARK: JSON
+    init?(map: Map) {}
+
+    mutating func mapping(map: Map) {
+      enumuration <- map["enum"]
+      required <- map["required"]
     }
 }
 
-struct OneOfProperty {
-    var properties: [String: OneOf]?
-}
 
+struct OneOfProperty: Mappable {
+    var properties: Dictionary<String, OneOf>?
+    // MARK: JSON
+    init?(map: Map) { }
 
-extension OneOfProperty: Decodable {
-    enum OneOfPropertyCodingKeys: String, CodingKey {
-        case properties
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: OneOfPropertyCodingKeys.self)
-        properties = try container.decodeWrapper(key: .properties, defaultValue: [:])
+    mutating func mapping(map: Map) {
+      properties <- map["properties"]
     }
 }

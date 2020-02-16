@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Moya_ObjectMapper
 import Moya
+import ObjectMapper
 
-class BaseInteractor<MoyaTarget: TargetType, T: Decodable> {
+class BaseInteractor<MoyaTarget: TargetType, T: Mappable> {
     var basePresenter: BasePresenterProtocol?
     let provider = MoyaProvider<MoyaTarget>(stubClosure: MoyaProvider.immediatelyStub)
 }
@@ -20,7 +22,7 @@ extension BaseInteractor {
             switch(result) {
             case .success(let response):
                 do {
-                    let decodableResponse = try response.map(T.self)
+                    let decodableResponse = try response.mapObject(T.self)
                     completion(decodableResponse)
                 } catch {
                     self.basePresenter?.present(error: error.localizedDescription)

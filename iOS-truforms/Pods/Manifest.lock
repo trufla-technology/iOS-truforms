@@ -1,16 +1,20 @@
 PODS:
-  - Alamofire (4.9.1)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
+  - Alamofire (5.0.0-rc.3)
+  - Moya (14.0.0-beta.6):
+    - Moya/Core (= 14.0.0-beta.6)
+  - Moya-ObjectMapper (2.9):
+    - Moya-ObjectMapper/Core (= 2.9)
+  - Moya-ObjectMapper/Core (2.9):
+    - Moya (~> 14.0.0-beta.6)
+    - ObjectMapper
+  - Moya/Core (14.0.0-beta.6):
+    - Alamofire (= 5.0.0-rc.3)
   - Nimble (8.0.5)
+  - ObjectMapper (3.5.1)
   - Quick (2.2.0)
-  - Result (4.1.0)
 
 DEPENDENCIES:
-  - Moya
+  - Moya-ObjectMapper
   - Nimble
   - Quick
 
@@ -18,17 +22,19 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
+    - Moya-ObjectMapper
     - Nimble
+    - ObjectMapper
     - Quick
-    - Result
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Moya: d4821fbcb3e784f34d2f82869e6855057a0b85d1
+  Moya-ObjectMapper: 967a99d9ea3aa9c93ddbe112aeca3667f53bfe93
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: a9328df72759b30bfc11c26ae6038ac28ef6cf82
+PODFILE CHECKSUM: 8ae7b46a2a66c9028f468907a4e5ad4cb9aea5f3
 
 COCOAPODS: 1.8.4

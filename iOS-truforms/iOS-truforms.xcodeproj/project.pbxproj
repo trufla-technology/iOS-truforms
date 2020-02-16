@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		539506D423F9788000D9C620 /* OrderedDictionary+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539506D023F9788000D9C620 /* OrderedDictionary+Codable.swift */; };
+		539506D523F9788000D9C620 /* OrderedDictionary+Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539506D123F9788000D9C620 /* OrderedDictionary+Deprecated.swift */; };
+		539506D623F9788000D9C620 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539506D223F9788000D9C620 /* OrderedDictionary.swift */; };
+		539506D723F9788000D9C620 /* OrderedDictionary+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539506D323F9788000D9C620 /* OrderedDictionary+Description.swift */; };
 		53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42323F16AF30024CED4 /* AppDelegate.swift */; };
 		53F8C42823F16AF30024CED4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42723F16AF30024CED4 /* ViewController.swift */; };
 		53F8C42B23F16AF30024CED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F8C42923F16AF30024CED4 /* Main.storyboard */; };
@@ -55,6 +59,11 @@
 
 /* Begin PBXFileReference section */
 		3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truforms_iOS_truformsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		539506CA23F8AF5E00D9C620 /* iOS-truforms-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS-truforms-Bridging-Header.h"; sourceTree = "<group>"; };
+		539506D023F9788000D9C620 /* OrderedDictionary+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderedDictionary+Codable.swift"; sourceTree = "<group>"; };
+		539506D123F9788000D9C620 /* OrderedDictionary+Deprecated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderedDictionary+Deprecated.swift"; sourceTree = "<group>"; };
+		539506D223F9788000D9C620 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		539506D323F9788000D9C620 /* OrderedDictionary+Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderedDictionary+Description.swift"; sourceTree = "<group>"; };
 		53F8C42023F16AF30024CED4 /* iOS-truforms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-truforms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F8C42323F16AF30024CED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F8C42723F16AF30024CED4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +274,11 @@
 				53F8C46E23F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift */,
 				53F8C46C23F1A3360024CED4 /* Responsable.swift */,
 				53F8C46D23F1A3360024CED4 /* Result.swift */,
+				539506CA23F8AF5E00D9C620 /* iOS-truforms-Bridging-Header.h */,
+				539506D223F9788000D9C620 /* OrderedDictionary.swift */,
+				539506D023F9788000D9C620 /* OrderedDictionary+Codable.swift */,
+				539506D123F9788000D9C620 /* OrderedDictionary+Deprecated.swift */,
+				539506D323F9788000D9C620 /* OrderedDictionary+Description.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,6 +424,7 @@
 				TargetAttributes = {
 					53F8C41F23F16AF30024CED4 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 					53F8C43523F16AF60024CED4 = {
 						CreatedOnToolsVersion = 11.1;
@@ -593,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539506D723F9788000D9C620 /* OrderedDictionary+Description.swift in Sources */,
 				53F8C47023F1A3360024CED4 /* Result.swift in Sources */,
 				53F8C48523F1AA780024CED4 /* SearchPresenter.swift in Sources */,
 				53F8C48723F1AA780024CED4 /* SchemaNodeViewController.swift in Sources */,
@@ -602,11 +618,14 @@
 				53F8C46F23F1A3360024CED4 /* Responsable.swift in Sources */,
 				53F8C48423F1AA780024CED4 /* SchemaNodeInteractor.swift in Sources */,
 				53F8C46623F1A2EC0024CED4 /* BasePresenter.swift in Sources */,
+				539506D623F9788000D9C620 /* OrderedDictionary.swift in Sources */,
 				53F8C48F23F2FF0C0024CED4 /* SchemaString.swift in Sources */,
+				539506D523F9788000D9C620 /* OrderedDictionary+Deprecated.swift in Sources */,
 				53F8C47123F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				53F8C48B23F2E1AF0024CED4 /* SchemaObjectProtocol.swift in Sources */,
 				53F8C46923F1A2EC0024CED4 /* SchemaNode.swift in Sources */,
 				53F8C46823F1A2EC0024CED4 /* BaseConfig.swift in Sources */,
+				539506D423F9788000D9C620 /* OrderedDictionary+Codable.swift in Sources */,
 				53F8C48123F1AA780024CED4 /* SchemaNodeTarget.swift in Sources */,
 				53F8C46A23F1A2EC0024CED4 /* Interactor.swift in Sources */,
 				53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */,
@@ -785,6 +804,7 @@
 			baseConfigurationReference = 5C6593395A17F7DEF6C3D399 /* Pods-iOS-truforms.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JM6375DKHS;
 				INFOPLIST_FILE = "iOS-truforms/Info.plist";
@@ -794,6 +814,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truforms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS-truforms/Extensions/iOS-truforms-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -804,6 +826,7 @@
 			baseConfigurationReference = A29DF3D7388AE27845534756 /* Pods-iOS-truforms.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JM6375DKHS;
 				INFOPLIST_FILE = "iOS-truforms/Info.plist";
@@ -813,6 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.trufla.iOS-truforms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS-truforms/Extensions/iOS-truforms-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
