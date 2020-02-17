@@ -27,7 +27,6 @@ class SchemaNodePresenter: CustomStringConvertible {
 
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
-        // let presentationList = response.map {SearchPresentationModel(model: $0)}
-        // view?.display(list: presentationList)
+        
     }
 }

@@ -19,9 +19,11 @@ enum SchemaNodeConstants {
     \"title\": \"Multiple Conditional Control\",
     \"description\": \"Add multiple conditional controls\",
     \"type\": \"object\",
+    \"display_order\": 0,
     \"properties\": {
         \"food_like\": {
             \"type\": \"string\",
+            \"display_order\": 0,
             \"enum\": [
                 \"Hot Dog\",
                 \"Pizza\",
@@ -30,6 +32,7 @@ enum SchemaNodeConstants {
         },
         \"pizza_type\": {
             \"type\": \"string\",
+            \"display_order\": 1,
             \"enum\": [
                 \"Marinara\",
                 \"Margherita\",
@@ -38,6 +41,7 @@ enum SchemaNodeConstants {
         },
         \"hamburger_meat\": {
             \"type\": \"string\",
+            \"display_order\": 2,
             \"enum\": [
                 \"Chicken\",
                 \"Beef\",
@@ -47,6 +51,7 @@ enum SchemaNodeConstants {
         },
         \"vegetable_choice\": {
             \"type\": \"string\",
+            \"display_order\": 3,
             \"enum\": [
                 \"yes\",
                 \"no\"
@@ -59,6 +64,7 @@ enum SchemaNodeConstants {
         },
         \"vegetables\": {
             \"type\": \"string\",
+            \"display_order\": 4,
             \"enum\": [
                 \"Mushrooms\",
                 \"Tomatoes\",

@@ -25,4 +25,7 @@ class SchemaString: SchemaObjectProtocol {
     var description: String {
         return schemaNode?.description ?? ""
     }
+    var displayOrder: Int {
+        return schemaNode?.displayOrder ?? -1
+    }
 }

@@ -12,6 +12,7 @@ struct SchemaNode {
     var title: String?
     var description: String?
     var type: String
+    var displayOrder: Int?
     var format: String?
     var href: String?
     var properties: [String: SchemaNode]?
@@ -26,6 +27,7 @@ extension SchemaNode: Decodable {
         case title
         case description
         case type
+        case displayOrder = "display_order"
         case format
         case href
         case enumuration = "enum"
@@ -40,6 +42,7 @@ extension SchemaNode: Decodable {
         title = try container.decodeWrapper(key: .title, defaultValue: "")
         description = try container.decodeWrapper(key: .description, defaultValue: "")
         type = try container.decodeWrapper(key: .type, defaultValue: "")
+        displayOrder = try container.decodeWrapper(key: .displayOrder, defaultValue: -1)
         format = try container.decodeWrapper(key: .format, defaultValue: "")
         href = try container.decodeWrapper(key: .href, defaultValue: "")
         properties = try container.decodeWrapper(key: .properties, defaultValue: [:])
