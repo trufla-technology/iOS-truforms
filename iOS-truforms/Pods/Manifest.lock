@@ -1,5 +1,53 @@
 PODS:
   - Alamofire (4.9.1)
+  - MaterialComponents/AnimationTiming (104.0.1)
+  - MaterialComponents/Availability (104.0.1)
+  - MaterialComponents/Buttons (104.0.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Elevation (104.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (104.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Palettes (104.0.1)
+  - MaterialComponents/private/Application (104.0.1)
+  - MaterialComponents/private/Color (104.0.1)
+  - MaterialComponents/private/Math (104.0.1)
+  - MaterialComponents/Ripple (104.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (104.0.1)
+  - MaterialComponents/ShadowLayer (104.0.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (104.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/TextFields (104.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Typography (104.0.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -10,6 +58,7 @@ PODS:
   - Result (4.1.0)
 
 DEPENDENCIES:
+  - MaterialComponents/TextFields
   - Moya
   - Nimble
   - Quick
@@ -17,6 +66,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - Moya
     - Nimble
     - Quick
@@ -24,11 +76,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  MaterialComponents: 5f68750c41b8c191c605a9296586717b2f92da93
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: a9328df72759b30bfc11c26ae6038ac28ef6cf82
+PODFILE CHECKSUM: 5fcad3795c4d3e40c7429609671d9ff98633242a
 
 COCOAPODS: 1.8.4

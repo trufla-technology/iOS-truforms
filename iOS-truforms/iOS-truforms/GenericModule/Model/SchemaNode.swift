@@ -39,7 +39,7 @@ extension SchemaNode: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SchemaNodeCodingKeys.self)
-        title = try container.decodeWrapper(key: .title, defaultValue: "")
+        title = try container.decodeWrapper(key: .title, defaultValue: nil)
         description = try container.decodeWrapper(key: .description, defaultValue: "")
         type = try container.decodeWrapper(key: .type, defaultValue: "")
         displayOrder = try container.decodeWrapper(key: .displayOrder, defaultValue: -1)

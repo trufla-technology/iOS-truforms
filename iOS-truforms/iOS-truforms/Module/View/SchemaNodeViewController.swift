@@ -10,9 +10,10 @@ import UIKit
 // Now I will create Swift Clean Arch ... VIP Cycle (and I will break a retain cycle)
 protocol SchemaNodeViewProtocol: class {
     // back to write something here
-    func display(list: String)
+    func display(schema: SchemaPresentationModel)
 }
 class SchemaNodeViewController: BaseViewController {
+    @IBOutlet weak var stackView: UIStackView!
     var interactor: SchemaNodeInteractorProtocol?
 
     override func viewDidLoad() {
@@ -28,7 +29,15 @@ class SchemaNodeViewController: BaseViewController {
 }
 
 extension SchemaNodeViewController: SchemaNodeViewProtocol {
-    func display(list: String) {
-        print(list.count)
+    func display(schema: SchemaPresentationModel) {
+        guard let properties = schema.properties else {
+            return
+        }
+        for (_, value) in properties {
+            if let schema = value as? SchemaString {
+                let textField = SchemaTextField(schema: schema)
+                stackView.addSubview(textField.draw())
+            }
+        }
     }
 }

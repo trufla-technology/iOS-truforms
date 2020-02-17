@@ -27,6 +27,28 @@ class SchemaNodePresenter: CustomStringConvertible {
 
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
-        
+        var schemaPresentationModel = SchemaPresentationModel(title: response.title, description: response.description, properties: [:], required: response.required, oneOf: response.oneOf)
+        if let properties = response.properties {
+            for (key, value) in properties {
+                switch value.type {
+                case SchemaNodeConstants.SchemaType.STRING:
+                    if let format = value.format {
+                        if format.isEmpty {
+                            schemaPresentationModel.properties?[key] = SchemaString(schemaNode: value, key: key)
+                        } else {
+                            switch format {
+                            case SchemaNodeConstants.StringFormats.DATE:
+                                print("Date")
+                            default:
+                                print("Others")
+                            }
+                        }
+                    }
+                default:
+                    break
+                }
+            }
+        }
+        view?.display(schema: schemaPresentationModel)
     }
 }

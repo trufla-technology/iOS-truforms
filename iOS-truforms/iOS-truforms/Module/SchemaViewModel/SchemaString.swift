@@ -20,7 +20,7 @@ class SchemaString: SchemaObjectProtocol {
         return schemaNode?.type ?? ""
     }
     var title: String {
-        return schemaNode?.title ?? ""
+        return schemaNode?.title ?? key?.uppercased() ?? ""
     }
     var description: String {
         return schemaNode?.description ?? ""

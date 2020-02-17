@@ -16,105 +16,72 @@ enum SchemaNodeConstants {
     }
     static let sampleData = """
 {
-    \"title\": \"Multiple Conditional Control\",
-    \"description\": \"Add multiple conditional controls\",
-    \"type\": \"object\",
-    \"display_order\": 0,
-    \"properties\": {
-        \"food_like\": {
-            \"type\": \"string\",
-            \"display_order\": 0,
-            \"enum\": [
-                \"Hot Dog\",
-                \"Pizza\",
-                \"Hamburger\"
-            ]
+    "title": "Simple",
+    "description": "Simple form with input fields",
+    "type": "object",
+    "display_order": 0,
+    "properties": {
+        "first_name": {
+            "type": "string",
+            "display_order": 0
         },
-        \"pizza_type\": {
-            \"type\": \"string\",
-            \"display_order\": 1,
-            \"enum\": [
-                \"Marinara\",
-                \"Margherita\",
-                \"Vegetarian\"
-            ]
+        "last_name": {
+            "type": "string",
+            "display_order": 1
         },
-        \"hamburger_meat\": {
-            \"type\": \"string\",
-            \"display_order\": 2,
-            \"enum\": [
-                \"Chicken\",
-                \"Beef\",
-                \"Lamb\",
-                \"Vegetarian\"
-            ]
+        "email": {
+            "type": "string",
+            "display_order": 2
         },
-        \"vegetable_choice\": {
-            \"type\": \"string\",
-            \"display_order\": 3,
-            \"enum\": [
-                \"yes\",
-                \"no\"
-            ],
-            \"enumNames\": [
-                \"Yes\",
-                \"No\"
-            ],
-            \"format\": \"radiogroup\"
+        "phone_number": {
+            "type": "string",
+            "display_order": 3
         },
-        \"vegetables\": {
-            \"type\": \"string\",
-            \"display_order\": 4,
-            \"enum\": [
-                \"Mushrooms\",
-                \"Tomatoes\",
-                \"Lettuce\"
-            ]
+        "year": {
+            "type": "number",
+            "display_order": 4,
+            "pattern": "[1-2][0-9]{3}"
+        },
+        "effective_date": {
+            "type": "string",
+            "display_order": 5,
+            "format": "date"
+        },
+        "do_not_contact": {
+            "type": "boolean",
+            "display_order": 6
         }
     },
-    \"required\": [
-        \"food_like\",
-        \"vegetable_choice\"
-    ],
-    \"oneOf\": [
-        {
-            \"properties\": {
-                \"food_like\": {
-                    \"enum\": [
-                        \"Pizza\"
-                    ],
-                    \"required\": [
-                        \"pizza_type\"
-                    ]
-                }
-            }
-        },
-        {
-            \"properties\": {
-                \"food_like\": {
-                    \"enum\": [
-                        \"Hamburger\"
-                    ],
-                    \"required\": [
-                        \"hamburger_meat\"
-                    ]
-                }
-            }
-        },
-        {
-            \"properties\": {
-                \"vegetable_choice\": {
-                    \"enum\": [
-                        \"yes\"
-                    ],
-                    \"required\": [
-                        \"vegetables\"
-                    ]
-                }
-            }
-        }
+    "required": [
+        "year",
+        "effective_date"
     ]
 }
 """
+    enum SchemaKeywords {
+        static let TYPE = "type"
+        static let ENUM = "enum"
+        static let FORMAT = "format"
+        static let CONST = "const"
+        static let PROPERTIES = "properties"
+    }
+    
+    enum SchemaType {
+        static let NUMBER = "number"
+        static let STRING = "string"
+        static let BOOLEAN = "boolean"
+        static let OBJECT = "object"
+        static let ARRAY = "array"
+    }
+    
+    enum StringFormats {
+        static let DATETIME = "datetime"
+        static let PHOTO = "photo"
+        static let MAPLOCATION = "map_lat_long"
+        static let DATE = "date"
+        static let TIME = "time"
+        static let EMAIL = "email"
+        static let PHONE = "tel"
+    }
 }
 
