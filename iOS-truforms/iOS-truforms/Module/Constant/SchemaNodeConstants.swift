@@ -16,46 +16,237 @@ enum SchemaNodeConstants {
     }
     static let sampleData = """
 {
-    "title": "Simple",
-    "description": "Simple form with input fields",
-    "type": "object",
-    "display_order": 0,
-    "properties": {
-        "first_name": {
-            "type": "string",
-            "display_order": 0
-        },
-        "last_name": {
-            "type": "string",
-            "display_order": 1
-        },
-        "email": {
-            "type": "string",
-            "display_order": 2
-        },
-        "phone_number": {
-            "type": "string",
-            "display_order": 3
-        },
-        "year": {
-            "type": "number",
-            "display_order": 4,
-            "pattern": "[1-2][0-9]{3}"
-        },
-        "effective_date": {
-            "type": "string",
-            "display_order": 5,
-            "format": "date"
-        },
-        "do_not_contact": {
-            "type": "boolean",
-            "display_order": 6
-        }
+  "title": "Auto Claim - Vehicle Accident",
+  "type": "object",
+  "properties": {
+    "vehicle": {
+      "type": "number",
+      "title": "Select Vehicle",
+      "_data": {
+        "href": "/vehicles",
+        "enum": "id",
+        "enumNames": [
+          "vehicle_make",
+          "vehicle_model"
+        ]
+      }
     },
-    "required": [
-        "year",
-        "effective_date"
-    ]
+    "driver_information": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "date_time_of_accident": {
+          "title": "Date and Time of Accident",
+          "type": "object",
+          "properties": {
+            "date": {
+              "title": "Date of Accident",
+              "type": "string",
+              "format": "date"
+            },
+            "time": {
+              "title": "Time of Accident",
+              "type": "string",
+              "format": "time"
+            }
+          },
+          "required": [
+            "date",
+            "time"
+          ]
+        },
+        "location_of_accident": {
+          "type": "string",
+          "format": "map_lat_long"
+        },
+        "description_of_accident": {
+          "type": "string",
+          "format": "textarea"
+        },
+        "were_you_driving": {
+          "type": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        },
+        "who_was_driving": {
+          "type": "string"
+        },
+        "your_damage_photos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "photo": {
+                "type": "string",
+                "format": "photo"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "description_of_accident",
+        "were_you_driving",
+        "date_time_of_accident"
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "were_you_driving": {
+              "enum": [
+                "Yes"
+              ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "were_you_driving": {
+              "enum": [
+                "No"
+              ]
+            }
+          },
+          "required": [
+            "who_was_driving"
+          ]
+        }
+      ]
+    },
+    "other_driver_information": {
+      "type": "object",
+      "properties": {
+        "other_driver_information": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "document_photos": {
+                "description": "Photos of other driver's documentation",
+                "type": "object",
+                "properties": {
+                  "pink_card": {
+                    "type": "string",
+                    "format": "photo"
+                  },
+                  "drivers_license": {
+                    "type": "string",
+                    "format": "photo"
+                  },
+                  "license_plate": {
+                    "type": "string",
+                    "format": "photo"
+                  },
+                  "registration": {
+                    "type": "string",
+                    "format": "photo"
+                  }
+                }
+              },
+              "document_details": {
+                "description": "Other driver's information if no photos taken",
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "province": {
+                    "type": "string"
+                  },
+                  "postal_code": {
+                    "type": "string"
+                  },
+                  "home_phone_number": {
+                    "type": "string",
+                    "format": "tel"
+                  },
+                  "cell_phone_number": {
+                    "type": "string",
+                    "format": "tel"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "drivers_license_number": {
+                    "type": "string"
+                  },
+                  "license_plate": {
+                    "type": "string"
+                  },
+                  "other_drivers_car": {
+                    "title": "Other Drivers Car",
+                    "type": "object",
+                    "properties": {
+                      "year": {
+                        "type": "string"
+                      },
+                      "make": {
+                        "type": "string"
+                      },
+                      "model": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "policy_number": {
+                    "type": "string"
+                  },
+                  "insurance_company": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "witness_information": {
+      "type": "object",
+      "properties": {
+        "witnesses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "home_phone_number": {
+                "type": "string",
+                "format": "tel"
+              },
+              "cell_phone_number": {
+                "type": "string",
+                "format": "tel"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "vehicle"
+  ]
 }
 """
     enum SchemaKeywords {

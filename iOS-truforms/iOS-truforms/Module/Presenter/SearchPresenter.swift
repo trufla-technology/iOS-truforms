@@ -23,10 +23,54 @@ class SchemaNodePresenter: CustomStringConvertible {
     deinit {
         print("\(description) go away")
     }
+    
+    func map(schema: SchemaNode) {
+        guard let properties = schema.properties else {
+            return
+        }
+        let pro = properties.mapValues { mapSchema(schema: $0) }
+        print(pro["address"]?.type ?? "")
+    }
+    
+    func mapSchema(schema: SchemaNode) -> SchemaObjectProtocol {
+        let types = SchemaNodeConstants.SchemaType.self
+        let formats = SchemaNodeConstants.StringFormats.self
+        //let keys = SchemaNodeConstants.SchemaKeywords.self
+        switch schema.type {
+        case types.STRING:
+            if let _ = schema.enumuration {
+                return SchemaEnum(schemaNode: schema)
+            } else {
+                switch schema.format {
+                case formats.DATE:
+                    return SchemaDate(schemaNode: schema)
+                case formats.DATETIME:
+                    return SchemaDate(schemaNode: schema)
+                case formats.EMAIL:
+                    return SchemaString(schemaNode: schema)
+                case formats.MAPLOCATION:
+                    return SchemaLocation(schemaNode: schema)
+                case formats.PHONE:
+                    return SchemaString(schemaNode: schema)
+                case formats.PHOTO:
+                    return SchemaPhoto(schemaNode: schema)
+                case formats.TIME:
+                    return SchemaDate(schemaNode: schema)
+                default:
+                    return SchemaString(schemaNode: schema)
+                }
+        }
+        case types.BOOLEAN:
+            return SchemaBool(schemaNode: schema)
+        default:
+            return SchemaString(schemaNode: schema)
+        }
+    }
 }
 
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
+        map(schema: response)
         var schemaPresentationModel = SchemaPresentationModel(title: response.title, description: response.description, properties: [:], required: response.required, oneOf: response.oneOf)
         if let properties = response.properties {
             for (key, value) in properties {

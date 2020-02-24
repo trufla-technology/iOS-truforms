@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A8AE7CFB-E5A5-4C8B-89A2-19E0A76BC16F"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS-truforms/GenericModule/Interactor/Interactor.swift"
@@ -30,8 +30,8 @@
             filePath = "iOS-truforms/Module/Presenter/SearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "present(response:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D15A22BA-5F77-4E7E-951B-73B8B711B829"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS-truforms/Module/View/SchemaNodeViewController.swift"
@@ -56,15 +56,79 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6D04C2F0-A8B5-41E9-B3C0-016B39C52BB7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS-truforms/Module/Presenter/SearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "present(response:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "mapSchema(schema:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6850E1C8-D53C-4463-94A2-6FE8DA0BE77E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-truforms/Module/Presenter/SearchPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "map(schema:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6850E1C8-D53C-4463-94A2-6FE8DA0BE77E - 25f74184b19b4cba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_truforms.SchemaNodePresenter.map(schema: iOS_truforms.SchemaNode) -&gt; ()"
+                  moduleName = "iOS-truforms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Trufla/SourceTree/iOS-truforms/iOS-truforms/iOS-truforms/Module/Presenter/SearchPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "6850E1C8-D53C-4463-94A2-6FE8DA0BE77E - 59b67e11a8082868"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (iOS_truforms.SchemaNode) -&gt; iOS_truforms.SchemaObjectProtocol in iOS_truforms.SchemaNodePresenter.map(schema: iOS_truforms.SchemaNode) -&gt; ()"
+                  moduleName = "iOS-truforms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Trufla/SourceTree/iOS-truforms/iOS-truforms/iOS-truforms/Module/Presenter/SearchPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB56370B-CFA4-4E57-BBC9-0E49AE922DF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-truforms/Module/Presenter/SearchPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "map(schema:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

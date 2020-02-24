@@ -11,34 +11,34 @@ import Foundation
 
 struct OneOf {
     var enumuration: [String]?
-    var required: [String]?
 }
 
 extension OneOf: Decodable {
     enum OneOfCodingKeys: String, CodingKey {
         case enumuration = "enum"
-        case required
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: OneOfCodingKeys.self)
         enumuration = try container.decodeWrapper(key: .enumuration, defaultValue: [])
-        required = try container.decodeWrapper(key: .required, defaultValue: [])
     }
 }
 
 struct OneOfProperty {
     var properties: [String: OneOf]?
+    var required: [String]?
 }
 
 
 extension OneOfProperty: Decodable {
     enum OneOfPropertyCodingKeys: String, CodingKey {
         case properties
+        case required
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: OneOfPropertyCodingKeys.self)
         properties = try container.decodeWrapper(key: .properties, defaultValue: [:])
+        required = try container.decodeWrapper(key: .required, defaultValue: [])
     }
 }

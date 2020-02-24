@@ -8,19 +8,29 @@
 
 import Foundation
 
-struct SchemaNode {
+struct SchemaNode{
     var title: String?
     var description: String?
     var type: String
     var displayOrder: Int?
     var format: String?
-    var href: String?
+    var pattern: String?
+    // for object
     var properties: [String: SchemaNode]?
-    var enumuration: [String]?
-    var enumNames: [String]?
     var required: [String]?
+    // for enum
+    var enumData: DataEnum?
+    var enumuration: [AnyType]?
+    var enumNames: [String]?
+    // for one Of
     var oneOf: [OneOfProperty]?
+    // for array
+    var items: SchemaNodeWrapper<SchemaNode>?
+    var maxItems: Int?
+    var minItems: Int?
+    var uniqueItems: Bool?
 }
+
 
 extension SchemaNode: Decodable {
     enum SchemaNodeCodingKeys: String, CodingKey {
@@ -29,26 +39,42 @@ extension SchemaNode: Decodable {
         case type
         case displayOrder = "display_order"
         case format
-        case href
-        case enumuration = "enum"
-        case enumNames
+        case pattern
+        // for object
         case properties
         case required
+        // for enum
+        case enumuration = "enum"
+        case enumNames
+        // for enum data
+        case enumData = "_data"
+        // for one Of
         case oneOf
+        // for array
+        case items
+        case maxItems
+        case minItems
+        case uniqueItems
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SchemaNodeCodingKeys.self)
         title = try container.decodeWrapper(key: .title, defaultValue: nil)
-        description = try container.decodeWrapper(key: .description, defaultValue: "")
+        description = try container.decodeWrapper(key: .description, defaultValue: nil)
         type = try container.decodeWrapper(key: .type, defaultValue: "")
-        displayOrder = try container.decodeWrapper(key: .displayOrder, defaultValue: -1)
-        format = try container.decodeWrapper(key: .format, defaultValue: "")
-        href = try container.decodeWrapper(key: .href, defaultValue: "")
-        properties = try container.decodeWrapper(key: .properties, defaultValue: [:])
-        enumuration = try container.decodeWrapper(key: .enumuration, defaultValue: [])
-        enumNames = try container.decodeWrapper(key: .enumNames, defaultValue: [])
-        required = try container.decodeWrapper(key: .required, defaultValue: [])
-        oneOf = try container.decodeWrapper(key: .oneOf, defaultValue: [])
+        displayOrder = try container.decodeWrapper(key: .displayOrder, defaultValue: nil)
+        format = try container.decodeWrapper(key: .format, defaultValue: nil)
+        pattern = try container.decodeWrapper(key: .pattern, defaultValue: nil)
+        enumData = try container.decodeWrapper(key: .enumData, defaultValue: nil)
+        properties = try container.decodeWrapper(key: .properties, defaultValue: nil)
+        enumuration = try container.decodeWrapper(key: .enumuration, defaultValue: nil)
+        enumNames = try container.decodeWrapper(key: .enumNames, defaultValue: nil)
+        required = try container.decodeWrapper(key: .required, defaultValue: nil)
+        oneOf = try container.decodeWrapper(key: .oneOf, defaultValue: nil)
+        items = try container.decodeWrapper(key: .items, defaultValue: nil)
+        maxItems = try container.decodeWrapper(key: .maxItems, defaultValue: nil)
+        minItems = try container.decodeWrapper(key: .minItems, defaultValue: nil)
+        uniqueItems = try container.decodeWrapper(key: .uniqueItems, defaultValue: nil)
     }
+    
 }
