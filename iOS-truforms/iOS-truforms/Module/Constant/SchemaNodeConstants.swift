@@ -16,237 +16,282 @@ enum SchemaNodeConstants {
     }
     static let sampleData = """
 {
-  "title": "Auto Claim - Vehicle Accident",
-  "type": "object",
-  "properties": {
-    "vehicle": {
-      "type": "number",
-      "title": "Select Vehicle",
-      "_data": {
-        "href": "/vehicles",
-        "enum": "id",
-        "enumNames": [
-          "vehicle_make",
-          "vehicle_model"
-        ]
-      }
-    },
-    "driver_information": {
-      "type": "object",
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "date_time_of_accident": {
-          "title": "Date and Time of Accident",
-          "type": "object",
-          "properties": {
-            "date": {
-              "title": "Date of Accident",
-              "type": "string",
-              "format": "date"
-            },
-            "time": {
-              "title": "Time of Accident",
-              "type": "string",
-              "format": "time"
+    "title": "Auto Claim - Vehicle Accident",
+    "type": "object",
+    "display_order": 1,
+    "properties": {
+        "vehicle": {
+            "type": "number",
+            "display_order": 1,
+            "title": "Select Vehicle",
+            "_data": {
+                "href": "/vehicles",
+                "enum": "id",
+                "enumNames": [
+                    "vehicle_make",
+                    "vehicle_model"
+                ]
             }
-          },
-          "required": [
-            "date",
-            "time"
-          ]
         },
-        "location_of_accident": {
-          "type": "string",
-          "format": "map_lat_long"
-        },
-        "description_of_accident": {
-          "type": "string",
-          "format": "textarea"
-        },
-        "were_you_driving": {
-          "type": "string",
-          "enum": [
-            "Yes",
-            "No"
-          ]
-        },
-        "who_was_driving": {
-          "type": "string"
-        },
-        "your_damage_photos": {
-          "type": "array",
-          "items": {
+        "driver_information": {
             "type": "object",
+            "display_order": 2,
             "properties": {
-              "photo": {
-                "type": "string",
-                "format": "photo"
-              }
-            }
-          }
-        }
-      },
-      "required": [
-        "description_of_accident",
-        "were_you_driving",
-        "date_time_of_accident"
-      ],
-      "oneOf": [
-        {
-          "properties": {
-            "were_you_driving": {
-              "enum": [
-                "Yes"
-              ]
-            }
-          }
-        },
-        {
-          "properties": {
-            "were_you_driving": {
-              "enum": [
-                "No"
-              ]
-            }
-          },
-          "required": [
-            "who_was_driving"
-          ]
-        }
-      ]
-    },
-    "other_driver_information": {
-      "type": "object",
-      "properties": {
-        "other_driver_information": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "document_photos": {
-                "description": "Photos of other driver's documentation",
-                "type": "object",
-                "properties": {
-                  "pink_card": {
+                "description": {
                     "type": "string",
-                    "format": "photo"
-                  },
-                  "drivers_license": {
-                    "type": "string",
-                    "format": "photo"
-                  },
-                  "license_plate": {
-                    "type": "string",
-                    "format": "photo"
-                  },
-                  "registration": {
-                    "type": "string",
-                    "format": "photo"
-                  }
-                }
-              },
-              "document_details": {
-                "description": "Other driver's information if no photos taken",
-                "type": "object",
-                "properties": {
-                  "first_name": {
-                    "type": "string"
-                  },
-                  "last_name": {
-                    "type": "string"
-                  },
-                  "address": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "province": {
-                    "type": "string"
-                  },
-                  "postal_code": {
-                    "type": "string"
-                  },
-                  "home_phone_number": {
-                    "type": "string",
-                    "format": "tel"
-                  },
-                  "cell_phone_number": {
-                    "type": "string",
-                    "format": "tel"
-                  },
-                  "email": {
-                    "type": "string",
-                    "format": "email"
-                  },
-                  "drivers_license_number": {
-                    "type": "string"
-                  },
-                  "license_plate": {
-                    "type": "string"
-                  },
-                  "other_drivers_car": {
-                    "title": "Other Drivers Car",
+                    "display_order": 1
+                },
+                "date_time_of_accident": {
+                    "title": "Date and Time of Accident",
                     "type": "object",
+                    "display_order": 2,
                     "properties": {
-                      "year": {
-                        "type": "string"
-                      },
-                      "make": {
-                        "type": "string"
-                      },
-                      "model": {
-                        "type": "string"
-                      }
+                        "date": {
+                            "title": "Date of Accident",
+                            "type": "string",
+                            "display_order": 1,
+                            "format": "date"
+                        },
+                        "time": {
+                            "title": "Time of Accident",
+                            "type": "string",
+                            "display_order": 2,
+                            "format": "time"
+                        }
+                    },
+                    "required": [
+                        "date",
+                        "time"
+                    ]
+                },
+                "location_of_accident": {
+                    "type": "string",
+                    "display_order": 3,
+                    "format": "map_lat_long"
+                },
+                "description_of_accident": {
+                    "type": "string",
+                    "display_order": 4,
+                    "format": "textarea"
+                },
+                "were_you_driving": {
+                    "type": "string",
+                    "display_order": 5,
+                    "enum": [
+                        "Yes",
+                        "No"
+                    ]
+                },
+                "who_was_driving": {
+                    "type": "string",
+                    "display_order": 6
+                },
+                "your_damage_photos": {
+                    "type": "array",
+                    "display_order": 7,
+                    "items": {
+                        "type": "object",
+                        "display_order": 1,
+                        "properties": {
+                            "photo": {
+                                "type": "string",
+                                "display_order": 1,
+                                "format": "photo"
+                            }
+                        }
                     }
-                  },
-                  "policy_number": {
-                    "type": "string"
-                  },
-                  "insurance_company": {
-                    "type": "string"
-                  }
                 }
-              }
-            }
-          }
-        }
-      }
-    },
-    "witness_information": {
-      "type": "object",
-      "properties": {
-        "witnesses": {
-          "type": "array",
-          "items": {
+            },
+            "required": [
+                "description_of_accident",
+                "were_you_driving",
+                "date_time_of_accident"
+            ],
+            "oneOf": [{
+                    "properties": {
+                        "were_you_driving": {
+                            "enum": [
+                                "Yes"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "were_you_driving": {
+                            "enum": [
+                                "No"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "who_was_driving"
+                    ]
+                }
+            ]
+        },
+        "other_driver_information": {
             "type": "object",
+            "display_order": 3,
             "properties": {
-              "name": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string",
-                "format": "email"
-              },
-              "home_phone_number": {
-                "type": "string",
-                "format": "tel"
-              },
-              "cell_phone_number": {
-                "type": "string",
-                "format": "tel"
-              }
+                "other_driver_information": {
+                    "type": "array",
+                    "display_order": 1,
+                    "items": {
+                        "type": "object",
+                        "display_order": 1,
+                        "properties": {
+                            "document_photos": {
+                                "description": "Photos of other driver's documentation",
+                                "type": "object",
+                                "display_order": 1,
+                                "properties": {
+                                    "pink_card": {
+                                        "type": "string",
+                                        "display_order": 1,
+                                        "format": "photo"
+                                    },
+                                    "drivers_license": {
+                                        "type": "string",
+                                        "display_order": 2,
+                                        "format": "photo"
+                                    },
+                                    "license_plate": {
+                                        "type": "string",
+                                        "display_order": 3,
+                                        "format": "photo"
+                                    },
+                                    "registration": {
+                                        "type": "string",
+                                        "display_order": 4,
+                                        "format": "photo"
+                                    }
+                                }
+                            },
+                            "document_details": {
+                                "description": "Other driver's information if no photos taken",
+                                "type": "object",
+                                "display_order": 2,
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string",
+                                        "display_order": 1
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "display_order": 2
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "display_order": 3
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "display_order": 4
+                                    },
+                                    "province": {
+                                        "type": "string",
+                                        "display_order": 5
+                                    },
+                                    "postal_code": {
+                                        "type": "string",
+                                        "display_order": 6
+                                    },
+                                    "home_phone_number": {
+                                        "type": "string",
+                                        "display_order": 7,
+                                        "format": "tel"
+                                    },
+                                    "cell_phone_number": {
+                                        "type": "string",
+                                        "display_order": 8,
+                                        "format": "tel"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "display_order": 9,
+                                        "format": "email"
+                                    },
+                                    "drivers_license_number": {
+                                        "type": "string",
+                                        "display_order": 10
+                                    },
+                                    "license_plate": {
+                                        "type": "string",
+                                        "display_order": 11
+                                    },
+                                    "other_drivers_car": {
+                                        "title": "Other Drivers Car",
+                                        "type": "object",
+                                        "display_order": 12,
+                                        "properties": {
+                                            "year": {
+                                                "type": "string",
+                                                "display_order": 1
+                                            },
+                                            "make": {
+                                                "type": "string",
+                                                "display_order": 2
+                                            },
+                                            "model": {
+                                                "type": "string",
+                                                "display_order": 3
+                                            }
+                                        }
+                                    },
+                                    "policy_number": {
+                                        "type": "string",
+                                        "display_order": 13
+                                    },
+                                    "insurance_company": {
+                                        "type": "string",
+                                        "display_order": 14
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          }
+        },
+        "witness_information": {
+            "type": "object",
+            "display_order": 4,
+            "properties": {
+                "witnesses": {
+                    "type": "array",
+                    "display_order": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "display_order": 1
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email",
+                                "display_order": 2
+                            },
+                            "home_phone_number": {
+                                "type": "string",
+                                "display_order": 3,
+                                "format": "tel"
+                            },
+                            "cell_phone_number": {
+                                "type": "string",
+                                "display_order": 4,
+                                "format": "tel"
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-  },
-  "required": [
-    "vehicle"
-  ]
+    },
+    "required": [
+        "vehicle"
+    ]
 }
 """
     enum SchemaKeywords {
