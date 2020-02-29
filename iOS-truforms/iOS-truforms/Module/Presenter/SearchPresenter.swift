@@ -32,6 +32,17 @@ class SchemaNodePresenter: CustomStringConvertible {
         print(pro["address"]?.type ?? "")
     }
     
+    func scan(schema: SchemaNode) -> TreeNode<String> {
+        var tree = TreeNode<String>(value: schema.type, children: [])
+        guard schema.type == SchemaNodeConstants.SchemaType.OBJECT || schema.type == SchemaNodeConstants.SchemaType.ARRAY else {
+            return tree
+        }
+        let properties = (schema.type == SchemaNodeConstants.SchemaType.OBJECT) ? schema.properties : schema.items?.value.properties
+        let sorted = (properties?.map({$0.value}) ?? []).sorted(by: <)
+        sorted.forEach({tree.add(node: scan(schema: $0))})
+        return tree
+    }
+    
     func mapSchema(schema: SchemaNode) -> SchemaObjectProtocol {
         let types = SchemaNodeConstants.SchemaType.self
         let formats = SchemaNodeConstants.StringFormats.self
@@ -70,7 +81,9 @@ class SchemaNodePresenter: CustomStringConvertible {
 
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
-        map(schema: response)
+        print("start scan: ", scan(schema: response).printTree())
+        
+        /*map(schema: response)
         var schemaPresentationModel = SchemaPresentationModel(title: response.title, description: response.description, properties: [:], required: response.required, oneOf: response.oneOf)
         if let properties = response.properties {
             for (key, value) in properties {
@@ -93,6 +106,6 @@ extension SchemaNodePresenter: SchemaNodePresenterProtocol {
                 }
             }
         }
-        view?.display(schema: schemaPresentationModel)
+        view?.display(schema: schemaPresentationModel)*/
     }
 }

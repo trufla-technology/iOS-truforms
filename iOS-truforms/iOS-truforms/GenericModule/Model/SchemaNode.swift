@@ -78,3 +78,13 @@ extension SchemaNode: Decodable {
     }
     
 }
+
+extension SchemaNode: Comparable {
+    static func == (lhs: SchemaNode, rhs: SchemaNode) -> Bool {
+        lhs.displayOrder == rhs.displayOrder
+    }
+    
+    static func < (lhs: Self, rhs: Self) -> Bool {
+        lhs.displayOrder! < rhs.displayOrder!
+    }
+}
