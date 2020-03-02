@@ -81,7 +81,7 @@ class SchemaNodePresenter: CustomStringConvertible {
 
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
-        print("start scan: ", scan(schema: response).printTree())
+        scan(schema: response).printTree()
         
         /*map(schema: response)
         var schemaPresentationModel = SchemaPresentationModel(title: response.title, description: response.description, properties: [:], required: response.required, oneOf: response.oneOf)

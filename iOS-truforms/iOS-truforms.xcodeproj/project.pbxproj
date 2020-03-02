@@ -35,7 +35,7 @@
 		53F8C47123F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C46E23F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift */; };
 		53F8C48123F1AA780024CED4 /* SchemaNodeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C47323F1AA770024CED4 /* SchemaNodeTarget.swift */; };
 		53F8C48423F1AA780024CED4 /* SchemaNodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C47823F1AA770024CED4 /* SchemaNodeInteractor.swift */; };
-		53F8C48523F1AA780024CED4 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C47A23F1AA770024CED4 /* SearchPresenter.swift */; };
+		53F8C48523F1AA780024CED4 /* SchemaNodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C47A23F1AA770024CED4 /* SchemaNodePresenter.swift */; };
 		53F8C48623F1AA780024CED4 /* SchemaNodeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C47C23F1AA770024CED4 /* SchemaNodeConstants.swift */; };
 		53F8C48723F1AA780024CED4 /* SchemaNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C47E23F1AA770024CED4 /* SchemaNodeViewController.swift */; };
 		53F8C48823F1AA780024CED4 /* SchemaNodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C48023F1AA780024CED4 /* SchemaNodeConfig.swift */; };
@@ -100,7 +100,7 @@
 		53F8C46E23F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Extension.swift"; sourceTree = "<group>"; };
 		53F8C47323F1AA770024CED4 /* SchemaNodeTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaNodeTarget.swift; sourceTree = "<group>"; };
 		53F8C47823F1AA770024CED4 /* SchemaNodeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaNodeInteractor.swift; sourceTree = "<group>"; };
-		53F8C47A23F1AA770024CED4 /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		53F8C47A23F1AA770024CED4 /* SchemaNodePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaNodePresenter.swift; sourceTree = "<group>"; };
 		53F8C47C23F1AA770024CED4 /* SchemaNodeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaNodeConstants.swift; sourceTree = "<group>"; };
 		53F8C47E23F1AA770024CED4 /* SchemaNodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaNodeViewController.swift; sourceTree = "<group>"; };
 		53F8C48023F1AA780024CED4 /* SchemaNodeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaNodeConfig.swift; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 		53F8C47923F1AA770024CED4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				53F8C47A23F1AA770024CED4 /* SearchPresenter.swift */,
+				53F8C47A23F1AA770024CED4 /* SchemaNodePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -635,7 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F8C47023F1A3360024CED4 /* Result.swift in Sources */,
-				53F8C48523F1AA780024CED4 /* SearchPresenter.swift in Sources */,
+				53F8C48523F1AA780024CED4 /* SchemaNodePresenter.swift in Sources */,
 				53F8C48723F1AA780024CED4 /* SchemaNodeViewController.swift in Sources */,
 				53D19EC024040B9800733B0C /* DataEnum.swift in Sources */,
 				53F8C48623F1AA780024CED4 /* SchemaNodeConstants.swift in Sources */,
