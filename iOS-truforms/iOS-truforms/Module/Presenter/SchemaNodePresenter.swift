@@ -34,10 +34,13 @@ class SchemaNodePresenter: CustomStringConvertible {
     
     func scan(schema: SchemaNode) -> TreeNode<String> {
         var tree = TreeNode<String>(value: schema.type, children: [])
-        guard schema.type == SchemaNodeConstants.SchemaType.OBJECT || schema.type == SchemaNodeConstants.SchemaType.ARRAY else {
+        if schema.type == SchemaNodeConstants.SchemaType.ARRAY, let schema = schema.items?.value {
+            tree.add(node: scan(schema: schema))
+        }
+        guard schema.type == SchemaNodeConstants.SchemaType.OBJECT else {
             return tree
         }
-        let properties = (schema.type == SchemaNodeConstants.SchemaType.OBJECT) ? schema.properties : schema.items?.value.properties
+        let properties = schema.properties
         let sorted = (properties?.map({$0.value}) ?? []).sorted(by: <)
         sorted.forEach({tree.add(node: scan(schema: $0))})
         return tree
