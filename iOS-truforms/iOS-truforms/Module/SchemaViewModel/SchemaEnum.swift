@@ -16,18 +16,6 @@ class SchemaEnum: SchemaObjectProtocol {
        self.schemaNode = schemaNode
        self.key = key
     }
-    var type: String {
-       return schemaNode?.type ?? ""
-    }
-    var title: String {
-       return schemaNode?.title ?? key?.uppercased() ?? ""
-    }
-    var description: String {
-       return schemaNode?.description ?? ""
-    }
-    var displayOrder: Int {
-       return schemaNode?.displayOrder ?? -1
-    }
     var format: String {
        return schemaNode?.format ?? ""
     }

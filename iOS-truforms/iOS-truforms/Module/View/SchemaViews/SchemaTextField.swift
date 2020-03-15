@@ -16,8 +16,8 @@ class SchemaTextField {
     }
     
     func draw() -> MDCTextField {
-        let textFieldFloating = MDCTextField(frame: CGRect(x: 20, y: 44 * schema.displayOrder, width: 256, height: 40))
-        textFieldFloating.placeholder = schema.title
+        let textFieldFloating = MDCTextField(frame: CGRect(x: 20, y: 44 * schema.displayOrder(), width: 256, height: 40))
+        textFieldFloating.placeholder = schema.title()
         // textFieldFloating.textView.delegate = self
         // textFieldControllerFloating = MDCTextInputControllerUnderline(textInput: textFieldFloating) // Hold on as a property
         return textFieldFloating

@@ -11,9 +11,23 @@ import Foundation
 protocol SchemaObjectProtocol {
     var schemaNode: SchemaNode? {set get}
     var key: String? {get set}
-    var type: String {get}
-    var title: String {get}
-    var description: String {get}
+    func type() -> String
+    func title() -> String
+    func description() -> String
+    func displayOrder() -> Int
 }
 
-
+extension SchemaObjectProtocol {
+     func type() -> String {
+        return schemaNode?.type ?? ""
+     }
+     func title() -> String {
+        return schemaNode?.title ?? key?.uppercased() ?? ""
+     }
+     func description() -> String {
+        return schemaNode?.description ?? ""
+     }
+     func displayOrder() -> Int {
+        return schemaNode?.displayOrder ?? -1
+     }
+}
