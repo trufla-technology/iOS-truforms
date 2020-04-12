@@ -19,6 +19,7 @@
 		5372984C23FC00B000044CF3 /* SchemaEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372984B23FC00B000044CF3 /* SchemaEnum.swift */; };
 		5383F1482434D2190057EACF /* SubmitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383F1472434D2190057EACF /* SubmitNode.swift */; };
 		538D7E22243C8E5900B7825E /* SchemaArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D7E21243C8E5900B7825E /* SchemaArray.swift */; };
+		5392196E2443407B00865562 /* SchemaEnumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392196D2443407B00865562 /* SchemaEnumData.swift */; };
 		53D19EC024040B9800733B0C /* DataEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D19EBF24040B9800733B0C /* DataEnum.swift */; };
 		53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42323F16AF30024CED4 /* AppDelegate.swift */; };
 		53F8C42823F16AF30024CED4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C42723F16AF30024CED4 /* ViewController.swift */; };
@@ -80,6 +81,7 @@
 		5372984B23FC00B000044CF3 /* SchemaEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnum.swift; sourceTree = "<group>"; };
 		5383F1472434D2190057EACF /* SubmitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitNode.swift; sourceTree = "<group>"; };
 		538D7E21243C8E5900B7825E /* SchemaArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaArray.swift; sourceTree = "<group>"; };
+		5392196D2443407B00865562 /* SchemaEnumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnumData.swift; sourceTree = "<group>"; };
 		53D19EBF24040B9800733B0C /* DataEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEnum.swift; sourceTree = "<group>"; };
 		53F8C42023F16AF30024CED4 /* iOS-truforms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-truforms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F8C42323F16AF30024CED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				5372984523FBF39000044CF3 /* SchemaPhoto.swift */,
 				5372984723FBF41900044CF3 /* SchemaLocation.swift */,
 				5372984923FBF56100044CF3 /* SchemaBool.swift */,
+				5392196D2443407B00865562 /* SchemaEnumData.swift */,
 				5372984B23FC00B000044CF3 /* SchemaEnum.swift */,
 				538D7E21243C8E5900B7825E /* SchemaArray.swift */,
 			);
@@ -646,6 +649,7 @@
 				53D19EC024040B9800733B0C /* DataEnum.swift in Sources */,
 				53F8C48623F1AA780024CED4 /* SchemaNodeConstants.swift in Sources */,
 				53F8C42823F16AF30024CED4 /* ViewController.swift in Sources */,
+				5392196E2443407B00865562 /* SchemaEnumData.swift in Sources */,
 				53F8C46723F1A2EC0024CED4 /* BaseViewController.swift in Sources */,
 				5372984623FBF39000044CF3 /* SchemaPhoto.swift in Sources */,
 				5383F1482434D2190057EACF /* SubmitNode.swift in Sources */,

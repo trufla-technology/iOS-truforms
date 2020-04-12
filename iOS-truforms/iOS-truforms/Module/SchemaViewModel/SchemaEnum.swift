@@ -16,7 +16,18 @@ class SchemaEnum: SchemaObjectProtocol {
        self.schemaNode = schemaNode
        self.key = key
     }
-    var format: String {
-       return schemaNode?.format ?? ""
+    
+    var enumuration: [AnyType] {
+        guard let enums = schemaNode?.enumuration else {
+            return []
+        }
+        return enums
+    }
+    
+    var enumNames: [String] {
+        guard let enumNames = schemaNode?.enumNames else {
+            return []
+        }
+        return enumNames
     }
 }
