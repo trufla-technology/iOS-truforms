@@ -10,7 +10,7 @@ import UIKit
 // Now I will create Swift Clean Arch ... VIP Cycle (and I will break a retain cycle)
 protocol SchemaNodeViewProtocol: class {
     // back to write something here
-    func display(schema: TreeNode<String>)
+    func display(schema: (TreeNode<String>, TreeNode<SubmitNode>))
 }
 class SchemaNodeViewController: BaseViewController {
     @IBOutlet weak var stackView: UIStackView!
@@ -29,7 +29,7 @@ class SchemaNodeViewController: BaseViewController {
 }
 
 extension SchemaNodeViewController: SchemaNodeViewProtocol {
-    func display(schema: TreeNode<String>) {
+    func display(schema: (TreeNode<String>, TreeNode<SubmitNode>)) {
         // traverse tree here
         
     }

@@ -29,6 +29,9 @@ struct SchemaNode{
     var maxItems: Int?
     var minItems: Int?
     var uniqueItems: Bool?
+    // for string
+    var maxLength: Int?
+    var minLength: Int?
 }
 
 
@@ -55,6 +58,9 @@ extension SchemaNode: Decodable {
         case maxItems
         case minItems
         case uniqueItems
+        // for string
+        case maxLength
+        case minLength
     }
     
     init(from decoder: Decoder) throws {
@@ -75,6 +81,8 @@ extension SchemaNode: Decodable {
         maxItems = try container.decodeWrapper(key: .maxItems, defaultValue: nil)
         minItems = try container.decodeWrapper(key: .minItems, defaultValue: nil)
         uniqueItems = try container.decodeWrapper(key: .uniqueItems, defaultValue: nil)
+        maxLength = try container.decodeWrapper(key: .maxLength, defaultValue: nil)
+        minLength = try container.decodeWrapper(key: .minLength, defaultValue: nil)
     }
     
 }

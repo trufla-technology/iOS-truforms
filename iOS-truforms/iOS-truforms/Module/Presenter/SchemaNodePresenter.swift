@@ -32,19 +32,30 @@ class SchemaNodePresenter: CustomStringConvertible {
         print(pro["address"]?.type ?? "")
     }
     
-    func scan(schema: SchemaNode) -> TreeNode<String> {
+    func scan(schema: SchemaNode) -> (TreeNode<String>, TreeNode<SubmitNode>) {
+        let id = UUID().uuidString
         var tree = TreeNode<String>(value: schema.type, children: [])
+        let submitNode = SubmitNode(key: schema.type, id: id, isRequired: false)
+        var treeSubmissin = TreeNode<SubmitNode>(value: submitNode, children: [])
         if schema.type == SchemaNodeConstants.SchemaType.ARRAY, let schema = schema.items?.value {
-            tree.add(node: scan(schema: schema))
+            let result = scan(schema: schema)
+            tree.add(node: result.0)
+            treeSubmissin.add(node: result.1)
         }
         guard schema.type == SchemaNodeConstants.SchemaType.OBJECT else {
-            return tree
+            return (tree, treeSubmissin)
         }
         let properties = schema.properties
         let sorted = (properties?.map({$0.value}) ?? []).sorted(by: <)
-        sorted.forEach({tree.add(node: scan(schema: $0))})
-        return tree
+        sorted.forEach({
+            let result = scan(schema: $0)
+            tree.add(node: result.0)
+            treeSubmissin.add(node: result.1)
+        })
+        return (tree, treeSubmissin)
     }
+    
+    
     
     func mapSchema(schema: SchemaNode) -> SchemaObjectProtocol {
         let types = SchemaNodeConstants.SchemaType.self
@@ -85,7 +96,7 @@ class SchemaNodePresenter: CustomStringConvertible {
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
         let treeNode = scan(schema: response)
-        treeNode.printTree()
+        treeNode.1.printTree()
         view?.display(schema: treeNode)
     }
 }

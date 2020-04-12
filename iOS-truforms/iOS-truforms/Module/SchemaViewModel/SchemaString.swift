@@ -16,4 +16,20 @@ class SchemaString: SchemaObjectProtocol {
         self.schemaNode = schemaNode
         self.key = key
     }
+    
+    var maxLength: Int {
+        return schemaNode?.maxLength ?? -1
+    }
+    
+    var minLength: Int {
+        return schemaNode?.minLength ?? -1
+    }
+    
+    var format: String {
+        return schemaNode?.format ?? ""
+    }
+    
+    var pattern: String {
+        return schemaNode?.pattern ?? ""
+    }
 }

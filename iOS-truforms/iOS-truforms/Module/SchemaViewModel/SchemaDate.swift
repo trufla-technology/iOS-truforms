@@ -16,6 +16,7 @@ class SchemaDate: SchemaObjectProtocol {
         self.schemaNode = schemaNode
         self.key = key
     }
+    
     var format: String {
         return schemaNode?.format ?? ""
     }
