@@ -16,10 +16,6 @@ class SchemaArray: SchemaObjectProtocol {
        self.key = key
     }
     
-    var items: SchemaNode? {
-        return schemaNode?.items?.value
-    }
-    
     var maxItem: Int {
         return schemaNode?.maxItems ?? 0
     }

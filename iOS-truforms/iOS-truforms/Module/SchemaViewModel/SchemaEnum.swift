@@ -17,6 +17,7 @@ class SchemaEnum: SchemaObjectProtocol {
        self.key = key
     }
     
+    // AnyType String, Number, Boolean
     var enumuration: [AnyType] {
         guard let enums = schemaNode?.enumuration else {
             return []

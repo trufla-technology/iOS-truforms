@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 class SchemaEnumData: SchemaObjectProtocol {
     var schemaNode: SchemaNode?
     var key: String?

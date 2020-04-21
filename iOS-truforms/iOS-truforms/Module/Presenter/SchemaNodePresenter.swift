@@ -32,9 +32,11 @@ class SchemaNodePresenter: CustomStringConvertible {
         print(pro["address"]?.type ?? "")
     }
     
-    func scan(schema: SchemaNode) -> (TreeNode<String>, TreeNode<SubmitNode>) {
+    func scan(schema: SchemaNode) -> (TreeNode<SchemaObjectProtocol>, TreeNode<SubmitNode>) {
         let id = UUID().uuidString
-        var tree = TreeNode<String>(value: schema.type, children: [])
+        // let value
+        let schemaObject = mapSchema(schema: schema)
+        var tree = TreeNode<SchemaObjectProtocol>(value: schemaObject, children: [])
         let submitNode = SubmitNode(key: schema.type, id: id, isRequired: false)
         var treeSubmissin = TreeNode<SubmitNode>(value: submitNode, children: [])
         if schema.type == SchemaNodeConstants.SchemaType.ARRAY, let schema = schema.items?.value {
@@ -65,6 +67,8 @@ class SchemaNodePresenter: CustomStringConvertible {
         case types.STRING:
             if let _ = schema.enumuration {
                 return SchemaEnum(schemaNode: schema)
+            } else if let _ = schema.enumData {
+                return SchemaEnumData(schemaNode: schema)
             } else {
                 switch schema.format {
                 case formats.DATE:
@@ -87,6 +91,10 @@ class SchemaNodePresenter: CustomStringConvertible {
         }
         case types.BOOLEAN:
             return SchemaBool(schemaNode: schema)
+        case types.ARRAY:
+            return SchemaArray(schemaNode: schema)
+        case types.OBJECT:
+            return SchemaObject(schemaNode: schema)
         default:
             return SchemaString(schemaNode: schema)
         }
