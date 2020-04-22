@@ -26,20 +26,19 @@ class EurekaManager {
             drawString(node)
         }
     }
-    
-    func drawObject(_ node: SchemaObject) {
+    private func drawObject(_ node: SchemaObject) {
         print(node.type(), ": ", node.title())
     }
-    func drawArray(_ node: SchemaArray) {
+    private func drawArray(_ node: SchemaArray) {
         print(node.type(), ": ", node.title())
     }
-    func drawEnum(_ node: SchemaEnum) {
+    private func drawEnum(_ node: SchemaEnum) {
         print(node.type(), ": ", node.title())
     }
-    func drawEnumData(_ node: SchemaEnumData) {
+    private func drawEnumData(_ node: SchemaEnumData) {
         print(node.type(), ": ", node.title())
     }
-    func drawString(_ node: SchemaString) {
+    private func drawString(_ node: SchemaString) {
         let formats = SchemaNodeConstants.StringFormats.self
         switch node.format {
         case formats.DATE:
@@ -60,28 +59,28 @@ class EurekaManager {
             drawTextField(node)
         }
     }
-    func drawTextField(_ node: SchemaString) {
+    private func drawTextField(_ node: SchemaString) {
         print("Text area: ", node.title())
     }
-    func drawDate(_ node: SchemaString) {
+    private func drawDate(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
-    func drawDateTime(_ node: SchemaString) {
+    private func drawDateTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
-    func drawTime(_ node: SchemaString) {
+    private func drawTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
-    func drawEmail(_ node: SchemaString) {
+    private func drawEmail(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
-    func drawPhone(_ node: SchemaString) {
+    private func drawPhone(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
-    func drawPhoto(_ node: SchemaString) {
+    private func drawPhoto(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
-    func drawMapLocation(_ node: SchemaString) {
+    private func drawMapLocation(_ node: SchemaString) {
         print(node.format, ": ", node.title())
     }
 }
