@@ -23,6 +23,7 @@ class SchemaNodeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         manager = EurekaManager()
         manager?.delegate = self
         let module = SchemaNodeConfig()
@@ -45,6 +46,7 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
     func display(schema: (TreeNode<SchemaObjectProtocol>, TreeNode<SubmitNode>)) {
         // traverse tree here
         schema.0.printTree()
+        configureNavigationBar(title: schema.0.value.title(), selector: nil)
         traverse(schema.0)
     }
 }
@@ -93,14 +95,14 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
     func addSection(title:String)  {
         form +++ Section(title)
             
-        <<< TextRow(){ row in
-             row.title = "Text Row"
-             row.placeholder = "Enter text here"
-         }
-         <<< PhoneRow(){
-             $0.title = "Phone Row"
-             $0.placeholder = "And numbers here"
-         }
+//        <<< TextRow(){ row in
+//             row.title = "Text Row"
+//             row.placeholder = "Enter text here"
+//         }
+//         <<< PhoneRow(){
+//             $0.title = "Phone Row"
+//             $0.placeholder = "And numbers here"
+//         }
     }
     
     func addImagePicker(title:String)  {
