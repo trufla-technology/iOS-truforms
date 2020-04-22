@@ -14,9 +14,6 @@
 		5340CE542402BFA5003DBD84 /* AnyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340CE532402BFA5003DBD84 /* AnyType.swift */; };
 		5366FBB923FAB1D300174DE7 /* SchemaPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366FBB823FAB1D300174DE7 /* SchemaPresentationModel.swift */; };
 		5366FBBC23FABE2900174DE7 /* SchemaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366FBBB23FABE2900174DE7 /* SchemaTextField.swift */; };
-		5372984423FBE94600044CF3 /* SchemaDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372984323FBE94600044CF3 /* SchemaDate.swift */; };
-		5372984623FBF39000044CF3 /* SchemaPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372984523FBF39000044CF3 /* SchemaPhoto.swift */; };
-		5372984823FBF41900044CF3 /* SchemaLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372984723FBF41900044CF3 /* SchemaLocation.swift */; };
 		5372984A23FBF56100044CF3 /* SchemaBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372984923FBF56100044CF3 /* SchemaBool.swift */; };
 		5372984C23FC00B000044CF3 /* SchemaEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372984B23FC00B000044CF3 /* SchemaEnum.swift */; };
 		5383F1482434D2190057EACF /* SubmitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383F1472434D2190057EACF /* SubmitNode.swift */; };
@@ -78,9 +75,6 @@
 		5340CE532402BFA5003DBD84 /* AnyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyType.swift; sourceTree = "<group>"; };
 		5366FBB823FAB1D300174DE7 /* SchemaPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaPresentationModel.swift; sourceTree = "<group>"; };
 		5366FBBB23FABE2900174DE7 /* SchemaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaTextField.swift; sourceTree = "<group>"; };
-		5372984323FBE94600044CF3 /* SchemaDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaDate.swift; sourceTree = "<group>"; };
-		5372984523FBF39000044CF3 /* SchemaPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaPhoto.swift; sourceTree = "<group>"; };
-		5372984723FBF41900044CF3 /* SchemaLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaLocation.swift; sourceTree = "<group>"; };
 		5372984923FBF56100044CF3 /* SchemaBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaBool.swift; sourceTree = "<group>"; };
 		5372984B23FC00B000044CF3 /* SchemaEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnum.swift; sourceTree = "<group>"; };
 		5383F1472434D2190057EACF /* SubmitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitNode.swift; sourceTree = "<group>"; };
@@ -378,9 +372,6 @@
 				5366FBB823FAB1D300174DE7 /* SchemaPresentationModel.swift */,
 				53F8C48A23F2E1AF0024CED4 /* SchemaObjectProtocol.swift */,
 				53F8C48E23F2FF0C0024CED4 /* SchemaString.swift */,
-				5372984323FBE94600044CF3 /* SchemaDate.swift */,
-				5372984523FBF39000044CF3 /* SchemaPhoto.swift */,
-				5372984723FBF41900044CF3 /* SchemaLocation.swift */,
 				5372984923FBF56100044CF3 /* SchemaBool.swift */,
 				5392196D2443407B00865562 /* SchemaEnumData.swift */,
 				5372984B23FC00B000044CF3 /* SchemaEnum.swift */,
@@ -666,17 +657,14 @@
 				5392196E2443407B00865562 /* SchemaEnumData.swift in Sources */,
 				5339B40F244E591700DC8F96 /* SchemaObject.swift in Sources */,
 				53F8C46723F1A2EC0024CED4 /* BaseViewController.swift in Sources */,
-				5372984623FBF39000044CF3 /* SchemaPhoto.swift in Sources */,
 				5383F1482434D2190057EACF /* SubmitNode.swift in Sources */,
 				53F8C46F23F1A3360024CED4 /* Responsable.swift in Sources */,
 				5366FBBC23FABE2900174DE7 /* SchemaTextField.swift in Sources */,
-				5372984823FBF41900044CF3 /* SchemaLocation.swift in Sources */,
 				5340CE522402BEFB003DBD84 /* SchemaNodeWrapper.swift in Sources */,
 				53F8C48423F1AA780024CED4 /* SchemaNodeInteractor.swift in Sources */,
 				53F8C46623F1A2EC0024CED4 /* BasePresenter.swift in Sources */,
 				53F8C48F23F2FF0C0024CED4 /* SchemaString.swift in Sources */,
 				53F8C47123F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift in Sources */,
-				5372984423FBE94600044CF3 /* SchemaDate.swift in Sources */,
 				53F8C48B23F2E1AF0024CED4 /* SchemaObjectProtocol.swift in Sources */,
 				5372984A23FBF56100044CF3 /* SchemaBool.swift in Sources */,
 				53F8C46923F1A2EC0024CED4 /* SchemaNode.swift in Sources */,
