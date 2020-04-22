@@ -40,7 +40,48 @@ class EurekaManager {
         print(node.type(), ": ", node.title())
     }
     func drawString(_ node: SchemaString) {
-        print(node.type(), ": ", node.title())
+        let formats = SchemaNodeConstants.StringFormats.self
+        switch node.format {
+        case formats.DATE:
+            drawDate(node)
+        case formats.DATETIME:
+            drawDateTime(node)
+        case formats.EMAIL:
+            drawEmail(node)
+        case formats.MAPLOCATION:
+            drawMapLocation(node)
+        case formats.PHONE:
+            drawPhone(node)
+        case formats.PHOTO:
+            drawPhoto(node)
+        case formats.TIME:
+            drawTime(node)
+        default:
+            drawTextField(node)
+        }
     }
-    
+    func drawTextField(_ node: SchemaString) {
+        print("Text area: ", node.title())
+    }
+    func drawDate(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
+    func drawDateTime(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
+    func drawTime(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
+    func drawEmail(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
+    func drawPhone(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
+    func drawPhoto(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
+    func drawMapLocation(_ node: SchemaString) {
+        print(node.format, ": ", node.title())
+    }
 }
