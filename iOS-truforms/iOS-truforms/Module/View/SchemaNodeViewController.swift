@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Eureka
+import ImageRow
+
 // Now I will create Swift Clean Arch ... VIP Cycle (and I will break a retain cycle)
 protocol SchemaNodeViewProtocol: class {
     // back to write something here
@@ -21,6 +24,7 @@ class SchemaNodeViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         manager = EurekaManager()
+        manager?.delegate = self
         let module = SchemaNodeConfig()
         module.createModule(view: self)
         interactor?.fetch(id: "11")
@@ -42,5 +46,68 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
         // traverse tree here
         schema.0.printTree()
         traverse(schema.0)
+    }
+}
+
+extension SchemaNodeViewController: EurekaManagerDelegate {
+    
+    func addText(title:String, placeHolder:String) {
+        form  +++ TextRow(){ row in
+            row.title = title
+            row.placeholder = placeHolder
+        }
+    }
+    
+    func addEmailText(title:String, placeHolder:String) {
+        form +++ EmailRow(){ row in
+            row.title = title
+            row.placeholder = placeHolder
+        }
+    }
+    
+    func addPhoneText(title:String, placeHolder:String) {
+        form +++ PhoneRow(){
+            $0.title = title
+            $0.placeholder = placeHolder
+        }
+    }
+    
+    func addDate(title:String) {
+        form +++ DateRow(){
+            $0.title = title
+            $0.value = Date(timeIntervalSinceReferenceDate: 0)
+        }
+    }
+    
+    func addPicker(title:String) {
+        form +++ PickerInputRow<String>("Picker Input Row"){
+            $0.title = "Options"
+            $0.options = []
+            for i in 1...10{
+                $0.options.append("option \(i)")
+            }
+            $0.value = $0.options.first
+        }
+    }
+    
+    func addSection(title:String)  {
+        form +++ Section(title)
+            
+        <<< TextRow(){ row in
+             row.title = "Text Row"
+             row.placeholder = "Enter text here"
+         }
+         <<< PhoneRow(){
+             $0.title = "Phone Row"
+             $0.placeholder = "And numbers here"
+         }
+    }
+    
+    func addImagePicker(title:String)  {
+        form +++ ImageRow() { row in
+            row.title = title
+            row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
+            row.clearAction = .yes(style: UIAlertAction.Style.destructive)
+        }
     }
 }

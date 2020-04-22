@@ -8,7 +8,26 @@
 
 import Foundation
 
+protocol EurekaManagerDelegate: class {
+    // back to write something here
+    func addText(title:String, placeHolder:String)
+    
+    func addEmailText(title:String, placeHolder:String)
+    
+    func addPhoneText(title:String, placeHolder:String)
+    
+    func addDate(title:String)
+    
+    func addPicker(title:String)
+    
+    func addImagePicker(title:String)
+    
+    func addSection(title:String)
+}
+
 class EurekaManager {
+    weak var delegate:EurekaManagerDelegate!
+    
     func draw(_ node: SchemaObjectProtocol) {
         if let node = node as? SchemaObject {
             drawObject(node)
@@ -28,6 +47,7 @@ class EurekaManager {
     }
     private func drawObject(_ node: SchemaObject) {
         print(node.type(), ": ", node.title())
+        delegate.addSection(title: node.title())
     }
     private func drawArray(_ node: SchemaArray) {
         print(node.type(), ": ", node.title())
@@ -60,10 +80,12 @@ class EurekaManager {
         }
     }
     private func drawTextField(_ node: SchemaString) {
-        print("Text area: ", node.title())
+        //        print("Text area: ", node.title())
+        delegate.addText(title: node.title(), placeHolder: node.title())
     }
     private func drawDate(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
+        //        print(node.format, ": ", node.title())
+        delegate.addDate(title: node.title())
     }
     private func drawDateTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
@@ -72,13 +94,16 @@ class EurekaManager {
         print(node.format, ": ", node.title())
     }
     private func drawEmail(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
+        //        print(node.format, ": ", node.title())
+        delegate.addEmailText(title: node.title(), placeHolder: node.title())
     }
     private func drawPhone(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
+        //        print(node.format, ": ", node.title())
+        delegate.addPhoneText(title: node.title(), placeHolder: node.title())
     }
     private func drawPhoto(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
+        //        print(node.format, ": ", node.title())
+        delegate.addImagePicker(title: node.title())
     }
     private func drawMapLocation(_ node: SchemaString) {
         print(node.format, ": ", node.title())

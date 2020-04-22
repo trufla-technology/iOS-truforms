@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import Eureka
 protocol BaseViewProtocol: class {
     func display(error: String)
 }
 
-class BaseViewController: UIViewController {
+class BaseViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
