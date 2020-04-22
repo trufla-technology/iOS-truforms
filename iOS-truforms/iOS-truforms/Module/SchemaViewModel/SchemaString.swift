@@ -10,11 +10,9 @@ import Foundation
 
 class SchemaString: SchemaObjectProtocol {
     var schemaNode: SchemaNode?
-    var key: String?
 
-    init(schemaNode: SchemaNode, key: String = "") {
+    init(schemaNode: SchemaNode) {
         self.schemaNode = schemaNode
-        self.key = key
     }
     
     var maxLength: Int {

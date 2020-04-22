@@ -15,10 +15,12 @@ protocol SchemaNodeViewProtocol: class {
 class SchemaNodeViewController: BaseViewController {
     @IBOutlet weak var stackView: UIStackView!
     var interactor: SchemaNodeInteractorProtocol?
-
+    var manager: EurekaManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        manager = EurekaManager()
         let module = SchemaNodeConfig()
         module.createModule(view: self)
         interactor?.fetch(id: "11")
@@ -26,11 +28,19 @@ class SchemaNodeViewController: BaseViewController {
     deinit {
         print("\(SchemaNodeViewController.self) go away")
     }
+    
+    func traverse(_ root: TreeNode<SchemaObjectProtocol>) {
+        manager?.draw(root.value)
+        for child in root.children {
+            traverse(child)
+        }
+    }
 }
 
 extension SchemaNodeViewController: SchemaNodeViewProtocol {
     func display(schema: (TreeNode<SchemaObjectProtocol>, TreeNode<SubmitNode>)) {
         // traverse tree here
         schema.0.printTree()
+        traverse(schema.0)
     }
 }

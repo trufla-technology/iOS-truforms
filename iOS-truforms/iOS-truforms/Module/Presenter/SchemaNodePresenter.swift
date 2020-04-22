@@ -56,7 +56,13 @@ class SchemaNodePresenter: CustomStringConvertible {
             return (tree, treeSubmissin)
         }
         let properties = schema.properties
-        let sorted = (properties?.map({$0.value}) ?? []).sorted(by: <)
+        var propertyList = [SchemaNode]()
+        properties?.forEach { (key, value) in
+            var schemaNode = value
+            schemaNode.key = key
+            propertyList.append(schemaNode)
+        }
+        let sorted = propertyList.sorted(by: <)
         sorted.forEach({
             let result = scan(schema: $0)
             tree.add(node: result.0)

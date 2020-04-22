@@ -10,7 +10,7 @@ import Foundation
 
 protocol SchemaObjectProtocol {
     var schemaNode: SchemaNode? {set get}
-    var key: String? {get set}
+    func key() -> String 
     func type() -> String
     func title() -> String
     func description() -> String
@@ -21,8 +21,11 @@ extension SchemaObjectProtocol {
      func type() -> String {
         return schemaNode?.type ?? ""
      }
+     func key() -> String {
+        return schemaNode?.key ?? ""
+     }
      func title() -> String {
-        return schemaNode?.title ?? key?.uppercased() ?? ""
+        return schemaNode?.title ?? key()
      }
      func description() -> String {
         return schemaNode?.description ?? ""

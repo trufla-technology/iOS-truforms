@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		53352C582408741B0098A119 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53352C572408741B0098A119 /* TreeNode.swift */; };
 		5339B40F244E591700DC8F96 /* SchemaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339B40E244E591700DC8F96 /* SchemaObject.swift */; };
+		5339B4122450C3DE00DC8F96 /* EurekaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339B4112450C3DE00DC8F96 /* EurekaManager.swift */; };
 		5340CE522402BEFB003DBD84 /* SchemaNodeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340CE512402BEFB003DBD84 /* SchemaNodeWrapper.swift */; };
 		5340CE542402BFA5003DBD84 /* AnyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340CE532402BFA5003DBD84 /* AnyType.swift */; };
 		5366FBB923FAB1D300174DE7 /* SchemaPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366FBB823FAB1D300174DE7 /* SchemaPresentationModel.swift */; };
@@ -72,6 +73,7 @@
 		3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truforms_iOS_truformsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53352C572408741B0098A119 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		5339B40E244E591700DC8F96 /* SchemaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaObject.swift; sourceTree = "<group>"; };
+		5339B4112450C3DE00DC8F96 /* EurekaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaManager.swift; sourceTree = "<group>"; };
 		5340CE512402BEFB003DBD84 /* SchemaNodeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaNodeWrapper.swift; sourceTree = "<group>"; };
 		5340CE532402BFA5003DBD84 /* AnyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyType.swift; sourceTree = "<group>"; };
 		5366FBB823FAB1D300174DE7 /* SchemaPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaPresentationModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5339B4102450C3C500DC8F96 /* EurekaManager */ = {
+			isa = PBXGroup;
+			children = (
+				5339B4112450C3DE00DC8F96 /* EurekaManager.swift */,
+			);
+			path = EurekaManager;
+			sourceTree = "<group>";
+		};
 		5366FBBA23FABE0600174DE7 /* SchemaViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +257,7 @@
 		53F8C45B23F1A2AC0024CED4 /* GenericModule */ = {
 			isa = PBXGroup;
 			children = (
+				5339B4102450C3C500DC8F96 /* EurekaManager */,
 				53F8C46023F1A2EC0024CED4 /* Config */,
 				53F8C46423F1A2EC0024CED4 /* Interactor */,
 				53F8C46223F1A2EC0024CED4 /* Model */,
@@ -680,6 +691,7 @@
 				53F8C48D23F2FD1B0024CED4 /* OneOfProperty.swift in Sources */,
 				53F8C48823F1AA780024CED4 /* SchemaNodeConfig.swift in Sources */,
 				5372984C23FC00B000044CF3 /* SchemaEnum.swift in Sources */,
+				5339B4122450C3DE00DC8F96 /* EurekaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

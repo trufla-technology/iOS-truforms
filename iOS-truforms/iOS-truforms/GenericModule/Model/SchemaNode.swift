@@ -9,6 +9,7 @@
 import Foundation
 
 struct SchemaNode{
+    var key = ""
     var title: String?
     var description: String?
     var type: String

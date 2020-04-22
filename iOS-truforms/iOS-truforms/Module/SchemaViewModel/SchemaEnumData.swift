@@ -10,11 +10,9 @@ import Foundation
 
 class SchemaEnumData: SchemaObjectProtocol {
     var schemaNode: SchemaNode?
-    var key: String?
 
     init(schemaNode: SchemaNode, key: String = "") {
        self.schemaNode = schemaNode
-       self.key = key
     }
     
     var data: DataEnum? {
