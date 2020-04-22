@@ -40,4 +40,6 @@ extension TreeNode
    func printTree() {
         print(treeLines().joined(separator:"\n"))
    }
+   // traverse
+   
 }

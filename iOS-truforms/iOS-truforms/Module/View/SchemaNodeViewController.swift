@@ -31,6 +31,6 @@ class SchemaNodeViewController: BaseViewController {
 extension SchemaNodeViewController: SchemaNodeViewProtocol {
     func display(schema: (TreeNode<SchemaObjectProtocol>, TreeNode<SubmitNode>)) {
         // traverse tree here
-        
+        schema.0.printTree()
     }
 }

@@ -35,6 +35,14 @@ class SchemaNodePresenter: CustomStringConvertible {
     func scan(schema: SchemaNode) -> (TreeNode<SchemaObjectProtocol>, TreeNode<SubmitNode>) {
         let id = UUID().uuidString
         // let value
+        // Object -
+                 // - Text
+                 // - Array
+                          // - Text
+                 // - Array
+                          // -Obj
+                                 // - Text
+                              
         let schemaObject = mapSchema(schema: schema)
         var tree = TreeNode<SchemaObjectProtocol>(value: schemaObject, children: [])
         let submitNode = SubmitNode(key: schema.type, id: id, isRequired: false)
@@ -104,7 +112,8 @@ class SchemaNodePresenter: CustomStringConvertible {
 extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
         let treeNode = scan(schema: response)
-        treeNode.1.printTree()
         view?.display(schema: treeNode)
     }
 }
+
+
