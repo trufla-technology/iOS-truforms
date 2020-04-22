@@ -75,15 +75,14 @@ class SchemaNodePresenter: CustomStringConvertible {
     
     func mapSchema(schema: SchemaNode) -> SchemaObjectProtocol {
         let types = SchemaNodeConstants.SchemaType.self
+        if let _ = schema.enumuration {
+            return SchemaEnum(schemaNode: schema)
+        } else if let _ = schema.enumData {
+            return SchemaEnumData(schemaNode: schema)
+        }
         switch schema.type {
         case types.STRING:
-            if let _ = schema.enumuration {
-                return SchemaEnum(schemaNode: schema)
-            } else if let _ = schema.enumData {
-                return SchemaEnumData(schemaNode: schema)
-            } else {
                 return SchemaString(schemaNode: schema)
-            }
         case types.BOOLEAN:
             return SchemaBool(schemaNode: schema)
         case types.ARRAY:
