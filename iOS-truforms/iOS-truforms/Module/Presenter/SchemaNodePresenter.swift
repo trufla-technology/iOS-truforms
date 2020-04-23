@@ -32,21 +32,19 @@ class SchemaNodePresenter: CustomStringConvertible {
         print(pro["address"]?.type ?? "")
     }
     
-    func scan(schema: SchemaNode, tag: inout String) -> TreeNode<SchemaObjectProtocol> {
+    func scan(schema: SchemaNode, tag: inout String, parentTage: String) -> TreeNode<SchemaObjectProtocol> {
         let schemaObject = mapSchema(schema: schema)
         var tree = TreeNode<SchemaObjectProtocol>(value: schemaObject, children: [])
         tree.value.tag = tag
+        tree.value.parentTag = parentTage
         if schema.type == SchemaNodeConstants.SchemaType.ARRAY, let schema = schema.items?.value {
-            tag = UUID().uuidString
-            tree.value.tag = tag
-            let result = scan(schema: schema, tag: &tag)
+            var newTag = UUID().uuidString
+            let result = scan(schema: schema, tag: &newTag, parentTage: tag)
             tree.add(node: result)
         }
         guard schema.type == SchemaNodeConstants.SchemaType.OBJECT else {
             return tree
         }
-        tag = UUID().uuidString
-        tree.value.tag = tag
         let properties = schema.properties
         var propertyList = [SchemaNode]()
         properties?.forEach { (key, value) in
@@ -56,8 +54,9 @@ class SchemaNodePresenter: CustomStringConvertible {
         }
         let sorted = propertyList.sorted(by: <)
         sorted.forEach({
-            var result = scan(schema: $0, tag: &tag)
-            result.value.parentTag = tree.value.tag
+            var newTag = UUID().uuidString
+            var result = scan(schema: $0, tag: &newTag, parentTage: tag)
+            result.value.parentTag = tag
             tree.add(node: result)
         })
         return tree
@@ -89,7 +88,7 @@ extension SchemaNodePresenter: SchemaNodePresenterProtocol {
     func present(response: SchemaNode) {
         // let schemaObject = mapSchema(schema: response)
         var tag = UUID().uuidString
-        var treeNode = scan(schema: response, tag: &tag)
+        var treeNode = scan(schema: response, tag: &tag, parentTage: tag)
         treeNode.value.tag = tag
         view?.display(schema: treeNode)
     }

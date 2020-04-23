@@ -32,8 +32,9 @@ extension TreeNode
 {
    func treeLines(_ nodeIndent:String="", _ childIndent:String="") -> [String]
    {
+      let node = value as! SchemaObjectProtocol
       let enumrated = children.enumerated().map{ ($0 < children.count-1, $1) }
-      return [ nodeIndent + "\(value)" ] + enumrated.flatMap{ $0 ? $1.treeLines("┣╸","┃ ") : $1.treeLines("┗╸","  ") }
+      return [ nodeIndent + "\(value): \(node.tag) : \(node.parentTag)" ] + enumrated.flatMap{ $0 ? $1.treeLines("┣╸","┃ ") : $1.treeLines("┗╸","  ") }
           .map{childIndent + $0}
    }
 

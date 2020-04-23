@@ -7,28 +7,22 @@
 //
 
 import Foundation
+import Eureka
+import ImageRow
 
 protocol EurekaManagerDelegate: class {
     // back to write something here
-    func addText(title:String, placeHolder:String, _ sectionTag: String)
     
-    func addEmailText(title:String, placeHolder:String, _ sectionTag: String)
+    func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
-    func addPhoneText(title:String, placeHolder:String, _ sectionTag: String)
-    
-    func addDate(title:String, _ sectionTag: String)
-    
-    func addPicker(title:String, _ sectionTag: String)
-    
-    func addImagePicker(title:String, _ sectionTag: String)
-    
-    func addSection(title:String, _ sectionTag: String, _ parentTag: String)
+    func addRow <R:BaseRow> (_ row:R, at tag: String)
 }
 
 class EurekaManager {
     weak var delegate:EurekaManagerDelegate!
+    var ignoreTitle: Bool = true
     
-    func draw(_ node: SchemaObjectProtocol, _ sectionTag: String = "") {
+    func draw(_ node: SchemaObjectProtocol) {
         if let node = node as? SchemaObject {
             drawObject(node)
         }
@@ -46,16 +40,17 @@ class EurekaManager {
         }
     }
     private func drawObject(_ node: SchemaObject) {
-        delegate.addSection(title: node.title(), node.tag, node.parentTag)
+        delegate.addSection(title: node.title(), with: node.tag, at: node.parentTag, ignoreTitle: ignoreTitle)
+        ignoreTitle = false
     }
     private func drawArray(_ node: SchemaArray) {
-        print(node.type(), ": ", node.title())
     }
     private func drawEnum(_ node: SchemaEnum) {
-        print(node.type(), ": ", node.title())
+        let pickerInputRow = PickerInputRow<String>()
+        pickerInputRow.title = node.title()
+        delegate.addRow(pickerInputRow, at: node.parentTag)
     }
     private func drawEnumData(_ node: SchemaEnumData) {
-        print(node.type(), ": ", node.title())
     }
     private func drawString(_ node: SchemaString) {
         let formats = SchemaNodeConstants.StringFormats.self
@@ -79,27 +74,53 @@ class EurekaManager {
         }
     }
     private func drawTextField(_ node: SchemaString) {
-        delegate.addText(title: node.title(), placeHolder: node.title(), node.parentTag)
+        //        print("Text area: ", node.title())
+        let textRow = TextRow()
+        textRow.title = node.title()
+        textRow.placeholder = node.title()
+        
+        delegate.addRow(textRow, at: node.parentTag)
     }
     private func drawDate(_ node: SchemaString) {
-        delegate.addDate(title: node.title(), node.parentTag)
+        
+        let dateRow = DateRow()
+        
+        dateRow.title = node.title()
+        dateRow.value = Date(timeIntervalSinceReferenceDate: 0)
+    
+        delegate.addRow(dateRow, at: node.parentTag)
     }
     private func drawDateTime(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
+        let dateTimeRow = DateTimeRow()
+        dateTimeRow.title = node.title()
+        
+        delegate.addRow(dateTimeRow, at: node.parentTag)
     }
     private func drawTime(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
+        let timeRow = TimeRow()
+        timeRow.title = node.title()
+        
+        delegate.addRow(timeRow, at: node.parentTag)
     }
     private func drawEmail(_ node: SchemaString) {
-        delegate.addEmailText(title: node.title(), placeHolder: node.title(), node.parentTag)
+        let emailRow = EmailRow()
+        emailRow.title = node.title()
+        emailRow.placeholder = node.title()
+        delegate.addRow(emailRow, at: node.parentTag)
     }
     private func drawPhone(_ node: SchemaString) {
-        delegate.addPhoneText(title: node.title(), placeHolder: node.title(), node.parentTag)
+        let phoneRow = PhoneRow()
+        phoneRow.title = node.title()
+        phoneRow.placeholder = node.title()
+        delegate.addRow(phoneRow, at: node.parentTag)
     }
     private func drawPhoto(_ node: SchemaString) {
-        delegate.addImagePicker(title: node.title(), node.parentTag)
+        let imageRow = ImageRow()
+        imageRow.title = node.title()
+        imageRow.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
+        imageRow.clearAction = .yes(style: UIAlertAction.Style.destructive)
+        delegate.addRow(imageRow, at: node.parentTag)
     }
     private func drawMapLocation(_ node: SchemaString) {
-        print(node.format, ": ", node.title())
     }
 }
