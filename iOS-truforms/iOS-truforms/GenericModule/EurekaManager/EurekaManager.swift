@@ -10,25 +10,25 @@ import Foundation
 
 protocol EurekaManagerDelegate: class {
     // back to write something here
-    func addText(title:String, placeHolder:String)
+    func addText(title:String, placeHolder:String, _ sectionTag: String)
     
-    func addEmailText(title:String, placeHolder:String)
+    func addEmailText(title:String, placeHolder:String, _ sectionTag: String)
     
-    func addPhoneText(title:String, placeHolder:String)
+    func addPhoneText(title:String, placeHolder:String, _ sectionTag: String)
     
-    func addDate(title:String)
+    func addDate(title:String, _ sectionTag: String)
     
-    func addPicker(title:String)
+    func addPicker(title:String, _ sectionTag: String)
     
-    func addImagePicker(title:String)
+    func addImagePicker(title:String, _ sectionTag: String)
     
-    func addSection(title:String)
+    func addSection(title:String, _ sectionTag: String, _ parentTag: String)
 }
 
 class EurekaManager {
     weak var delegate:EurekaManagerDelegate!
     
-    func draw(_ node: SchemaObjectProtocol) {
+    func draw(_ node: SchemaObjectProtocol, _ sectionTag: String = "") {
         if let node = node as? SchemaObject {
             drawObject(node)
         }
@@ -46,8 +46,7 @@ class EurekaManager {
         }
     }
     private func drawObject(_ node: SchemaObject) {
-        print(node.type(), ": ", node.title())
-            delegate.addSection(title: node.title())        
+        delegate.addSection(title: node.title(), node.tag, node.parentTag)
     }
     private func drawArray(_ node: SchemaArray) {
         print(node.type(), ": ", node.title())
@@ -80,12 +79,10 @@ class EurekaManager {
         }
     }
     private func drawTextField(_ node: SchemaString) {
-        //        print("Text area: ", node.title())
-        delegate.addText(title: node.title(), placeHolder: node.title())
+        delegate.addText(title: node.title(), placeHolder: node.title(), node.parentTag)
     }
     private func drawDate(_ node: SchemaString) {
-        //        print(node.format, ": ", node.title())
-        delegate.addDate(title: node.title())
+        delegate.addDate(title: node.title(), node.parentTag)
     }
     private func drawDateTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
@@ -94,16 +91,13 @@ class EurekaManager {
         print(node.format, ": ", node.title())
     }
     private func drawEmail(_ node: SchemaString) {
-        //        print(node.format, ": ", node.title())
-        delegate.addEmailText(title: node.title(), placeHolder: node.title())
+        delegate.addEmailText(title: node.title(), placeHolder: node.title(), node.parentTag)
     }
     private func drawPhone(_ node: SchemaString) {
-        //        print(node.format, ": ", node.title())
-        delegate.addPhoneText(title: node.title(), placeHolder: node.title())
+        delegate.addPhoneText(title: node.title(), placeHolder: node.title(), node.parentTag)
     }
     private func drawPhoto(_ node: SchemaString) {
-        //        print(node.format, ": ", node.title())
-        delegate.addImagePicker(title: node.title())
+        delegate.addImagePicker(title: node.title(), node.parentTag)
     }
     private func drawMapLocation(_ node: SchemaString) {
         print(node.format, ": ", node.title())

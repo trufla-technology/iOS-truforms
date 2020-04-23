@@ -10,6 +10,8 @@ import Foundation
 
 protocol SchemaObjectProtocol {
     var schemaNode: SchemaNode? {set get}
+    var tag: String {set get}
+    var parentTag: String {set get}
     func key() -> String 
     func type() -> String
     func title() -> String

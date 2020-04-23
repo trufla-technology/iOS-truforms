@@ -41,5 +41,4 @@ extension TreeNode
         print(treeLines().joined(separator:"\n"))
    }
    // traverse
-   
 }

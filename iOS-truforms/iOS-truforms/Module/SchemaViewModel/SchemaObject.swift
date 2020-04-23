@@ -9,6 +9,8 @@
 import Foundation
 class SchemaObject: SchemaObjectProtocol {
     var schemaNode: SchemaNode?
+    var tag: String = ""
+    var parentTag: String = ""
 
     init(schemaNode: SchemaNode) {
        self.schemaNode = schemaNode

@@ -10,7 +10,8 @@ import Foundation
 
 class SchemaEnumData: SchemaObjectProtocol {
     var schemaNode: SchemaNode?
-
+    var tag: String = ""
+     var parentTag: String = ""
     init(schemaNode: SchemaNode, key: String = "") {
        self.schemaNode = schemaNode
     }

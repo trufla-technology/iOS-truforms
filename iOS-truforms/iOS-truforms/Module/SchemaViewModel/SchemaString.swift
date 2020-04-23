@@ -9,7 +9,9 @@
 import Foundation
 
 class SchemaString: SchemaObjectProtocol {
-    var schemaNode: SchemaNode?
+    var tag: String = ""
+     var parentTag: String = ""
+     var schemaNode: SchemaNode?
 
     init(schemaNode: SchemaNode) {
         self.schemaNode = schemaNode
