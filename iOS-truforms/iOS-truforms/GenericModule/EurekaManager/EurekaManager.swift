@@ -18,6 +18,10 @@ protocol EurekaManagerDelegate: class {
     
     func addDate(title:String)
     
+    func addTime(title:String)
+    
+    func addDateTime(title:String)
+
     func addPicker(title:String)
     
     func addImagePicker(title:String)
@@ -47,7 +51,7 @@ class EurekaManager {
     }
     private func drawObject(_ node: SchemaObject) {
         print(node.type(), ": ", node.title())
-            delegate.addSection(title: node.title())        
+            delegate.addSection(title: node.title())
     }
     private func drawArray(_ node: SchemaArray) {
         print(node.type(), ": ", node.title())
@@ -89,9 +93,11 @@ class EurekaManager {
     }
     private func drawDateTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
+        delegate.addDateTime(title: node.title())
     }
     private func drawTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
+        delegate.addTime(title: node.title())
     }
     private func drawEmail(_ node: SchemaString) {
         //        print(node.format, ": ", node.title())

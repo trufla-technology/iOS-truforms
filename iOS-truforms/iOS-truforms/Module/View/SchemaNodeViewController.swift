@@ -53,6 +53,10 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
     
+    func addView()  {
+        
+    }
+    
     func addText(title:String, placeHolder:String) {
         form  +++ TextRow(){ row in
             row.title = title
@@ -74,10 +78,22 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
         }
     }
     
+    func addTime(title:String) {
+        form +++ TimeRow(){
+            $0.title = title
+        }
+    }
+    
     func addDate(title:String) {
         form +++ DateRow(){
             $0.title = title
             $0.value = Date(timeIntervalSinceReferenceDate: 0)
+        }
+    }
+    
+    func addDateTime(title:String) {
+        form +++ DateTimeRow(){
+            $0.title = title
         }
     }
     
@@ -94,14 +110,22 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
     
     func addSection(title:String)  {
         form +++ Section(title)
-            
-//        <<< TextRow(){ row in
+        
+//        <<< DateTimeRow(){ row in
 //             row.title = "Text Row"
-//             row.placeholder = "Enter text here"
 //         }
 //         <<< PhoneRow(){
 //             $0.title = "Phone Row"
 //             $0.placeholder = "And numbers here"
+//         }
+        
+//     let section = Section(title)
+//     form +++
+//         section
+//         myArray.forEach {
+//             section <<< TextRow($0) {
+//                 $0.title = $0.tag
+//             }
 //         }
     }
     
