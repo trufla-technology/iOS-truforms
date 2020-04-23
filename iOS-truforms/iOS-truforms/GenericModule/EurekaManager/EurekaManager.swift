@@ -47,9 +47,7 @@ class EurekaManager {
     }
     private func drawObject(_ node: SchemaObject) {
         print(node.type(), ": ", node.title())
-        if(node.displayOrder() != 1){
-            delegate.addSection(title: node.title())
-        }
+            delegate.addSection(title: node.title())        
     }
     private func drawArray(_ node: SchemaArray) {
         print(node.type(), ": ", node.title())
