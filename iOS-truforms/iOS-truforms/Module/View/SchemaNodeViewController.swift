@@ -53,50 +53,11 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
     
-    func addView()  {
+    //Generic Method to add Row
+    func addRow <R:BaseRow> (_ row:R)  {
+         form +++ row
+    }
         
-    }
-    
-    func addText(title:String, placeHolder:String) {
-        form  +++ TextRow(){ row in
-            row.title = title
-            row.placeholder = placeHolder
-        }
-    }
-    
-    func addEmailText(title:String, placeHolder:String) {
-        form +++ EmailRow(){ row in
-            row.title = title
-            row.placeholder = placeHolder
-        }
-    }
-    
-    func addPhoneText(title:String, placeHolder:String) {
-        form +++ PhoneRow(){
-            $0.title = title
-            $0.placeholder = placeHolder
-        }
-    }
-    
-    func addTime(title:String) {
-        form +++ TimeRow(){
-            $0.title = title
-        }
-    }
-    
-    func addDate(title:String) {
-        form +++ DateRow(){
-            $0.title = title
-            $0.value = Date(timeIntervalSinceReferenceDate: 0)
-        }
-    }
-    
-    func addDateTime(title:String) {
-        form +++ DateTimeRow(){
-            $0.title = title
-        }
-    }
-    
     func addPicker(title:String) {
         form +++ PickerInputRow<String>("Picker Input Row"){
             $0.title = "Options"
@@ -111,13 +72,13 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
     func addSection(title:String)  {
         form +++ Section(title)
         
-//        <<< DateTimeRow(){ row in
-//             row.title = "Text Row"
-//         }
-//         <<< PhoneRow(){
-//             $0.title = "Phone Row"
-//             $0.placeholder = "And numbers here"
-//         }
+        <<< DateTimeRow(){ row in
+             row.title = "Text Row"
+         }
+         <<< PhoneRow(){
+             $0.title = "Phone Row"
+             $0.placeholder = "And numbers here"
+         }
         
 //     let section = Section(title)
 //     form +++

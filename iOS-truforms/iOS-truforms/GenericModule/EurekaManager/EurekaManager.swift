@@ -7,26 +7,15 @@
 //
 
 import Foundation
+import Eureka
+import ImageRow
 
 protocol EurekaManagerDelegate: class {
     // back to write something here
-    func addText(title:String, placeHolder:String)
-    
-    func addEmailText(title:String, placeHolder:String)
-    
-    func addPhoneText(title:String, placeHolder:String)
-    
-    func addDate(title:String)
-    
-    func addTime(title:String)
-    
-    func addDateTime(title:String)
-
-    func addPicker(title:String)
-    
-    func addImagePicker(title:String)
     
     func addSection(title:String)
+    
+    func addRow <R:BaseRow> (_ row:R)
 }
 
 class EurekaManager {
@@ -58,6 +47,11 @@ class EurekaManager {
     }
     private func drawEnum(_ node: SchemaEnum) {
         print(node.type(), ": ", node.title())
+        
+        let pickerInputRow = PickerInputRow<String>()
+        pickerInputRow.title = node.title()
+    
+        delegate.addRow(pickerInputRow)
     }
     private func drawEnumData(_ node: SchemaEnumData) {
         print(node.type(), ": ", node.title())
@@ -85,31 +79,61 @@ class EurekaManager {
     }
     private func drawTextField(_ node: SchemaString) {
         //        print("Text area: ", node.title())
-        delegate.addText(title: node.title(), placeHolder: node.title())
+        let textRow = TextRow()
+        textRow.title = node.title()
+        textRow.placeholder = node.title()
+        
+        delegate.addRow(textRow)
     }
     private func drawDate(_ node: SchemaString) {
         //        print(node.format, ": ", node.title())
-        delegate.addDate(title: node.title())
+        
+        let dateRow = DateRow()
+        
+        dateRow.title = node.title()
+        dateRow.value = Date(timeIntervalSinceReferenceDate: 0)
+    
+        delegate.addRow(dateRow)
     }
     private func drawDateTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
-        delegate.addDateTime(title: node.title())
+        let dateTimeRow = DateTimeRow()
+        dateTimeRow.title = node.title()
+        
+        delegate.addRow(dateTimeRow)
     }
     private func drawTime(_ node: SchemaString) {
         print(node.format, ": ", node.title())
-        delegate.addTime(title: node.title())
+        let timeRow = TimeRow()
+        timeRow.title = node.title()
+        
+        delegate.addRow(timeRow)
     }
     private func drawEmail(_ node: SchemaString) {
         //        print(node.format, ": ", node.title())
-        delegate.addEmailText(title: node.title(), placeHolder: node.title())
+        let emailRow = EmailRow()
+        emailRow.title = node.title()
+        emailRow.placeholder = node.title()
+        
+        delegate.addRow(emailRow)
     }
     private func drawPhone(_ node: SchemaString) {
         //        print(node.format, ": ", node.title())
-        delegate.addPhoneText(title: node.title(), placeHolder: node.title())
+        let phoneRow = PhoneRow()
+        phoneRow.title = node.title()
+        phoneRow.placeholder = node.title()
+        
+        delegate.addRow(phoneRow)
     }
     private func drawPhoto(_ node: SchemaString) {
         //        print(node.format, ": ", node.title())
-        delegate.addImagePicker(title: node.title())
+        let imageRow = ImageRow()
+        
+        imageRow.title = node.title()
+        imageRow.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
+        imageRow.clearAction = .yes(style: UIAlertAction.Style.destructive)
+        
+        delegate.addRow(imageRow)
     }
     private func drawMapLocation(_ node: SchemaString) {
         print(node.format, ": ", node.title())
