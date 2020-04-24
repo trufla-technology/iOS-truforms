@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import ImageRow
 
 // Now I will create Swift Clean Arch ... VIP Cycle (and I will break a retain cycle)
 protocol SchemaNodeViewProtocol: class {
@@ -82,13 +81,5 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
             parentSection +++ section
         } else {
         }*/
-    }
-    
-    func addImagePicker(title:String)  {
-        form +++ ImageRow() { row in
-            row.title = title
-            row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-            row.clearAction = .yes(style: UIAlertAction.Style.destructive)
-        }
     }
 }

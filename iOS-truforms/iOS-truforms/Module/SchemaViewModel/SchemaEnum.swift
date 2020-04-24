@@ -11,9 +11,9 @@ import Foundation
 class SchemaEnum: SchemaObjectProtocol {
     var schemaNode: SchemaNode?
     var tag: String = ""
-     var parentTag: String = ""
+    var parentTag: String = ""
     init(schemaNode: SchemaNode) {
-       self.schemaNode = schemaNode
+        self.schemaNode = schemaNode
     }
     
     // AnyType String, Number, Boolean
@@ -29,5 +29,24 @@ class SchemaEnum: SchemaObjectProtocol {
             return []
         }
         return enumNames
+    }
+    
+    
+    func itemsToDisplay() ->[Any] {
+        if(!enumNames.isEmpty){
+            return enumNames
+        }
+        var array:[Any] = []
+        for name in enumuration {
+            switch name {
+            case let .int(property):
+                array.append(property.value ?? 1)
+            case let .string(property):
+                array.append(property.value ?? "")
+            case let .bool(property):
+                array.append(property.value ?? false)
+            }
+        }
+        return array
     }
 }

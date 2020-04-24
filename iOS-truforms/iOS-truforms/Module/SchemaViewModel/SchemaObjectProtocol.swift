@@ -27,7 +27,7 @@ extension SchemaObjectProtocol {
         return schemaNode?.key ?? ""
      }
      func title() -> String {
-        return schemaNode?.title ?? key().uppercased().replacingOccurrences(of: "_", with: " ")
+        return schemaNode?.title ?? key().replacingOccurrences(of: "_", with: " ")
      }
      func description() -> String {
         return schemaNode?.description ?? ""

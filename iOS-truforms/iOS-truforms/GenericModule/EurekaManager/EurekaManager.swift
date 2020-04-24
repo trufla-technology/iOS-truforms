@@ -44,13 +44,28 @@ class EurekaManager {
         ignoreTitle = false
     }
     private func drawArray(_ node: SchemaArray) {
+        
     }
     private func drawEnum(_ node: SchemaEnum) {
-        let pickerInputRow = PickerInputRow<String>()
-        pickerInputRow.title = node.title()
-        delegate.addRow(pickerInputRow, at: node.parentTag)
+        let items = node.itemsToDisplay()
+        print(items)
+        if items is [String] {
+            let pickerInputRow = PickerInputRow<String>()
+            pickerInputRow.title = node.title()
+            pickerInputRow.options = items as! [String]
+            delegate.addRow(pickerInputRow, at: node.parentTag)
+        }
+        
+        if items is [Int] {
+            let pickerInputRow = PickerInputRow<Int>()
+            pickerInputRow.title = node.title()
+            pickerInputRow.options = items as! [Int]
+            delegate.addRow(pickerInputRow, at: node.parentTag)
+        }
+        
     }
     private func drawEnumData(_ node: SchemaEnumData) {
+        
     }
     private func drawString(_ node: SchemaString) {
         let formats = SchemaNodeConstants.StringFormats.self
@@ -82,12 +97,11 @@ class EurekaManager {
         delegate.addRow(textRow, at: node.parentTag)
     }
     private func drawDate(_ node: SchemaString) {
-        
         let dateRow = DateRow()
         
         dateRow.title = node.title()
         dateRow.value = Date(timeIntervalSinceReferenceDate: 0)
-    
+        
         delegate.addRow(dateRow, at: node.parentTag)
     }
     private func drawDateTime(_ node: SchemaString) {
