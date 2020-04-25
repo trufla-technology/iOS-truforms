@@ -47,6 +47,7 @@
 		892D6161A1C02D742B404E8E /* Pods_iOS_truforms_iOS_truformsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */; };
 		949E4C9B78F4091871125B70 /* Pods_iOS_truformsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */; };
 		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
+		AB4A9E8A245487F1003EB90F /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A9E89245487F1003EB90F /* custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		A29DF3D7388AE27845534756 /* Pods-iOS-truforms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms.release.xcconfig"; path = "Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms.release.xcconfig"; sourceTree = "<group>"; };
 		AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truformsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB4A9E89245487F1003EB90F /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		B210C041D679CBCA06908573 /* Pods-iOS-truformsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3304A18BB96EB9FABA3A7C9 /* Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-truforms-iOS-truformsUITests/Pods-iOS-truforms-iOS-truformsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truforms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				5366FBBB23FABE2900174DE7 /* SchemaTextField.swift */,
+				AB4A9E89245487F1003EB90F /* custom.swift */,
 			);
 			path = SchemaViews;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				5383F1482434D2190057EACF /* SubmitNode.swift in Sources */,
 				53F8C46F23F1A3360024CED4 /* Responsable.swift in Sources */,
 				5366FBBC23FABE2900174DE7 /* SchemaTextField.swift in Sources */,
+				AB4A9E8A245487F1003EB90F /* custom.swift in Sources */,
 				5340CE522402BEFB003DBD84 /* SchemaNodeWrapper.swift in Sources */,
 				53F8C48423F1AA780024CED4 /* SchemaNodeInteractor.swift in Sources */,
 				53F8C46623F1A2EC0024CED4 /* BasePresenter.swift in Sources */,

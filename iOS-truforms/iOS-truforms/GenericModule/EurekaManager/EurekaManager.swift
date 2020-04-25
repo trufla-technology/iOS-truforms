@@ -136,5 +136,6 @@ class EurekaManager {
         delegate.addRow(imageRow, at: node.parentTag)
     }
     private func drawMapLocation(_ node: SchemaString) {
+        
     }
 }
