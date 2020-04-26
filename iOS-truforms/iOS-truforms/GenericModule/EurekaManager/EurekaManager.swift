@@ -16,6 +16,8 @@ protocol EurekaManagerDelegate: class {
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
     func addRow <R:BaseRow> (_ row:R, at tag: String)
+    
+    func insertSection()
 }
 
 class EurekaManager {
@@ -39,12 +41,14 @@ class EurekaManager {
             drawString(node)
         }
     }
+        
     private func drawObject(_ node: SchemaObject) {
         delegate.addSection(title: node.title(), with: node.tag, at: node.parentTag, ignoreTitle: ignoreTitle)
         ignoreTitle = false
     }
     private func drawArray(_ node: SchemaArray) {
-        
+        delegate.insertSection()
+//        drawObject(objprotocol)
     }
     private func drawEnum(_ node: SchemaEnum) {
         let items = node.itemsToDisplay()
@@ -62,7 +66,6 @@ class EurekaManager {
             pickerInputRow.options = items as! [Int]
             delegate.addRow(pickerInputRow, at: node.parentTag)
         }
-        
     }
     private func drawEnumData(_ node: SchemaEnumData) {
         

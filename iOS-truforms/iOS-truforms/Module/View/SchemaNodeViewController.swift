@@ -26,7 +26,6 @@ class SchemaNodeViewController: BaseViewController {
         
         manager = EurekaManager()
         manager?.delegate = self
-        insertSection()
         let module = SchemaNodeConfig()
         module.createModule(view: self)
         interactor?.fetch(id: "11")
@@ -85,8 +84,9 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
          }*/
     }
     
+    
+  
     func insertSection()  {
-        
         form +++  ButtonRow() {
             $0.title = "Add"
             $0.cellStyle = .value1
@@ -105,7 +105,6 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
                         $0.placeholder = "And numbers here"
                     }
                 self.form.insert(dynamicSection, at: (row.indexPath?.section)!)
-            
             }
         }
         
