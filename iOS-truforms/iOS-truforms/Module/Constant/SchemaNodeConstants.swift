@@ -9,8 +9,10 @@
 import Foundation
 
 enum SchemaNodeConstants {
-    static let baseUrl = "https://itunes.apple.com/"
+    static let baseUrl = "https://tm-api-2.trufla.dev"
     static let endPoint = "search"
+    //"https://trumobile.trufla.dev/"
+    
     enum params {
         static let term = "term"
     }
