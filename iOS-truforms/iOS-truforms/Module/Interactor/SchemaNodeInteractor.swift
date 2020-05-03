@@ -28,6 +28,7 @@ extension SchemaNodeInteractor: SchemaNodeInteractorProtocol {
     }
 }
 
+
 extension SchemaNodeInteractor: CustomStringConvertible {
     var description: String {
         return String(describing: SchemaNodeInteractor.self)

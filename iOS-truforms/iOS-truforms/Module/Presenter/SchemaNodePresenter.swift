@@ -71,7 +71,7 @@ class SchemaNodePresenter: CustomStringConvertible {
         }
         switch schema.type {
         case types.STRING:
-                return SchemaString(schemaNode: schema)
+            return SchemaString(schemaNode: schema)
         case types.BOOLEAN:
             return SchemaBool(schemaNode: schema)
         case types.ARRAY:
