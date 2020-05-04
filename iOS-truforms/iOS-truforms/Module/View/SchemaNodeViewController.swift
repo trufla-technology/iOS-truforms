@@ -14,10 +14,13 @@ import Eureka
 protocol SchemaNodeViewProtocol: class {
     // back to write something here
     func display(schema: TreeNode<SchemaObjectProtocol>)
+    // enum data
+    func display()
 }
 class SchemaNodeViewController: BaseViewController {
     @IBOutlet weak var stackView: UIStackView!
     var interactor: SchemaNodeInteractorProtocol?
+    var enumDataInteractor: EnumDataInteractorProtocol?
     var manager: EurekaManager?
     
     override func viewDidLoad() {
@@ -42,6 +45,10 @@ class SchemaNodeViewController: BaseViewController {
 }
 
 extension SchemaNodeViewController: SchemaNodeViewProtocol {
+    func display() {
+        // eureka mana
+    }
+    
     func display(schema: TreeNode<SchemaObjectProtocol>) {
         // traverse tree here
         schema.printTree()
@@ -51,6 +58,10 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 }
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
+  
+    func handleEnumData(model: EnumDataRequest) {
+        enumDataInteractor?.callEnumData(model: model)
+    }
     
     //Generic Method to add Row
     func addRow <R:BaseRow> (_ row:R, at tag: String)  {
@@ -68,5 +79,6 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
     }
     
     func insertSection(_ tag: String)  {
+        
     }
 }

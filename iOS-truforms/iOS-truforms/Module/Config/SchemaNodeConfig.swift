@@ -15,6 +15,10 @@ class SchemaNodeConfig: BaseConfig {
         let interactor = SchemaNodeInteractor()
         interactor.presenter = presenter
         interactor.basePresenter = handleBasePresenter(baseView: view)
+        let enumDataInteractor = EnumDataInteractor()
+        let enumDataPresenter = EnumDataPresenter()
+        enumDataInteractor.presenter = enumDataPresenter
         view.interactor = interactor
+        view.enumDataInteractor = enumDataInteractor
     }
 }

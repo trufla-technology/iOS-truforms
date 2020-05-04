@@ -18,6 +18,10 @@ protocol EurekaManagerDelegate: class {
     func addRow <R:BaseRow> (_ row:R, at tag: String)
     
     func insertSection(_ childTag: String)
+    
+    
+    func handleEnumData(model: EnumDataRequest)
+
 }
 
 class EurekaManager {
@@ -117,8 +121,10 @@ class EurekaManager {
         }
     }
     private func drawEnumData(_ node: SchemaEnumData) {
-        
+        let model = EnumDataRequest(path: node.href, date: "", names: node.enumNames)
+        delegate.handleEnumData(model: model)
     }
+    
     private func drawString(_ node: SchemaString) {
         let formats = SchemaNodeConstants.StringFormats.self
         switch node.format {

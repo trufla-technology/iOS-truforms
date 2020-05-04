@@ -10,7 +10,8 @@ import Foundation
 
 
 protocol EnumDataPresenterProtocol {
-    func requestData(schemaEnumData:SchemaEnumData)
+//    func requestData(schemaEnumData:SchemaEnumData)
+    func present()
 }
 
 class EnumDataPresenter : EnumDataPresenterProtocol {
@@ -19,12 +20,18 @@ class EnumDataPresenter : EnumDataPresenterProtocol {
     weak var view: SchemaNodeViewProtocol?
     
     
-    func requestData(schemaEnumData: SchemaEnumData) {
-        let path = schemaEnumData.href
-        let names = schemaEnumData.enumNames
-        let identifierColumn = schemaEnumData.id
-        
-        
-        // TODO request data 
+//    func requestData(schemaEnumData: SchemaEnumData) {
+//        let path = schemaEnumData.href
+//        let names = schemaEnumData.enumNames
+//        let identifierColumn = schemaEnumData.id
+//
+//
+//        // TODO request data
+//    }
+    
+    func present() {
+        //convert response to presentation obejects
+        // pass it to display method 
+        view?.display()
     }
 }

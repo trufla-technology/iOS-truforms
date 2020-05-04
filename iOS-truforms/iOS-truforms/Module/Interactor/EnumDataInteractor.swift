@@ -8,22 +8,20 @@
 
 import Foundation
 
+struct EnumDataRequest {
+    let path: String
+    let date: String
+    let names: [String]
+}
+
+protocol EnumDataInteractorProtocol {
+    func callEnumData(model: EnumDataRequest)
+}
+
 class EnumDataInteractor: BaseInteractor<SchemaEnumTarget, SchemaNode> {
-    var names:[String]
-    var path:String
-    
-    init(callBack: @escaping (String) -> Void, selector:String, names:[String], path:String) {
-        self.names = names
-        self.path = path
-    }
-    
-    func fetch(id: String) {
-        request(targetType: .fetch(id: id)) { response in
-           print(response)
-        }
-    }
-    
-    
+    var presenter: EnumDataPresenterProtocol?
+
+    /*
     private func createUrl() {
         var urlIncludes :[String] = []
         
@@ -62,10 +60,17 @@ class EnumDataInteractor: BaseInteractor<SchemaEnumTarget, SchemaNode> {
     private func getCurrentDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
         let result = dateFormatter.string(from: Date())
-        
         return result
+    }
+ */
+}
 
+extension EnumDataInteractor: EnumDataInteractorProtocol {
+    func callEnumData(model: EnumDataRequest) {
+        request(targetType: .callEnumData(model: model)) { response in
+           self.presenter?.present()
+           print(response)
+        }
     }
 }

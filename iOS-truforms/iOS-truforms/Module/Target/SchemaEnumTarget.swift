@@ -10,7 +10,7 @@ import Moya
 
 
 enum SchemaEnumTarget {
-    case fetch(id: String)
+    case callEnumData(model: EnumDataRequest)
 }
 
 extension SchemaEnumTarget: TargetType {
@@ -23,14 +23,14 @@ extension SchemaEnumTarget: TargetType {
     
     var path: String {
         switch self {
-        case .fetch:
-            return SchemaNodeConstants.endPoint
+        case .callEnumData(let model):
+            return "\(model.path)"
         }
     }
     
     var method: Method {
         switch self {
-        case .fetch:
+        case .callEnumData:
             return .get
         }
     }
@@ -40,15 +40,15 @@ extension SchemaEnumTarget: TargetType {
             preconditionFailure("Invalid data")
         }
         switch self {
-        case .fetch:
+        case .callEnumData:
             return data
         }
     }
     
     var task: Task {
         switch self {
-        case .fetch(let id):
-            return .requestParameters(parameters: [SchemaNodeConstants.params.term: "\(id)"], encoding: URLEncoding.queryString)
+        case .callEnumData(let model):
+            return .requestParameters(parameters: [SchemaNodeConstants.params.term: "\(model)"], encoding: URLEncoding.queryString)
         }
     }
     
