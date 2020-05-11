@@ -18,16 +18,14 @@ protocol EurekaManagerDelegate: class {
     func addRow <R:BaseRow> (_ row:R, at tag: String)
     
     func insertSection(_ childTag: String)
-    
-    
-    func handleEnumData(model: EnumDataRequest)
-
+        
+    func handleEnumData(model: EnumDataRequest, data: @escaping ([String]) -> Void)
 }
 
 class EurekaManager {
     weak var delegate:EurekaManagerDelegate!
     var ignoreTitle: Bool = true
-        
+    
     func draw(_ node: SchemaObjectProtocol) {
         if let node = node as? SchemaObject {
             drawObject(node)
@@ -73,27 +71,27 @@ class EurekaManager {
     }
     
     private func detectStringRaw(_ node: SchemaString) -> BaseRow{
-         let formats = SchemaNodeConstants.StringFormats.self
-         switch node.format {
-         case formats.DATE:
-             return createDateRow(node)
-         case formats.DATETIME:
-             return createDateTimeRow(node)
-         case formats.EMAIL:
+        let formats = SchemaNodeConstants.StringFormats.self
+        switch node.format {
+        case formats.DATE:
+            return createDateRow(node)
+        case formats.DATETIME:
+            return createDateTimeRow(node)
+        case formats.EMAIL:
             return createEmailRow(node)
-         case formats.MAPLOCATION:
+        case formats.MAPLOCATION:
             return createLocationRaw(node)
-         case formats.PHONE:
-             return createPhoneRow(node)
-         case formats.PHOTO:
-             return createPhotoRow(node)
-         case formats.TIME:
-             return createTimeRow(node)
-         default:
-             return createTextFieldRow(node)
-         }
-     }
-        
+        case formats.PHONE:
+            return createPhoneRow(node)
+        case formats.PHOTO:
+            return createPhotoRow(node)
+        case formats.TIME:
+            return createTimeRow(node)
+        default:
+            return createTextFieldRow(node)
+        }
+    }
+    
     private func drawObject(_ node: SchemaObject) {
         delegate.addSection(title: node.title(), with: node.tag, at: node.parentTag, ignoreTitle: ignoreTitle)
         ignoreTitle = false
@@ -122,7 +120,14 @@ class EurekaManager {
     }
     private func drawEnumData(_ node: SchemaEnumData) {
         let model = EnumDataRequest(path: node.href, date: "", names: node.enumNames)
-        delegate.handleEnumData(model: model)
+//        delegate.handleEnumData(model: model)
+        delegate.handleEnumData(model: model) { (dataArr) in
+            let items = dataArr
+            let pickerInputRow = PickerInputRow<String>()
+            pickerInputRow.title = node.title()
+            pickerInputRow.options = items
+            self.delegate.addRow(pickerInputRow, at: node.parentTag)
+        }
     }
     
     private func drawString(_ node: SchemaString) {
@@ -157,19 +162,19 @@ class EurekaManager {
         delegate.addRow(textRow, at: node.parentTag)
     }
     private func createDateRow(_ node: SchemaObjectProtocol) -> DateRow {
-         let dateRow = DateRow()
-         dateRow.title = node.title()
-         dateRow.value = Date(timeIntervalSinceReferenceDate: 0)
-         return dateRow
+        let dateRow = DateRow()
+        dateRow.title = node.title()
+        dateRow.value = Date(timeIntervalSinceReferenceDate: 0)
+        return dateRow
     }
     private func drawDate(_ node: SchemaString) {
         let dateRow = createDateRow(node)
         delegate.addRow(dateRow, at: node.parentTag)
     }
     private func createDateTimeRow(_ node: SchemaObjectProtocol) -> DateTimeRow {
-         let dateTimeRow = DateTimeRow()
-         dateTimeRow.title = node.title()
-         return dateTimeRow
+        let dateTimeRow = DateTimeRow()
+        dateTimeRow.title = node.title()
+        return dateTimeRow
     }
     private func drawDateTime(_ node: SchemaString) {
         let dateTimeRow = createDateTimeRow(node)

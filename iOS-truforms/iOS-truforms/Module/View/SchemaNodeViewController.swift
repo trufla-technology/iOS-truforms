@@ -17,6 +17,7 @@ protocol SchemaNodeViewProtocol: class {
     // enum data
     func display()
 }
+
 class SchemaNodeViewController: BaseViewController {
     @IBOutlet weak var stackView: UIStackView!
     var interactor: SchemaNodeInteractorProtocol?
@@ -45,8 +46,10 @@ class SchemaNodeViewController: BaseViewController {
 }
 
 extension SchemaNodeViewController: SchemaNodeViewProtocol {
+    
     func display() {
         // eureka mana
+        print("Yalla")
     }
     
     func display(schema: TreeNode<SchemaObjectProtocol>) {
@@ -58,13 +61,14 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 }
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
-  
-    func handleEnumData(model: EnumDataRequest) {
-        enumDataInteractor?.callEnumData(model: model)
+    
+    // Fetch Enum Data
+    func handleEnumData(model: EnumDataRequest,data: @escaping ([String]) -> Void) {
+        enumDataInteractor?.callEnumData(model: model, data: data)
     }
     
     //Generic Method to add Row
-    func addRow <R:BaseRow> (_ row:R, at tag: String)  {
+    func addRow <R:BaseRow> (_ row:R, at tag: String) {
         form.sectionBy(tag: tag)! <<< row
     }
 

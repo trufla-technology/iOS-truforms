@@ -296,6 +296,10 @@ enum SchemaNodeConstants {
     ]
 }
 """
+    
+        static let EnumsampleData = """
+          { "name":"John", "age":30, "car":50 }
+    """
     enum SchemaKeywords {
         static let TYPE = "type"
         static let ENUM = "enum"

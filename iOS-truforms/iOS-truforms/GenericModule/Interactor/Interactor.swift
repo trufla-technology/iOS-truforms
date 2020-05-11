@@ -30,4 +30,26 @@ extension BaseInteractor {
             }
         }
     }
+    
+    
+    func requestEnumData(targetType: MoyaTarget, completion: @escaping (Any) -> Void) {
+        provider.request(targetType) { result in
+            switch(result) {
+            case .success(let response):
+                do {
+//                    guard let myJson:[String:Any] = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] else {return}
+//                    for (key, value) in myJson {
+//                        print(key, value)
+//
+//                    }
+//                    let decodableResponse = try response.map(T.self)
+                    completion(try response.mapJSON())
+                } catch {
+                    self.basePresenter?.present(error: error.localizedDescription)
+                }
+            case .failure(let error):
+                self.basePresenter?.present(error: error.localizedDescription)
+            }
+        }
+    }
 }

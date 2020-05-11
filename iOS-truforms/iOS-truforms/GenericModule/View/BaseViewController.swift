@@ -18,7 +18,6 @@ class BaseViewController: FormViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     func configureNavigationBar(title:String,selector:Selector?) {
         self.navigationController?.navigationBar.barTintColor = .orange
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

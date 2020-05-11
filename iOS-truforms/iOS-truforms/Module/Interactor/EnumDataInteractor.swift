@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct EnumDataRequest {
     let path: String
     let date: String
@@ -15,62 +14,44 @@ struct EnumDataRequest {
 }
 
 protocol EnumDataInteractorProtocol {
-    func callEnumData(model: EnumDataRequest)
+    func callEnumData(model: EnumDataRequest,data: @escaping ([String]) -> Void)
 }
 
-class EnumDataInteractor: BaseInteractor<SchemaEnumTarget, SchemaNode> {
+class EnumDataInteractor: BaseInteractor<SchemaEnumTarget, SchemaNode> , EnumDataInteractorProtocol{
     var presenter: EnumDataPresenterProtocol?
-
-    /*
-    private func createUrl() {
-        var urlIncludes :[String] = []
-        
-        var fullUrl:String = ""
-        
-        for name in names {
-            if name.contains("."){
-                let parts = name.split(separator: ".")
-                urlIncludes.append(String(parts[0]))
-            }
-        }
-        
-        if (urlIncludes.count != 0) {
-            fullUrl.append("?includes=")
-            for include in urlIncludes{
-                fullUrl.append(include + ",")
-            }
-        }
-        
-        switch self.path {
-        case "/vehicles","/properties":
-         
-            if fullUrl.contains("?includes="){
-                fullUrl += "location.policy&location.policy.policy_expiration_date=gteq::" + getCurrentDate() + "&location.policy.cycle_business_purpose=!eq::XLN"
-            }else {
-                fullUrl += "?includes=location.policy&location.policy.policy_expiration_date=gteq::" + getCurrentDate() + "&location.policy.cycle_business_purpose=!eq::XLN"
+    
+    func callEnumData(model: EnumDataRequest, data: @escaping ([String]) -> Void) {
+        requestEnumData(targetType: .callEnumData(model: model)) { response in
+            if let x : [String] = response as? [String]{
+                data(x)
             }
             
-            case "/policies":
-             fullUrl += "?policy_expiration_date=gteq::" + getCurrentDate()  + "&cycle_business_purpose=!eq::XLN"
-        default:
-             print("")
+            if let dic:[String : Any] = response as? [String:Any] {
+                var dataArr = [String]()
+                for (key, value) in dic {
+                    print(key, value)
+                    let resultString = String(describing: value)
+
+                    dataArr.append(resultString)
+                }
+                data(dataArr)
+            }
+            
+            self.presenter?.present()
         }
     }
     
-    private func getCurrentDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let result = dateFormatter.string(from: Date())
-        return result
+    func betterPrintGenericInfo<T>(_ value: T) {
+        let t = type(of: value as Any)
+        let resultString = String(describing: value)
+
+        print("'\(resultString)' of type '\(t)'")
     }
- */
+    
+    func printInfo(_ value: Any) {
+        let t = type(of: value)
+        print("'\(value)' of type '\(t)'")
+    }
 }
 
-extension EnumDataInteractor: EnumDataInteractorProtocol {
-    func callEnumData(model: EnumDataRequest) {
-        request(targetType: .callEnumData(model: model)) { response in
-           self.presenter?.present()
-           print(response)
-        }
-    }
-}
+

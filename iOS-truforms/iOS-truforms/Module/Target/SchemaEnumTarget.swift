@@ -36,7 +36,7 @@ extension SchemaEnumTarget: TargetType {
     }
     
     var sampleData: Data {
-        guard let data = SchemaNodeConstants.sampleData.data(using: .utf8) else {
+        guard let data = SchemaNodeConstants.EnumsampleData.data(using: .utf8) else {
             preconditionFailure("Invalid data")
         }
         switch self {
