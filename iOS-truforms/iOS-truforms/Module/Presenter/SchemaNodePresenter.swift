@@ -38,7 +38,8 @@ class SchemaNodePresenter: CustomStringConvertible {
         tree.value.tag = tag
         tree.value.parentTag = parentTage
         if schema.type == SchemaNodeConstants.SchemaType.ARRAY, let schema = schema.items?.value {
-            var newTag = UUID().uuidString
+            tree.value.tag = "Array" + tag
+            var newTag = "Array" + tag
             let result = scan(schema: schema, tag: &newTag, parentTage: tag)
             tree.add(node: result)
         }

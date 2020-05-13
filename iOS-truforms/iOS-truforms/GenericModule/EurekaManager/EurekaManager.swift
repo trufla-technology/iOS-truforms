@@ -15,8 +15,10 @@ protocol EurekaManagerDelegate: class {
     
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
+    func addArraySection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
+
     func addRow <R:BaseRow> (_ row:R, at tag: String)
-    
+        
     func insertSection(_ childTag: String)
         
     func handleEnumData(model: EnumDataRequest, data: @escaping ([String]) -> Void)
@@ -98,8 +100,10 @@ class EurekaManager {
     }
     
     private func drawArray(_ node: SchemaArray) {
-        delegate.insertSection(node.tag)
+        print(node.tag)
+        delegate.addArraySection(title: node.title(), with: node.tag, at: "", ignoreTitle: ignoreTitle)
     }
+    
     private func createPickerInputRow<T: Equatable>(_ node: SchemaEnum) -> PickerInputRow<T> {
         let items = node.itemsToDisplay()
         let pickerInputRow = PickerInputRow<T>()
