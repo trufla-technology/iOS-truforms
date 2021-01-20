@@ -11,6 +11,7 @@ import MaterialComponents.MaterialTextFields
 
 class SchemaTextField {
     var schema: SchemaString
+    
     init(schema: SchemaString) {
         self.schema = schema
     }

@@ -49,6 +49,7 @@
 		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
 		AB4A9E8A245487F1003EB90F /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A9E89245487F1003EB90F /* custom.swift */; };
 		AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */; };
+		AB638C3C2553F95C005CD04B /* SchemaBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */; };
 		AB64E7AE2456D6A90067D191 /* EnumDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64E7AD2456D6A90067D191 /* EnumDataPresenter.swift */; };
 		AB64E7B02456DFC70067D191 /* SchemaEnumTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64E7AF2456DFC70067D191 /* SchemaEnumTarget.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB4A9E89245487F1003EB90F /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataInteractor.swift; sourceTree = "<group>"; };
+		AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaBaseView.swift; sourceTree = "<group>"; };
 		AB64E7AD2456D6A90067D191 /* EnumDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataPresenter.swift; sourceTree = "<group>"; };
 		AB64E7AF2456DFC70067D191 /* SchemaEnumTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnumTarget.swift; sourceTree = "<group>"; };
 		B210C041D679CBCA06908573 /* Pods-iOS-truformsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		53F8C47D23F1AA770024CED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB638C3A2553F924005CD04B /* TruViews */,
 				5366FBBA23FABE0600174DE7 /* SchemaViews */,
 				53F8C47E23F1AA770024CED4 /* SchemaNodeViewController.swift */,
 			);
@@ -401,6 +404,14 @@
 				AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB638C3A2553F924005CD04B /* TruViews */ = {
+			isa = PBXGroup;
+			children = (
+				AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */,
+			);
+			path = TruViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,6 +701,7 @@
 				AB64E7AE2456D6A90067D191 /* EnumDataPresenter.swift in Sources */,
 				53352C582408741B0098A119 /* TreeNode.swift in Sources */,
 				53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */,
+				AB638C3C2553F95C005CD04B /* SchemaBaseView.swift in Sources */,
 				AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */,
 				538D7E22243C8E5900B7825E /* SchemaArray.swift in Sources */,
 				53F8C48D23F2FD1B0024CED4 /* OneOfProperty.swift in Sources */,
