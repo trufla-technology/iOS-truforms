@@ -9,7 +9,7 @@
 import Foundation
 import MaterialComponents.MaterialTextFields
 
-class SchemaTextField {
+class SchemaTextField2 {
     var schema: SchemaString
     
     init(schema: SchemaString) {

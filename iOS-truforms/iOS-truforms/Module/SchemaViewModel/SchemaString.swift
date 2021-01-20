@@ -9,7 +9,7 @@
 import Foundation
 
 class SchemaString: SchemaObjectProtocol {
-    var tag: String = ""
+     var tag: String = ""
      var parentTag: String = ""
      var schemaNode: SchemaNode?
 

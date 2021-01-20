@@ -8,6 +8,6 @@
 
 import Foundation
 
-class SchemaBaseView {
+class SchemaBaseView<T: SchemaObjectProtocol> {
     
 }
