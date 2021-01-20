@@ -7,7 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class SchemaTextField: SchemaBaseView<SchemaString> {
     
+    @IBOutlet var contentView: UIView!
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    override func initSubviews() {
+        // standard initialization logic
+        let nib = UINib(nibName: "SchemaTextField", bundle: nil)
+        nib.instantiate(withOwner: self, options: nil)
+        contentView.frame = bounds
+        addSubview(contentView)
+    }
 }

@@ -7,7 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
-class SchemaBaseView<T: SchemaObjectProtocol> {
+class SchemaBaseView<T: SchemaObjectProtocol>: UIView {
     
+    var instance: T?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initSubviews()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initSubviews()
+    }
+    
+    func initSubviews() {}
 }

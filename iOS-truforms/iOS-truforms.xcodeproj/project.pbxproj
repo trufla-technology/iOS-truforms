@@ -47,6 +47,9 @@
 		892D6161A1C02D742B404E8E /* Pods_iOS_truforms_iOS_truformsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */; };
 		949E4C9B78F4091871125B70 /* Pods_iOS_truformsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */; };
 		AB26AB8B25B859B6001AA5E8 /* SchemaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB8A25B859B6001AA5E8 /* SchemaTextField.swift */; };
+		AB26AB8E25B8EFB8001AA5E8 /* SchemaTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB8D25B8EFB8001AA5E8 /* SchemaTextField.xib */; };
+		AB26AB9025B8F21C001AA5E8 /* SchemaDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */; };
+		AB26AB9225B8F27C001AA5E8 /* SchemaDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */; };
 		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
 		AB4A9E8A245487F1003EB90F /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A9E89245487F1003EB90F /* custom.swift */; };
 		AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */; };
@@ -123,6 +126,9 @@
 		AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truformsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB26AB8A25B859B6001AA5E8 /* SchemaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaTextField.swift; sourceTree = "<group>"; };
+		AB26AB8D25B8EFB8001AA5E8 /* SchemaTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaTextField.xib; sourceTree = "<group>"; };
+		AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaDatePicker.swift; sourceTree = "<group>"; };
+		AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaDatePicker.xib; sourceTree = "<group>"; };
 		AB4A9E89245487F1003EB90F /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataInteractor.swift; sourceTree = "<group>"; };
 		AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaBaseView.swift; sourceTree = "<group>"; };
@@ -408,11 +414,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB26AB8C25B8EF8E001AA5E8 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				AB26AB8D25B8EFB8001AA5E8 /* SchemaTextField.xib */,
+				AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
 		AB638C3A2553F924005CD04B /* TruViews */ = {
 			isa = PBXGroup;
 			children = (
+				AB26AB8C25B8EF8E001AA5E8 /* xibs */,
 				AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */,
 				AB26AB8A25B859B6001AA5E8 /* SchemaTextField.swift */,
+				AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */,
 			);
 			path = TruViews;
 			sourceTree = "<group>";
@@ -527,8 +544,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB26AB9225B8F27C001AA5E8 /* SchemaDatePicker.xib in Resources */,
 				53F8C43023F16AF60024CED4 /* LaunchScreen.storyboard in Resources */,
 				53F8C42D23F16AF60024CED4 /* Assets.xcassets in Resources */,
+				AB26AB8E25B8EFB8001AA5E8 /* SchemaTextField.xib in Resources */,
 				53F8C42B23F16AF30024CED4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +717,7 @@
 				53F8C46923F1A2EC0024CED4 /* SchemaNode.swift in Sources */,
 				53F8C46823F1A2EC0024CED4 /* BaseConfig.swift in Sources */,
 				5366FBB923FAB1D300174DE7 /* SchemaPresentationModel.swift in Sources */,
+				AB26AB9025B8F21C001AA5E8 /* SchemaDatePicker.swift in Sources */,
 				53F8C48123F1AA780024CED4 /* SchemaNodeTarget.swift in Sources */,
 				5340CE542402BFA5003DBD84 /* AnyType.swift in Sources */,
 				53F8C46A23F1A2EC0024CED4 /* Interactor.swift in Sources */,

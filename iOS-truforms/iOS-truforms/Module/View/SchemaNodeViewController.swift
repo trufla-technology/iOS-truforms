@@ -26,12 +26,14 @@ class SchemaNodeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let s = SchemaDatePicker(frame: CGRect(x: 0, y: 20, width: view.bounds.width, height: 200))
+        view.addSubview(s)
         // Do any additional setup after loading the view.
-        manager = EurekaManager()
-        manager?.delegate = self
-        let module = SchemaNodeConfig()
-        module.createModule(view: self)
-        interactor?.fetch(id: "11")
+//        manager = EurekaManager()
+//        manager?.delegate = self
+//        let module = SchemaNodeConfig()
+//        module.createModule(view: self)
+//        interactor?.fetch(id: "11")
     }
     deinit {
         print("\(SchemaNodeViewController.self) go away")
