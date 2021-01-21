@@ -1,5 +1,5 @@
 //
-//  SchemaDatePicker.swift
+//  SchemaTimePicker.swift
 //  iOS-truforms
 //
 //  Created by Mohamed Salah on 1/21/21.
@@ -7,28 +7,26 @@
 //
 
 import Foundation
+
 import UIKit
 
-class SchemaDatePicker: SchemaBaseView<SchemaString> {
-    
+class SchemaTimePicker: SchemaBaseView<SchemaString> {
     @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var dateTextField: UITextField!
     
     let datePicker = UIDatePicker()
     
-    let formatter = DateFormatter()
-    
     override func initSubviews() {
         // standard initialization logic
         let nib = UINib(nibName: "SchemaDatePicker", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
-        createDatePicker()
+        createTimePicker()
         contentView.frame = bounds
         addSubview(contentView)
     }
     
-    func createDatePicker() {
+    func createTimePicker() {
         dateTextField.textAlignment = .center
         
         //toolbar
@@ -44,27 +42,17 @@ class SchemaDatePicker: SchemaBaseView<SchemaString> {
         
         //assign date picker to view
         dateTextField.inputView = datePicker
+        
+        // date picker mood to show only date
+        datePicker.datePickerMode = .time
     }
     
     @objc func donePressed() {
-        dateTextField.text = formatter.string(from: datePicker.date)
-        self.contentView.endEditing(true)
-    }
-    
-    
-     func setDatePicker() {
-        // date picker mood to show only date
-        datePicker.datePickerMode = .date
-        
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-    }
-    
-     func setTimePicker() {
-        // date picker mood to show only time
-        datePicker.datePickerMode = .time
-        
+        let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .medium
+        
+        dateTextField.text = formatter.string(from: datePicker.date)
+        self.contentView.endEditing(true)
     }
 }
