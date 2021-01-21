@@ -13,6 +13,8 @@ class SchemaPhotoPickerView: SchemaBaseView<SchemaString> {
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func initSubviews() {
         // standard initialization logic
           let nib = UINib(nibName: "SchemaPhotoPickerView", bundle: nil)
