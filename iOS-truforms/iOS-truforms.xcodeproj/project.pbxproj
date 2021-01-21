@@ -52,6 +52,8 @@
 		AB26AB9225B8F27C001AA5E8 /* SchemaDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */; };
 		AB26AB9425B8F9A9001AA5E8 /* SchemaTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB9325B8F9A9001AA5E8 /* SchemaTimePicker.swift */; };
 		AB26AB9625B8FAC9001AA5E8 /* SchemaTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB9525B8FAC9001AA5E8 /* SchemaTimePicker.xib */; };
+		AB26AB9825B97F28001AA5E8 /* SchemaEnumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB9725B97F28001AA5E8 /* SchemaEnumTextField.swift */; };
+		AB26AB9A25B97F4E001AA5E8 /* SchemaEnumTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB9925B97F4E001AA5E8 /* SchemaEnumTextField.xib */; };
 		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
 		AB4A9E8A245487F1003EB90F /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A9E89245487F1003EB90F /* custom.swift */; };
 		AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */; };
@@ -133,6 +135,8 @@
 		AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaDatePicker.xib; sourceTree = "<group>"; };
 		AB26AB9325B8F9A9001AA5E8 /* SchemaTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaTimePicker.swift; sourceTree = "<group>"; };
 		AB26AB9525B8FAC9001AA5E8 /* SchemaTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaTimePicker.xib; sourceTree = "<group>"; };
+		AB26AB9725B97F28001AA5E8 /* SchemaEnumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnumTextField.swift; sourceTree = "<group>"; };
+		AB26AB9925B97F4E001AA5E8 /* SchemaEnumTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaEnumTextField.xib; sourceTree = "<group>"; };
 		AB4A9E89245487F1003EB90F /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataInteractor.swift; sourceTree = "<group>"; };
 		AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaBaseView.swift; sourceTree = "<group>"; };
@@ -424,6 +428,7 @@
 				AB26AB8D25B8EFB8001AA5E8 /* SchemaTextField.xib */,
 				AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */,
 				AB26AB9525B8FAC9001AA5E8 /* SchemaTimePicker.xib */,
+				AB26AB9925B97F4E001AA5E8 /* SchemaEnumTextField.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				AB26AB8A25B859B6001AA5E8 /* SchemaTextField.swift */,
 				AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */,
 				AB26AB9325B8F9A9001AA5E8 /* SchemaTimePicker.swift */,
+				AB26AB9725B97F28001AA5E8 /* SchemaEnumTextField.swift */,
 			);
 			path = TruViews;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 			files = (
 				AB26AB9225B8F27C001AA5E8 /* SchemaDatePicker.xib in Resources */,
 				53F8C43023F16AF60024CED4 /* LaunchScreen.storyboard in Resources */,
+				AB26AB9A25B97F4E001AA5E8 /* SchemaEnumTextField.xib in Resources */,
 				53F8C42D23F16AF60024CED4 /* Assets.xcassets in Resources */,
 				AB26AB9625B8FAC9001AA5E8 /* SchemaTimePicker.xib in Resources */,
 				AB26AB8E25B8EFB8001AA5E8 /* SchemaTextField.xib in Resources */,
@@ -732,6 +739,7 @@
 				53352C582408741B0098A119 /* TreeNode.swift in Sources */,
 				53F8C42423F16AF30024CED4 /* AppDelegate.swift in Sources */,
 				AB26AB9425B8F9A9001AA5E8 /* SchemaTimePicker.swift in Sources */,
+				AB26AB9825B97F28001AA5E8 /* SchemaEnumTextField.swift in Sources */,
 				AB638C3C2553F95C005CD04B /* SchemaBaseView.swift in Sources */,
 				AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */,
 				538D7E22243C8E5900B7825E /* SchemaArray.swift in Sources */,
