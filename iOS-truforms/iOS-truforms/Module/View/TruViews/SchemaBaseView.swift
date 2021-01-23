@@ -11,7 +11,7 @@ import UIKit
 
 class SchemaBaseView<T: SchemaObjectProtocol>: UIView {
     
-    var instance: T?
+    var instance: T!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

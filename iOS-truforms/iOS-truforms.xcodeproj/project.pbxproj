@@ -59,6 +59,16 @@
 		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
 		AB4A9E8A245487F1003EB90F /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A9E89245487F1003EB90F /* custom.swift */; };
 		AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */; };
+		AB6366A425BC4DF3003563FB /* SchemaSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6366A325BC4DF3003563FB /* SchemaSectionView.swift */; };
+		AB6366A625BC4E5D003563FB /* SchemaSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6366A525BC4E5D003563FB /* SchemaSectionView.xib */; };
+		AB6366A825BC4E7A003563FB /* SchemaBooleanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6366A725BC4E7A003563FB /* SchemaBooleanView.swift */; };
+		AB6366AA25BC4E84003563FB /* SchemaBooleanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6366A925BC4E84003563FB /* SchemaBooleanView.xib */; };
+		AB6366AC25BC5047003563FB /* SchemaArrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6366AB25BC5047003563FB /* SchemaArrayView.swift */; };
+		AB6366AE25BC510C003563FB /* SchemaArrayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6366AD25BC510C003563FB /* SchemaArrayView.xib */; };
+		AB6366B125BC5499003563FB /* SchemaObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6366B025BC5499003563FB /* SchemaObjectView.swift */; };
+		AB6366B325BC569D003563FB /* SchemaObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6366B225BC569D003563FB /* SchemaObjectView.xib */; };
+		AB6366B525BC591F003563FB /* SchemaEnumDataTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6366B425BC591F003563FB /* SchemaEnumDataTextField.swift */; };
+		AB6366B725BC5A3F003563FB /* SchemaEnumDataTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6366B625BC5A3F003563FB /* SchemaEnumDataTextField.xib */; };
 		AB638C3C2553F95C005CD04B /* SchemaBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */; };
 		AB64E7AE2456D6A90067D191 /* EnumDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64E7AD2456D6A90067D191 /* EnumDataPresenter.swift */; };
 		AB64E7B02456DFC70067D191 /* SchemaEnumTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64E7AF2456DFC70067D191 /* SchemaEnumTarget.swift */; };
@@ -143,6 +153,16 @@
 		AB26AB9D25B98D5A001AA5E8 /* SchemaPhotoPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaPhotoPickerView.xib; sourceTree = "<group>"; };
 		AB4A9E89245487F1003EB90F /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataInteractor.swift; sourceTree = "<group>"; };
+		AB6366A325BC4DF3003563FB /* SchemaSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaSectionView.swift; sourceTree = "<group>"; };
+		AB6366A525BC4E5D003563FB /* SchemaSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaSectionView.xib; sourceTree = "<group>"; };
+		AB6366A725BC4E7A003563FB /* SchemaBooleanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaBooleanView.swift; sourceTree = "<group>"; };
+		AB6366A925BC4E84003563FB /* SchemaBooleanView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaBooleanView.xib; sourceTree = "<group>"; };
+		AB6366AB25BC5047003563FB /* SchemaArrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaArrayView.swift; sourceTree = "<group>"; };
+		AB6366AD25BC510C003563FB /* SchemaArrayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaArrayView.xib; sourceTree = "<group>"; };
+		AB6366B025BC5499003563FB /* SchemaObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaObjectView.swift; sourceTree = "<group>"; };
+		AB6366B225BC569D003563FB /* SchemaObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaObjectView.xib; sourceTree = "<group>"; };
+		AB6366B425BC591F003563FB /* SchemaEnumDataTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnumDataTextField.swift; sourceTree = "<group>"; };
+		AB6366B625BC5A3F003563FB /* SchemaEnumDataTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaEnumDataTextField.xib; sourceTree = "<group>"; };
 		AB638C3B2553F95C005CD04B /* SchemaBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaBaseView.swift; sourceTree = "<group>"; };
 		AB64E7AD2456D6A90067D191 /* EnumDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataPresenter.swift; sourceTree = "<group>"; };
 		AB64E7AF2456DFC70067D191 /* SchemaEnumTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaEnumTarget.swift; sourceTree = "<group>"; };
@@ -433,7 +453,12 @@
 				AB26AB9125B8F27C001AA5E8 /* SchemaDatePicker.xib */,
 				AB26AB9525B8FAC9001AA5E8 /* SchemaTimePicker.xib */,
 				AB26AB9925B97F4E001AA5E8 /* SchemaEnumTextField.xib */,
+				AB6366B625BC5A3F003563FB /* SchemaEnumDataTextField.xib */,
 				AB26AB9D25B98D5A001AA5E8 /* SchemaPhotoPickerView.xib */,
+				AB6366A525BC4E5D003563FB /* SchemaSectionView.xib */,
+				AB6366A925BC4E84003563FB /* SchemaBooleanView.xib */,
+				AB6366AD25BC510C003563FB /* SchemaArrayView.xib */,
+				AB6366B225BC569D003563FB /* SchemaObjectView.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -447,7 +472,12 @@
 				AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */,
 				AB26AB9325B8F9A9001AA5E8 /* SchemaTimePicker.swift */,
 				AB26AB9725B97F28001AA5E8 /* SchemaEnumTextField.swift */,
+				AB6366B425BC591F003563FB /* SchemaEnumDataTextField.swift */,
 				AB26AB9B25B98CA5001AA5E8 /* SchemaPhotoPickerView.swift */,
+				AB6366A325BC4DF3003563FB /* SchemaSectionView.swift */,
+				AB6366A725BC4E7A003563FB /* SchemaBooleanView.swift */,
+				AB6366AB25BC5047003563FB /* SchemaArrayView.swift */,
+				AB6366B025BC5499003563FB /* SchemaObjectView.swift */,
 			);
 			path = TruViews;
 			sourceTree = "<group>";
@@ -562,12 +592,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6366B325BC569D003563FB /* SchemaObjectView.xib in Resources */,
+				AB6366AE25BC510C003563FB /* SchemaArrayView.xib in Resources */,
 				AB26AB9225B8F27C001AA5E8 /* SchemaDatePicker.xib in Resources */,
+				AB6366B725BC5A3F003563FB /* SchemaEnumDataTextField.xib in Resources */,
 				53F8C43023F16AF60024CED4 /* LaunchScreen.storyboard in Resources */,
 				AB26AB9A25B97F4E001AA5E8 /* SchemaEnumTextField.xib in Resources */,
 				53F8C42D23F16AF60024CED4 /* Assets.xcassets in Resources */,
+				AB6366AA25BC4E84003563FB /* SchemaBooleanView.xib in Resources */,
 				AB26AB9625B8FAC9001AA5E8 /* SchemaTimePicker.xib in Resources */,
 				AB26AB8E25B8EFB8001AA5E8 /* SchemaTextField.xib in Resources */,
+				AB6366A625BC4E5D003563FB /* SchemaSectionView.xib in Resources */,
 				AB26AB9E25B98D5A001AA5E8 /* SchemaPhotoPickerView.xib in Resources */,
 				53F8C42B23F16AF30024CED4 /* Main.storyboard in Resources */,
 			);
@@ -715,10 +750,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F8C47023F1A3360024CED4 /* Result.swift in Sources */,
+				AB6366B525BC591F003563FB /* SchemaEnumDataTextField.swift in Sources */,
 				53F8C48523F1AA780024CED4 /* SchemaNodePresenter.swift in Sources */,
 				53F8C48723F1AA780024CED4 /* SchemaNodeViewController.swift in Sources */,
 				53D19EC024040B9800733B0C /* DataEnum.swift in Sources */,
 				53F8C48623F1AA780024CED4 /* SchemaNodeConstants.swift in Sources */,
+				AB6366AC25BC5047003563FB /* SchemaArrayView.swift in Sources */,
 				53F8C42823F16AF30024CED4 /* ViewController.swift in Sources */,
 				AB26AB9C25B98CA5001AA5E8 /* SchemaPhotoPickerView.swift in Sources */,
 				5392196E2443407B00865562 /* SchemaEnumData.swift in Sources */,
@@ -728,10 +765,12 @@
 				53F8C46F23F1A3360024CED4 /* Responsable.swift in Sources */,
 				5366FBBC23FABE2900174DE7 /* SchemaTextField2.swift in Sources */,
 				AB4A9E8A245487F1003EB90F /* custom.swift in Sources */,
+				AB6366A825BC4E7A003563FB /* SchemaBooleanView.swift in Sources */,
 				5340CE522402BEFB003DBD84 /* SchemaNodeWrapper.swift in Sources */,
 				53F8C48423F1AA780024CED4 /* SchemaNodeInteractor.swift in Sources */,
 				53F8C46623F1A2EC0024CED4 /* BasePresenter.swift in Sources */,
 				53F8C48F23F2FF0C0024CED4 /* SchemaString.swift in Sources */,
+				AB6366B125BC5499003563FB /* SchemaObjectView.swift in Sources */,
 				53F8C47123F1A3360024CED4 /* KeyedDecodingContainer+Extension.swift in Sources */,
 				AB64E7B02456DFC70067D191 /* SchemaEnumTarget.swift in Sources */,
 				53F8C48B23F2E1AF0024CED4 /* SchemaObjectProtocol.swift in Sources */,
@@ -739,6 +778,7 @@
 				53F8C46923F1A2EC0024CED4 /* SchemaNode.swift in Sources */,
 				53F8C46823F1A2EC0024CED4 /* BaseConfig.swift in Sources */,
 				5366FBB923FAB1D300174DE7 /* SchemaPresentationModel.swift in Sources */,
+				AB6366A425BC4DF3003563FB /* SchemaSectionView.swift in Sources */,
 				AB26AB9025B8F21C001AA5E8 /* SchemaDatePicker.swift in Sources */,
 				53F8C48123F1AA780024CED4 /* SchemaNodeTarget.swift in Sources */,
 				5340CE542402BFA5003DBD84 /* AnyType.swift in Sources */,
