@@ -26,8 +26,6 @@ class SchemaNodeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let s = SchemaEnumDataTextField(frame: CGRect(x: 0, y: 20, width: view.bounds.width, height: 200))
-//        view.addSubview(s)
         // Do any additional setup after loading the view.
         manager = EurekaManager()
         manager?.delegate = self
