@@ -43,7 +43,7 @@ class SchemaDatePicker: SchemaBaseView<SchemaString> {
         dateTextField.inputAccessoryView = toolbar
         
         //assign date picker to view
-        dateTextField.inputView = datePicker
+        dateTextField.inputView = datePicker        
     }
     
     @objc func donePressed() {

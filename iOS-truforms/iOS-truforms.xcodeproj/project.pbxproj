@@ -46,6 +46,7 @@
 		53F8C48F23F2FF0C0024CED4 /* SchemaString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8C48E23F2FF0C0024CED4 /* SchemaString.swift */; };
 		892D6161A1C02D742B404E8E /* Pods_iOS_truforms_iOS_truformsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B75736E0641DDB254D734A5 /* Pods_iOS_truforms_iOS_truformsUITests.framework */; };
 		949E4C9B78F4091871125B70 /* Pods_iOS_truformsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */; };
+		AB10F73C25CD864E0075CC19 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB10F73B25CD864E0075CC19 /* ViewController.xib */; };
 		AB26AB8B25B859B6001AA5E8 /* SchemaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB8A25B859B6001AA5E8 /* SchemaTextField.swift */; };
 		AB26AB8E25B8EFB8001AA5E8 /* SchemaTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB8D25B8EFB8001AA5E8 /* SchemaTextField.xib */; };
 		AB26AB9025B8F21C001AA5E8 /* SchemaDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */; };
@@ -141,6 +142,7 @@
 		A29DF3D7388AE27845534756 /* Pods-iOS-truforms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truforms.release.xcconfig"; path = "Target Support Files/Pods-iOS-truforms/Pods-iOS-truforms.release.xcconfig"; sourceTree = "<group>"; };
 		AA88551814DF4EF2069B7C5B /* Pods_iOS_truformsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_truformsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E783330F862FDB53E8610 /* Pods-iOS-truformsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-truformsTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-truformsTests/Pods-iOS-truformsTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB10F73B25CD864E0075CC19 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		AB26AB8A25B859B6001AA5E8 /* SchemaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaTextField.swift; sourceTree = "<group>"; };
 		AB26AB8D25B8EFB8001AA5E8 /* SchemaTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaTextField.xib; sourceTree = "<group>"; };
 		AB26AB8F25B8F21C001AA5E8 /* SchemaDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaDatePicker.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				53F8C47923F1AA770024CED4 /* Presenter */,
 				53F8C47223F1AA770024CED4 /* Target */,
 				53F8C47D23F1AA770024CED4 /* View */,
+				AB10F73B25CD864E0075CC19 /* ViewController.xib */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB10F73C25CD864E0075CC19 /* ViewController.xib in Resources */,
 				AB6366B325BC569D003563FB /* SchemaObjectView.xib in Resources */,
 				AB6366AE25BC510C003563FB /* SchemaArrayView.xib in Resources */,
 				AB26AB9225B8F27C001AA5E8 /* SchemaDatePicker.xib in Resources */,
