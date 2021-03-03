@@ -22,6 +22,8 @@ protocol EurekaManagerDelegate: class {
     func insertSection(_ childTag: String)
         
     func handleEnumData(model: EnumDataRequest, data: @escaping ([String]) -> Void)
+    
+    func drawDate(title: String)
 }
 
 class EurekaManager {
@@ -172,8 +174,9 @@ class EurekaManager {
         return dateRow
     }
     private func drawDate(_ node: SchemaString) {
-        let dateRow = createDateRow(node)
-        delegate.addRow(dateRow, at: node.parentTag)
+        delegate.drawDate(title: node.title())
+//        let dateRow = createDateRow(node)
+//        delegate.addRow(dateRow, at: node.parentTag)
     }
     private func createDateTimeRow(_ node: SchemaObjectProtocol) -> DateTimeRow {
         let dateTimeRow = DateTimeRow()
