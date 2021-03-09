@@ -63,6 +63,10 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 }
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
+    func drawTextField(title: String) {
+        
+    }
+    
     func drawDate(title: String) {
         
     }
