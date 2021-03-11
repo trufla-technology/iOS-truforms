@@ -31,12 +31,11 @@ class ViewController: BaseViewController {
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.distribution  = UIStackView.Distribution.equalSpacing
 //        stackView.alignment = UIStackView.Alignment.center
-//         stackView.spacing   = 16.0
+         stackView.spacing   = 16.0
 //         stackView.translatesAutoresizingMaskIntoConstraints = true
 
-        stackViewHeight.constant = stackView.frame.height
+//        stackViewHeight.constant = stackView.frame.height
         
-        stackView.backgroundColor = .red
         //Constraints
 //        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
 //        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -94,5 +93,13 @@ extension ViewController: EurekaManagerDelegate {
         let s = SchemaDatePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         s.dateTextField.placeholder = title
         stackView.addArrangedSubview(s)
+        stackViewHeight.constant += 100
+    }
+    
+    func drawTextField(title: String) {
+        let s = SchemaTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        s.textField.placeholder = title
+        stackView.addArrangedSubview(s)
+        stackViewHeight.constant += 100
     }
 }
