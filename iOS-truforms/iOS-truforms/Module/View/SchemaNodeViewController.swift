@@ -61,6 +61,14 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 }
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
+    func drawPhotoPikcer(title: String) {
+        
+    }
+    
+    func drawTimePicker(title: String) {
+        
+    }
+    
     func drawTextField(title: String) {
         
     }

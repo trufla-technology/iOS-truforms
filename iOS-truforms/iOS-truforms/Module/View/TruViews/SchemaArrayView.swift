@@ -12,6 +12,7 @@ import UIKit
 class SchemaArrayView: SchemaBaseView<SchemaArray>  {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var title: UILabel!
     
     override func initSubviews() {
         // standard initialization logic

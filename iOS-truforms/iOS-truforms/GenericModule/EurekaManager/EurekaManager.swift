@@ -25,7 +25,11 @@ protocol EurekaManagerDelegate: class {
     
     func drawDate(title: String)
     
+    func drawTimePicker(title: String)
+
     func drawTextField(title: String)
+    
+    func drawPhotoPikcer(title: String)
 }
 
 class EurekaManager {
@@ -104,7 +108,6 @@ class EurekaManager {
     }
     
     private func drawArray(_ node: SchemaArray) {
-        print(node.tag)
         delegate.addArraySection(title: node.title(), with: node.tag, at: "", ignoreTitle: ignoreTitle)
     }
     
@@ -196,8 +199,10 @@ class EurekaManager {
         return timeRow
     }
     private func drawTime(_ node: SchemaString) {
-        let timeRow = createTimeRow(node)
-        delegate.addRow(timeRow, at: node.parentTag)
+        delegate.drawTimePicker(title: node.title())
+
+//        let timeRow = createTimeRow(node)
+//        delegate.addRow(timeRow, at: node.parentTag)
     }
     private func createEmailRow(_ node: SchemaObjectProtocol) -> EmailRow {
         let emailRow = EmailRow()
@@ -206,8 +211,9 @@ class EurekaManager {
         return emailRow
     }
     private func drawEmail(_ node: SchemaString) {
-        let emailRow = createEmailRow(node)
-        delegate.addRow(emailRow, at: node.parentTag)
+        delegate.drawTextField(title: node.title())
+//        let emailRow = createEmailRow(node)
+//        delegate.addRow(emailRow, at: node.parentTag)
     }
     private func createPhoneRow(_ node: SchemaObjectProtocol) -> PhoneRow {
         let phoneRow = PhoneRow()
@@ -227,8 +233,9 @@ class EurekaManager {
         return imageRow
     }
     private func drawPhoto(_ node: SchemaString) {
-        let imageRow = createPhotoRow(node)
-        delegate.addRow(imageRow, at: node.parentTag)
+//        let imageRow = createPhotoRow(node)
+//        delegate.addRow(imageRow, at: node.parentTag)
+        delegate.drawPhotoPikcer(title: node.title())
     }
     private func createLabelRaw(_ node: SchemaObjectProtocol) -> LabelRow {
         let labelRow = LabelRow()
@@ -245,5 +252,6 @@ class EurekaManager {
         return locationRow
     }
     private func drawMapLocation(_ node: SchemaString) {
+        
     }
 }

@@ -10,13 +10,13 @@ import UIKit
 import Eureka
 
 class ViewController: BaseViewController {
-
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     
     var interactor: SchemaNodeInteractorProtocol?
     var enumDataInteractor: EnumDataInteractorProtocol?
-        
+    
     var manager: EurekaManager?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +30,15 @@ class ViewController: BaseViewController {
         //Stack View
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.distribution  = UIStackView.Distribution.equalSpacing
-//        stackView.alignment = UIStackView.Alignment.center
-         stackView.spacing   = 16.0
-//         stackView.translatesAutoresizingMaskIntoConstraints = true
-
-//        stackViewHeight.constant = stackView.frame.height
+        //        stackView.alignment = UIStackView.Alignment.center
+        stackView.spacing   = 5.0
+        //         stackView.translatesAutoresizingMaskIntoConstraints = true
+        
+        //        stackViewHeight.constant = stackView.frame.height
         
         //Constraints
-//        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        //        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        //        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
     
     func traverse(_ root: TreeNode<SchemaObjectProtocol>) {
@@ -70,7 +70,10 @@ extension ViewController: EurekaManagerDelegate {
     }
     
     func addArraySection(title: String, with tag: String, at parentTag: String, ignoreTitle: Bool) {
-   
+        let s = SchemaArrayView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        s.title.text = title
+        stackView.addArrangedSubview(s)
+        stackViewHeight.constant += 100
     }
     
     // Fetch Enum Data
@@ -82,11 +85,12 @@ extension ViewController: EurekaManagerDelegate {
     func addRow <R:BaseRow> (_ row:R, at tag: String) {
         
     }
-
+    
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
         let s = SchemaObjectView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         s.title.text = title
         stackView.addArrangedSubview(s)
+        stackViewHeight.constant += 100
     }
     
     func drawDate(title: String) {
@@ -99,6 +103,20 @@ extension ViewController: EurekaManagerDelegate {
     func drawTextField(title: String) {
         let s = SchemaTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         s.textField.placeholder = title
+        stackView.addArrangedSubview(s)
+        stackViewHeight.constant += 100
+    }
+    
+    func drawTimePicker(title: String) {
+        let s = SchemaTimePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        s.dateTextField.placeholder = title
+        stackView.addArrangedSubview(s)
+        stackViewHeight.constant += 100
+    }
+    
+    func drawPhotoPikcer(title: String) {
+        let s = SchemaPhotoPickerView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        //s.tit.placeholder = title
         stackView.addArrangedSubview(s)
         stackViewHeight.constant += 100
     }
