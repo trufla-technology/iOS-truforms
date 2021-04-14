@@ -16,9 +16,12 @@ class SchemaObjectView: SchemaBaseView<SchemaObject> {
     
     override func nibSetup() {
         //standard initialization logic
-        let nib = UINib(nibName: "SchemaObjectView", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
         addSubview(contentView)
     }
 }

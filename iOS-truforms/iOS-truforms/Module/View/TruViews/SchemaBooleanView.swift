@@ -18,9 +18,12 @@ class SchemaBooleanView: SchemaBaseView<SchemaBool> {
     
     override func nibSetup() {
         // standard initialization logic
-        let nib = UINib(nibName: "SchemaBooleanView", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
         addSubview(contentView)
     }
 }

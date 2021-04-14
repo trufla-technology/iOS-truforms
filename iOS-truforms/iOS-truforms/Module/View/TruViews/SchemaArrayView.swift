@@ -14,11 +14,25 @@ class SchemaArrayView: SchemaBaseView<SchemaArray>  {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var title: UILabel!
     
+    var delegate: AppendViewDelegate!
+    
     override func nibSetup() {
         // standard initialization logic
-        let nib = UINib(nibName: "SchemaArrayView", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
         addSubview(contentView)
     }
+    
+    @IBAction func addOrDeleteView(_ sender: Any) {
+        
+        delegate.append(child: self)
+    }
+}
+
+protocol AppendViewDelegate {
+    func append(child: UIView)
 }

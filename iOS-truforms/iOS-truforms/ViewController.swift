@@ -47,6 +47,7 @@ class ViewController: BaseViewController {
         
         setupViews()
         setupLayout()
+        
     }
     
     func traverse(_ root: TreeNode<SchemaObjectProtocol>) {
@@ -101,9 +102,24 @@ extension ViewController: SchemaNodeViewProtocol {
     }
 }
 
+extension ViewController: AppendViewDelegate {
+    
+    func append(child: UIView) {
+        if let index = stackView.arrangedSubviews.firstIndex(of: child) {
+            let newView = UIView()
+            newView.backgroundColor = .red
+            newView.isHidden = true
+            stackView.insertArrangedSubview(newView, at: index + 1)
+            
+            UIView.animate(withDuration: 0.25) { () -> Void in
+                newView.isHidden = false
+                //            scrollv.contentOffset = offset
+            }
+        }
+    }
+}
+
 extension ViewController: EurekaManagerDelegate {
-    
-    
     
     func insertSection(_ childTag: String) {
         
@@ -112,8 +128,8 @@ extension ViewController: EurekaManagerDelegate {
     func addArraySection(title: String, with tag: String, at parentTag: String, ignoreTitle: Bool) {
         let s = SchemaArrayView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         s.title.text = title
+        s.delegate = self
         stackView.addArrangedSubview(s)
-        //        stackViewHeight.constant += 100
     }
     
     // Fetch Enum Data
@@ -167,17 +183,5 @@ extension ViewController: EurekaManagerDelegate {
         s.instance = node
         s.loadData()
         stackView.addArrangedSubview(s)
-    }
-    
-    
-    func appendView() {
-        let newView = UIView()
-        newView.isHidden = true
-        stackView.insertArrangedSubview(newView, at: 0)
-        
-        UIView.animate(withDuration: 0.25) { () -> Void in
-            newView.isHidden = false
-            //            scrollv.contentOffset = offset
-        }
     }
 }

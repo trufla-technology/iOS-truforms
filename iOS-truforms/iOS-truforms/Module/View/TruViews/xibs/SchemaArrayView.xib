@@ -27,6 +27,9 @@
                 </label>
                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wXb-Ml-kgv">
                     <rect key="frame" x="310" y="54" width="94" height="42"/>
+                    <connections>
+                        <action selector="addOrDeleteView:" destination="-1" eventType="valueChanged" id="v9Z-4i-WfP"/>
+                    </connections>
                 </stepper>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

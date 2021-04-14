@@ -226,7 +226,8 @@ class EurekaManager {
     }
     private func drawPhone(_ node: SchemaString) {
         let phoneRow = createPhoneRow(node)
-        delegate.addRow(phoneRow, at: node.parentTag)
+//        delegate.addRow(phoneRow, at: node.parentTag)
+        delegate.drawTextField(title: node.title())
     }
     private func createPhotoRow(_ node: SchemaObjectProtocol) -> ImageRow {
         let imageRow = ImageRow()
