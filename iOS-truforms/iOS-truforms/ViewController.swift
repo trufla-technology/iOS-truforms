@@ -11,9 +11,6 @@ import Eureka
 
 class ViewController: BaseViewController {
     
-    //    @IBOutlet weak var stackView: UIStackView!
-    //    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
-    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,19 +44,6 @@ class ViewController: BaseViewController {
         let module = SchemaNodeConfig()
         module.createModule(view: self)
         interactor?.fetch(id: "11")
-        
-        //Stack View
-        //        stackView.axis  = NSLayoutConstraint.Axis.vertical
-        //        stackView.distribution  = UIStackView.Distribution.equalSpacing
-        //        stackView.alignment = UIStackView.Alignment.center
-        //        stackView.spacing   = 5.0
-        //         stackView.translatesAutoresizingMaskIntoConstraints = true
-        
-        //        stackViewHeight.constant = stackView.frame.height
-        
-        //Constraints
-        //        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        //        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         
         setupViews()
         setupLayout()
