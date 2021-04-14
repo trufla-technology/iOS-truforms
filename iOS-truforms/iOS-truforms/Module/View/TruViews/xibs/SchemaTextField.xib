@@ -20,21 +20,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="go1-mP-PXJ">
-                    <rect key="frame" x="10" y="47.5" width="394" height="34"/>
+                    <rect key="frame" x="10" y="10" width="394" height="65"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="go1-mP-PXJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="2ED-Br-byN"/>
-                <constraint firstItem="go1-mP-PXJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="33u-dL-zGS"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="go1-mP-PXJ" secondAttribute="trailing" constant="10" id="T8n-bG-yEK"/>
-                <constraint firstItem="go1-mP-PXJ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="eQ6-MV-TgU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="go1-mP-PXJ" secondAttribute="bottom" constant="10" id="8Ez-lB-2ce"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="go1-mP-PXJ" secondAttribute="trailing" constant="10" id="KqW-yY-VzJ"/>
+                <constraint firstItem="go1-mP-PXJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="b8l-uL-SEH"/>
+                <constraint firstItem="go1-mP-PXJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="oLD-36-F8N"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="140.57971014492756" y="384.04017857142856"/>
+            <point key="canvasLocation" x="112" y="367"/>
         </view>
     </objects>
 </document>

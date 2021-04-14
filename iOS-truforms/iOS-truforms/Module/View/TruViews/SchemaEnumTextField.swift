@@ -19,7 +19,7 @@ class SchemaEnumTextField: SchemaBaseView<SchemaEnum> {
     
     let myPickerData = [String](arrayLiteral: "Dummy", "Data", "For", "Testing")
     
-    override func initSubviews() {
+    override func nibSetup() {
         let nib = UINib(nibName: "SchemaEnumTextField", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
         createPicker()

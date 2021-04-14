@@ -12,7 +12,7 @@ import ImageRow
 
 protocol EurekaManagerDelegate: class {
     // back to write something here
-    
+        
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
     func addArraySection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
@@ -30,6 +30,8 @@ protocol EurekaManagerDelegate: class {
     func drawTextField(title: String)
     
     func drawPhotoPikcer(title: String)
+    
+    func drawEnumDataPicker(node: SchemaEnumData)
 }
 
 class EurekaManager {
@@ -132,6 +134,7 @@ class EurekaManager {
     private func drawEnumData(_ node: SchemaEnumData) {
         let model = EnumDataRequest(path: node.href, date: "", names: node.enumNames)
 //        delegate.handleEnumData(model: model)
+        delegate.drawEnumDataPicker(node: node)
         delegate.handleEnumData(model: model) { (dataArr) in
             let items = dataArr
             let pickerInputRow = PickerInputRow<String>()

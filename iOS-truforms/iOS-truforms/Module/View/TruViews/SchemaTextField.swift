@@ -15,11 +15,13 @@ class SchemaTextField: SchemaBaseView<SchemaString> {
     
     @IBOutlet weak var textField: UITextField!
     
-    override func initSubviews() {
-        // standard initialization logic
-        let nib = UINib(nibName: "SchemaTextField", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
+    override func nibSetup() {
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
         addSubview(contentView)
     }
 }

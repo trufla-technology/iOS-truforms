@@ -14,7 +14,7 @@ class SchemaArrayView: SchemaBaseView<SchemaArray>  {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var title: UILabel!
     
-    override func initSubviews() {
+    override func nibSetup() {
         // standard initialization logic
         let nib = UINib(nibName: "SchemaArrayView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)

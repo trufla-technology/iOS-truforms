@@ -19,12 +19,17 @@ class SchemaDatePicker: SchemaBaseView<SchemaString> {
     
     let formatter = DateFormatter()
     
-    override func initSubviews() {
+    override func nibSetup() {
         // standard initialization logic
-        let nib = UINib(nibName: "SchemaDatePicker", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
-        createDatePicker()
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
+        createDatePicker()
+        setDatePicker()
+        
         addSubview(contentView)
     }
     
@@ -52,7 +57,7 @@ class SchemaDatePicker: SchemaBaseView<SchemaString> {
     }
     
     
-     func setDatePicker() {
+    func setDatePicker() {
         // date picker mood to show only date
         datePicker.datePickerMode = .date
         
@@ -60,7 +65,7 @@ class SchemaDatePicker: SchemaBaseView<SchemaString> {
         formatter.timeStyle = .none
     }
     
-     func setTimePicker() {
+    func setTimePicker() {
         // date picker mood to show only time
         datePicker.datePickerMode = .time
         

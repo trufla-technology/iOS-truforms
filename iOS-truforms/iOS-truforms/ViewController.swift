@@ -20,7 +20,7 @@ class ViewController: BaseViewController {
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = UIStackView.Distribution.fillEqually
+        stackView.distribution = UIStackView.Distribution.fill
         stackView.spacing = 30
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -102,6 +102,9 @@ extension ViewController: SchemaNodeViewProtocol {
 }
 
 extension ViewController: EurekaManagerDelegate {
+    
+    
+    
     func insertSection(_ childTag: String) {
         
     }
@@ -124,38 +127,46 @@ extension ViewController: EurekaManagerDelegate {
     }
     
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
-        let s = SchemaObjectView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        s.title.text = title
-        stackView.addArrangedSubview(s)
-        //        stackViewHeight.constant += 100
+        var sectionTitle = ""
+        if !ignoreTitle {
+            sectionTitle = title
+            let s = SchemaObjectView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+            s.title.text = sectionTitle
+            stackView.addArrangedSubview(s)
+        }
     }
     
     func drawDate(title: String) {
         let s = SchemaDatePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         s.dateTextField.placeholder = title
         stackView.addArrangedSubview(s)
-        //        stackViewHeight.constant += 100
     }
     
     func drawTextField(title: String) {
-        let s = SchemaTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        let s = SchemaTextField()
         s.textField.placeholder = title
         stackView.addArrangedSubview(s)
-        //        stackViewHeight.constant += 100
     }
     
     func drawTimePicker(title: String) {
         let s = SchemaTimePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         s.dateTextField.placeholder = title
         stackView.addArrangedSubview(s)
-        //        stackViewHeight.constant += 100
     }
     
     func drawPhotoPikcer(title: String) {
         let s = SchemaPhotoPickerView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         //s.tit.placeholder = title
         stackView.addArrangedSubview(s)
-        //        stackViewHeight.constant += 100
+    }
+    
+    
+    func drawEnumDataPicker(node: SchemaEnumData) {
+        let s = SchemaEnumDataTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        s.textField.placeholder = node.title()
+        s.instance = node
+        s.loadData()
+        stackView.addArrangedSubview(s)
     }
     
     

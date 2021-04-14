@@ -21,14 +21,21 @@ class SchemaEnumDataTextField: SchemaBaseView<SchemaEnumData> {
     var myPickerData = [String](arrayLiteral: "Dummy", "Data", "For", "Testing")
     
     let enumDataInteractor = EnumDataInteractor()
-
-    override func initSubviews() {
-        let nib = UINib(nibName: "SchemaEnumTextField", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
-        createPicker()
+    
+    override func nibSetup() {
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
+        createPicker()
+        
         addSubview(contentView)
     }
+    
+    
+    
     
     func createPicker() {
         textField.textAlignment = .center
@@ -48,7 +55,6 @@ class SchemaEnumDataTextField: SchemaBaseView<SchemaEnumData> {
         
         pickerView.delegate = self
         
-        loadData()
     }
     
     func loadData()  {

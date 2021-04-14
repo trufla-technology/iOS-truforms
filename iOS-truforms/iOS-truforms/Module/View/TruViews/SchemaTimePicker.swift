@@ -11,18 +11,23 @@ import Foundation
 import UIKit
 
 class SchemaTimePicker: SchemaBaseView<SchemaString> {
+    
     @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var dateTextField: UITextField!
     
     let datePicker = UIDatePicker()
     
-    override func initSubviews() {
+    override func nibSetup() {
         // standard initialization logic
-        let nib = UINib(nibName: "SchemaDatePicker", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
-        createTimePicker()
+        backgroundColor = .clear
+        contentView = loadViewFromNib()
         contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
+        createTimePicker()
+        
         addSubview(contentView)
     }
     

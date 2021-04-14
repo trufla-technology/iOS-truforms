@@ -16,25 +16,25 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Jk-nG-KxH">
-                    <rect key="frame" x="10" y="97.5" width="394" height="34"/>
+                    <rect key="frame" x="10" y="10" width="394" height="87"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="1Jk-nG-KxH" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="a8d-iZ-m5T"/>
-                <constraint firstItem="1Jk-nG-KxH" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="pdm-xY-ZgV"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Jk-nG-KxH" secondAttribute="trailing" constant="10" id="rCF-6u-qK5"/>
-                <constraint firstItem="1Jk-nG-KxH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="tmi-qy-QgH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Jk-nG-KxH" secondAttribute="trailing" constant="10" id="cKe-Eu-MWS"/>
+                <constraint firstItem="1Jk-nG-KxH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="ivq-QS-FOV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1Jk-nG-KxH" secondAttribute="bottom" constant="10" id="kfO-0T-WOo"/>
+                <constraint firstItem="1Jk-nG-KxH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="wBl-cv-WAv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="371.98660714285711"/>
+            <point key="canvasLocation" x="137.68115942028987" y="398.10267857142856"/>
         </view>
     </objects>
 </document>

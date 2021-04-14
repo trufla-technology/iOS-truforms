@@ -14,7 +14,7 @@ class SchemaObjectView: SchemaBaseView<SchemaObject> {
     
     @IBOutlet weak var title: UILabel!
     
-    override func initSubviews() {
+    override func nibSetup() {
         //standard initialization logic
         let nib = UINib(nibName: "SchemaObjectView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)

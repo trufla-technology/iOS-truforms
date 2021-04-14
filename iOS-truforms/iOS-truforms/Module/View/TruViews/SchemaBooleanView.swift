@@ -15,7 +15,8 @@ class SchemaBooleanView: SchemaBaseView<SchemaBool> {
     
     @IBOutlet weak var boolSwitch: UISwitch!
     
-    override func initSubviews() {
+    
+    override func nibSetup() {
         // standard initialization logic
         let nib = UINib(nibName: "SchemaBooleanView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
