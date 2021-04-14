@@ -10,8 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="iOS_truforms" customModuleProvider="target">
             <connections>
-                <outlet property="stackView" destination="WVc-aU-bty" id="7he-hg-NrA"/>
-                <outlet property="stackViewHeight" destination="UyQ-ks-J3I" id="iDF-cy-cDn"/>
                 <outlet property="view" destination="iN0-l3-epB" id="BFL-KG-brI"/>
             </connections>
         </placeholder>
@@ -19,35 +17,9 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-1o-NEf">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WVc-aU-bty">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        </stackView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="WVc-aU-bty" firstAttribute="trailing" secondItem="SJa-fV-RwC" secondAttribute="trailing" id="5lE-Du-5cA"/>
-                        <constraint firstItem="WVc-aU-bty" firstAttribute="width" secondItem="lCl-QM-8GZ" secondAttribute="width" id="N61-Bc-A7W"/>
-                        <constraint firstItem="WVc-aU-bty" firstAttribute="bottom" secondItem="SJa-fV-RwC" secondAttribute="bottom" id="T16-aU-MBb"/>
-                        <constraint firstItem="WVc-aU-bty" firstAttribute="height" secondItem="lCl-QM-8GZ" secondAttribute="height" id="UyQ-ks-J3I"/>
-                        <constraint firstItem="WVc-aU-bty" firstAttribute="top" secondItem="SJa-fV-RwC" secondAttribute="top" id="agC-3b-VlJ"/>
-                        <constraint firstItem="WVc-aU-bty" firstAttribute="leading" secondItem="SJa-fV-RwC" secondAttribute="leading" id="bQI-tk-9su"/>
-                    </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="SJa-fV-RwC"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="lCl-QM-8GZ"/>
-                </scrollView>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="Gp0-1o-NEf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="C1D-uh-bzo"/>
-                <constraint firstAttribute="bottom" secondItem="Gp0-1o-NEf" secondAttribute="bottom" id="EUd-Sh-LyA"/>
-                <constraint firstItem="Gp0-1o-NEf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PUK-WR-Zz9"/>
-                <constraint firstItem="Gp0-1o-NEf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="uST-Ia-dnM"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="105.79710144927537" y="145.98214285714286"/>
+            <point key="canvasLocation" x="-61" y="128"/>
         </view>
     </objects>
 </document>

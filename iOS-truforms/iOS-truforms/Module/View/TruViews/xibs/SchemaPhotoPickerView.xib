@@ -19,12 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="535" height="195"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-M6-Ce0">
-                    <rect key="frame" x="185" y="51" width="164" height="92"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-M6-Ce0">
+                    <rect key="frame" x="10" y="54" width="515" height="97"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nT2-M6-Ce0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="1hX-Ag-ADY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nT2-M6-Ce0" secondAttribute="bottom" constant="10" id="WTK-kk-EcL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nT2-M6-Ce0" secondAttribute="trailing" constant="10" id="YoK-vM-GJ0"/>
+                <constraint firstItem="nT2-M6-Ce0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kEo-xJ-bop"/>
+                <constraint firstItem="nT2-M6-Ce0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="nql-7C-t7b"/>
+                <constraint firstItem="nT2-M6-Ce0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="yWa-Dy-gxv"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="136.95652173913044" y="363.28125"/>

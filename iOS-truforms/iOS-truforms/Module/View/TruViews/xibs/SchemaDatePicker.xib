@@ -20,16 +20,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKT-QM-0eg">
-                    <rect key="frame" x="20" y="75" width="374" height="34"/>
+                    <rect key="frame" x="10" y="75" width="394" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="iKT-QM-0eg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="84b-VW-Jbp"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iKT-QM-0eg" secondAttribute="trailing" constant="20" id="bRA-Zd-Lki"/>
-                <constraint firstItem="iKT-QM-0eg" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="g2E-A3-GWj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iKT-QM-0eg" secondAttribute="trailing" constant="10" id="EyZ-H6-Ocj"/>
+                <constraint firstItem="iKT-QM-0eg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Pza-99-ALz"/>
+                <constraint firstItem="iKT-QM-0eg" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Y3Q-9B-xMH"/>
+                <constraint firstItem="iKT-QM-0eg" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="c1e-OB-TAp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

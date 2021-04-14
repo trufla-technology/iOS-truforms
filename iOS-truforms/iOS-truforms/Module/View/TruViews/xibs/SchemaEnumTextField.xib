@@ -19,14 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tNf-Mx-vdU">
-                    <rect key="frame" x="56" y="73" width="338" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tNf-Mx-vdU">
+                    <rect key="frame" x="10" y="95" width="394" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tNf-Mx-vdU" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="BcE-TQ-eqU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tNf-Mx-vdU" secondAttribute="trailing" constant="10" id="RMF-Ie-HOl"/>
+                <constraint firstItem="tNf-Mx-vdU" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="WUW-G5-8zO"/>
+                <constraint firstItem="tNf-Mx-vdU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="yGX-ga-ZOG"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="374.33035714285711"/>
