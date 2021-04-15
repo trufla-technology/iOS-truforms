@@ -61,6 +61,18 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 }
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
+    
+    func addView<T, V>(view: V) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
+        
+    }
+    
+    func addViewInstance<Instance>(view: SchemaBaseView<Instance>) where Instance : SchemaObjectProtocol {
+        
+    }
+    func addArraySection(view: SchemaArrayView, with tag: String, at parentTag: String, ignoreTitle: Bool) {
+        
+    }
+    
     func drawEnumDataPicker(node: SchemaEnumData) {
         
     }

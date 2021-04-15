@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SchemaArrayView: SchemaBaseView<SchemaArray>  {
+class SchemaArrayView: SchemaBaseView<SchemaArray> {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var title: UILabel!
@@ -25,14 +25,15 @@ class SchemaArrayView: SchemaBaseView<SchemaArray>  {
         contentView.translatesAutoresizingMaskIntoConstraints = true
         
         addSubview(contentView)
+        
     }
     
     @IBAction func addOrDeleteView(_ sender: Any) {
-        
-        delegate.append(child: self)
+        print(instance.arrayItem())
+        delegate.append(child: self, node: instance)
     }
 }
 
 protocol AppendViewDelegate {
-    func append(child: UIView)
+    func append(child: UIView, node: SchemaObjectProtocol)
 }

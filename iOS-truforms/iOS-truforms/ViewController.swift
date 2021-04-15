@@ -36,6 +36,7 @@ class ViewController: BaseViewController {
     var enumDataInteractor: EnumDataInteractorProtocol?
     
     var manager: EurekaManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,7 +48,6 @@ class ViewController: BaseViewController {
         
         setupViews()
         setupLayout()
-        
     }
     
     func traverse(_ root: TreeNode<SchemaObjectProtocol>) {
@@ -56,7 +56,6 @@ class ViewController: BaseViewController {
             traverse(child)
         }
     }
-    
     
     private func setupViews() {
         scrollView.backgroundColor = .lightGray
@@ -104,9 +103,22 @@ extension ViewController: SchemaNodeViewProtocol {
 
 extension ViewController: AppendViewDelegate {
     
-    func append(child: UIView) {
+    func append(child: UIView, node: SchemaObjectProtocol) {
+        let presenter = SchemaNodePresenter()
+        var tag = UUID().uuidString
+        let treeNode = presenter.scan(schema: node.schemaNode!, tag: &tag, parentTage: tag)
+        
         if let index = stackView.arrangedSubviews.firstIndex(of: child) {
-            let newView = UIView()
+            manager?.drawAtIndex(treeNode.value, index: index)
+            for child in treeNode.children {
+                traverse(child)
+            }
+        }
+    }
+    
+    func appends(child: UIView) {
+        if let index = stackView.arrangedSubviews.firstIndex(of: child) {
+            let newView = UITextField()
             newView.backgroundColor = .red
             newView.isHidden = true
             stackView.insertArrangedSubview(newView, at: index + 1)
@@ -120,16 +132,24 @@ extension ViewController: AppendViewDelegate {
 }
 
 extension ViewController: EurekaManagerDelegate {
+    func addViewInstance<Instance>(view: SchemaBaseView<Instance>) where Instance : SchemaObjectProtocol {
+        
+    }
+    
+    func addView<T, V>(view: V) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
+        if let v = view as? SchemaArrayView {
+            v.delegate = self
+        }
+        stackView.addArrangedSubview(view)
+    }
     
     func insertSection(_ childTag: String) {
         
     }
     
-    func addArraySection(title: String, with tag: String, at parentTag: String, ignoreTitle: Bool) {
-        let s = SchemaArrayView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        s.title.text = title
-        s.delegate = self
-        stackView.addArrangedSubview(s)
+    func addArraySection(view: SchemaArrayView, with tag: String, at parentTag: String, ignoreTitle: Bool) {
+        view.delegate = self
+        stackView.addArrangedSubview(view)
     }
     
     // Fetch Enum Data
@@ -144,7 +164,7 @@ extension ViewController: EurekaManagerDelegate {
     
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
         var sectionTitle = ""
-        if !ignoreTitle {
+        if !ignoreTitle && !title.isEmpty {
             sectionTitle = title
             let s = SchemaObjectView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
             s.title.text = sectionTitle

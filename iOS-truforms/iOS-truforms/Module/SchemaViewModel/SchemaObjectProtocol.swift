@@ -17,22 +17,26 @@ protocol SchemaObjectProtocol {
     func title() -> String
     func description() -> String
     func displayOrder() -> Int
+    func arrayItem() -> SchemaNode?
 }
 
 extension SchemaObjectProtocol {
-     func type() -> String {
+    func type() -> String {
         return schemaNode?.type ?? ""
-     }
-     func key() -> String {
+    }
+    func key() -> String {
         return schemaNode?.key ?? ""
-     }
-     func title() -> String {
+    }
+    func title() -> String {
         return schemaNode?.title ?? key().replacingOccurrences(of: "_", with: " ")
-     }
-     func description() -> String {
+    }
+    func description() -> String {
         return schemaNode?.description ?? ""
-     }
-     func displayOrder() -> Int {
+    }
+    func displayOrder() -> Int {
         return schemaNode?.displayOrder ?? -1
-     }
+    }
+    func arrayItem() -> SchemaNode? {
+        return schemaNode?.items?.value
+    }
 }

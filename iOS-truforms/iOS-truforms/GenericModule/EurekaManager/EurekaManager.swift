@@ -15,7 +15,7 @@ protocol EurekaManagerDelegate: class {
         
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
-    func addArraySection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
+    func addArraySection(view: SchemaArrayView, with tag: String, at parentTag: String, ignoreTitle: Bool)
 
     func addRow <R:BaseRow> (_ row:R, at tag: String)
         
@@ -32,6 +32,8 @@ protocol EurekaManagerDelegate: class {
     func drawPhotoPikcer(title: String)
     
     func drawEnumDataPicker(node: SchemaEnumData)
+        
+    func addView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V) 
 }
 
 class EurekaManager {
@@ -52,7 +54,25 @@ class EurekaManager {
             drawEnumData(node)
         }
         if let node = node as? SchemaString {
-            drawString(node)
+            drawString(node,index: nil)
+        }
+    }
+    
+    func drawAtIndex(_ node: SchemaObjectProtocol, index: Int) {
+        if let node = node as? SchemaObject {
+            drawObject(node)
+        }
+        if let node = node as? SchemaArray {
+            drawArray(node)
+        }
+        if let node = node as? SchemaEnum {
+            drawEnum(node)
+        }
+        if let node = node as? SchemaEnumData {
+            drawEnumData(node)
+        }
+        if let node = node as? SchemaString {
+            drawString(node,index: index)
         }
     }
     
@@ -110,7 +130,10 @@ class EurekaManager {
     }
     
     private func drawArray(_ node: SchemaArray) {
-        delegate.addArraySection(title: node.title(), with: node.tag, at: "", ignoreTitle: ignoreTitle)
+        let schemaArray = SchemaArrayView()
+        schemaArray.instance = node
+        schemaArray.title.text = node.title()
+        delegate.addView(view: schemaArray)
     }
     
     private func createPickerInputRow<T: Equatable>(_ node: SchemaEnum) -> PickerInputRow<T> {
@@ -120,6 +143,7 @@ class EurekaManager {
         pickerInputRow.options = items as! [T]
         return pickerInputRow
     }
+    
     private func drawEnum(_ node: SchemaEnum) {
         let items = node.itemsToDisplay()
         if items is [String] {
@@ -144,7 +168,7 @@ class EurekaManager {
         }
     }
     
-    private func drawString(_ node: SchemaString) {
+    private func drawString(_ node: SchemaString, index: Int?) {
         let formats = SchemaNodeConstants.StringFormats.self
         switch node.format {
         case formats.DATE:
