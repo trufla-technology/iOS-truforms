@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Eureka
-import ImageRow
 
 protocol EurekaManagerDelegate: class {
     // back to write something here
@@ -16,8 +14,6 @@ protocol EurekaManagerDelegate: class {
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
     func addArraySection(view: SchemaArrayView, with tag: String, at parentTag: String, ignoreTitle: Bool)
-    
-    func addRow <R:BaseRow> (_ row:R, at tag: String)
     
     func insertSection(_ childTag: String)
     
@@ -43,60 +39,62 @@ class EurekaManager {
             drawEnum(node)
         }
         if let node = node as? SchemaEnumData {
-            drawEnumData(node)
+            drawEnumDataPicker(node)
         }
         if let node = node as? SchemaString {
             drawString(node,index: nil)
         }
     }
     
-    private func detectRaw(_ node: SchemaObjectProtocol) -> BaseRow {
-        if let node = node as? SchemaObject {
-            return createLabelRaw(node)
-        }
-        if let node = node as? SchemaEnum {
-            return detectGenericPickerData(node)
-        }
-        if let node = node as? SchemaEnumData {
-            return createLabelRaw(node)
-        }
-        if let node = node as? SchemaString {
-            return detectStringRaw(node)
-        }
-        return createLabelRaw(node)
-    }
+    /*   private func detectRaw(_ node: SchemaObjectProtocol) -> BaseRow {
+     if let node = node as? SchemaObject {
+     return createLabelRaw(node)
+     }
+     if let node = node as? SchemaEnum {
+     return detectGenericPickerData(node)
+     }
+     if let node = node as? SchemaEnumData {
+     return createLabelRaw(node)
+     }
+     if let node = node as? SchemaString {
+     return detectStringRaw(node)
+     }
+     return createLabelRaw(node)
+     }*/
     
-    private func detectGenericPickerData(_ node: SchemaEnum) -> BaseRow {
-        let items = node.itemsToDisplay()
-        if items is [String] {
-            let pickerInputRow: PickerInputRow<String> = createPickerInputRow(node)
-            return pickerInputRow
-        }
-        let pickerInputRow: PickerInputRow<Int> = createPickerInputRow(node)
-        return pickerInputRow
-    }
+    /*   private func detectGenericPickerData(_ node: SchemaEnum) -> BaseRow {
+     let items = node.itemsToDisplay()
+     if items is [String] {
+     let pickerInputRow: PickerInputRow<String> = createPickerInputRow(node)
+     return pickerInputRow
+     }
+     let pickerInputRow: PickerInputRow<Int> = createPickerInputRow(node)
+     return pickerInputRow
+     }
+     */
     
-    private func detectStringRaw(_ node: SchemaString) -> BaseRow{
-        let formats = SchemaNodeConstants.StringFormats.self
-        switch node.format {
-        case formats.DATE:
-            return createDateRow(node)
-        case formats.DATETIME:
-            return createDateTimeRow(node)
-        case formats.EMAIL:
-            return createEmailRow(node)
-        case formats.MAPLOCATION:
-            return createLocationRaw(node)
-        case formats.PHONE:
-            return createPhoneRow(node)
-        case formats.PHOTO:
-            return createPhotoRow(node)
-        case formats.TIME:
-            return createTimeRow(node)
-        default:
-            return createTextFieldRow(node)
-        }
-    }
+    /*     private func detectStringRaw(_ node: SchemaString) -> BaseRow{
+     let formats = SchemaNodeConstants.StringFormats.self
+     switch node.format {
+     case formats.DATE:
+     return createDateRow(node)
+     case formats.DATETIME:
+     return createDateTimeRow(node)
+     case formats.EMAIL:
+     return createEmailRow(node)
+     case formats.MAPLOCATION:
+     return createLocationRaw(node)
+     case formats.PHONE:
+     return createPhoneRow(node)
+     case formats.PHOTO:
+     return createPhotoRow(node)
+     case formats.TIME:
+     return createTimeRow(node)
+     default:
+     return createTextFieldRow(node)
+     }
+     }
+     */
     
     private func drawObject(_ node: SchemaObject) {
         delegate.addSection(title: node.title(), with: node.tag, at: node.parentTag, ignoreTitle: ignoreTitle)
@@ -110,36 +108,28 @@ class EurekaManager {
         delegate.addView(view: schemaArray)
     }
     
-    private func createPickerInputRow<T: Equatable>(_ node: SchemaEnum) -> PickerInputRow<T> {
-        let items = node.itemsToDisplay()
-        let pickerInputRow = PickerInputRow<T>()
-        pickerInputRow.title = node.title()
-        pickerInputRow.options = items as! [T]
-        return pickerInputRow
+    private func drawEnumDataPicker(_ node: SchemaEnumData) {
+        let s = SchemaEnumDataTextField()
+        s.textField.placeholder = node.title()
+        s.instance = node
+        s.loadData()
+        delegate.addView(view: s)
     }
     
     private func drawEnum(_ node: SchemaEnum) {
         let items = node.itemsToDisplay()
-        if items is [String] {
-            let pickerInputRow: PickerInputRow<String> = createPickerInputRow(node)
-            delegate.addRow(pickerInputRow, at: node.parentTag)
-        }
-        if items is [Int] {
-            let pickerInputRow: PickerInputRow<Int> = createPickerInputRow(node)
-            delegate.addRow(pickerInputRow, at: node.parentTag)
-        }
-    }
-    private func drawEnumData(_ node: SchemaEnumData) {
-        let model = EnumDataRequest(path: node.href, date: "", names: node.enumNames)
-        //        delegate.handleEnumData(model: model)
-        delegate.drawEnumDataPicker(node: node)
-        delegate.handleEnumData(model: model) { (dataArr) in
-            let items = dataArr
-            let pickerInputRow = PickerInputRow<String>()
-            pickerInputRow.title = node.title()
-            pickerInputRow.options = items
-            self.delegate.addRow(pickerInputRow, at: node.parentTag)
-        }
+        let picker = SchemaEnumTextField()
+        picker.textField.placeholder = node.title()
+        picker.instance = node
+        delegate.addView(view: picker)
+        //        if items is [String] {
+        //            let pickerInputRow: PickerInputRow<String> = createPickerInputRow(node)
+        //            delegate.addRow(pickerInputRow, at: node.parentTag)
+        //        }
+        //        if items is [Int] {
+        //            let pickerInputRow: PickerInputRow<Int> = createPickerInputRow(node)
+        //            delegate.addRow(pickerInputRow, at: node.parentTag)
+        //        }
     }
     
     private func drawString(_ node: SchemaString, index: Int?) {
@@ -163,24 +153,12 @@ class EurekaManager {
             drawTextField(node)
         }
     }
-    private func createTextFieldRow(_ node: SchemaObjectProtocol) -> TextRow {
-        let textRow = TextRow()
-        textRow.title = node.title()
-        textRow.placeholder = node.title()
-        return textRow
-    }
     
     private func drawTextField(_ node: SchemaString) {
         let schemaTextField = SchemaTextField()
         schemaTextField.instance = node
         schemaTextField.textField.placeholder = node.title()
         delegate.addView(view: schemaTextField)
-    }
-    private func createDateRow(_ node: SchemaObjectProtocol) -> DateRow {
-        let dateRow = DateRow()
-        dateRow.title = node.title()
-        dateRow.value = Date(timeIntervalSinceReferenceDate: 0)
-        return dateRow
     }
     
     private func drawDate(_ node: SchemaString) {
@@ -190,20 +168,11 @@ class EurekaManager {
         delegate.addView(view: schemaDatePicker)
     }
     
-    private func createDateTimeRow(_ node: SchemaObjectProtocol) -> DateTimeRow {
-        let dateTimeRow = DateTimeRow()
-        dateTimeRow.title = node.title()
-        return dateTimeRow
-    }
     private func drawDateTime(_ node: SchemaString) {
-        let dateTimeRow = createDateTimeRow(node)
-        delegate.addRow(dateTimeRow, at: node.parentTag)
+        //        let dateTimeRow = createDateTimeRow(node)
+        //        delegate.addRow(dateTimeRow, at: node.parentTag)
     }
-    private func createTimeRow(_ node: SchemaObjectProtocol) -> TimeRow {
-        let timeRow = TimeRow()
-        timeRow.title = node.title()
-        return timeRow
-    }
+    
     private func drawTime(_ node: SchemaString) {
         let timePicker = SchemaTimePicker()
         timePicker.instance = node
@@ -211,50 +180,32 @@ class EurekaManager {
         delegate.addView(view: timePicker)
     }
     
-    private func createEmailRow(_ node: SchemaObjectProtocol) -> EmailRow {
-        let emailRow = EmailRow()
-        emailRow.title = node.title()
-        emailRow.placeholder = node.title()
-        return emailRow
-    }
+    
     private func drawEmail(_ node: SchemaString) {
         let schemaTextField = SchemaTextField()
         schemaTextField.instance = node
         schemaTextField.textField.placeholder = node.title()
         delegate.addView(view: schemaTextField)
     }
-    private func createPhoneRow(_ node: SchemaObjectProtocol) -> PhoneRow {
-        let phoneRow = PhoneRow()
-        phoneRow.title = node.title()
-        phoneRow.placeholder = node.title()
-        return phoneRow
-    }
+    
     private func drawPhone(_ node: SchemaString) {
         let schemaTextField = SchemaTextField()
         schemaTextField.instance = node
         schemaTextField.textField.placeholder = node.title()
         delegate.addView(view: schemaTextField)
     }
-    private func createPhotoRow(_ node: SchemaObjectProtocol) -> ImageRow {
-        let imageRow = ImageRow()
-        imageRow.title = node.title()
-        imageRow.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-        imageRow.clearAction = .yes(style: UIAlertAction.Style.destructive)
-        return imageRow
-    }
+    
     private func drawPhoto(_ node: SchemaString) {
         let photoPickerView = SchemaPhotoPickerView()
         photoPickerView.instance = node
         delegate.addView(view: photoPickerView)
     }
-    private func createLabelRaw(_ node: SchemaObjectProtocol) -> LabelRow {
-        let labelRow = LabelRow()
-        labelRow.title = node.title()
-        return labelRow
-    }
+    
     private func drawLabel(_ node: SchemaObject) {
-        let labelRow = createLabelRaw(node)
-        delegate.addRow(labelRow, at: node.parentTag)
+        let section = SchemaObjectView()
+        section.instance = node
+        section.title.text = node.title()
+        delegate.addView(view: section)
     }
     private func createLocationRaw(_ node: SchemaObjectProtocol) -> LocationRow {
         let locationRow = LocationRow()

@@ -109,7 +109,7 @@ extension ViewController: AppendViewDelegate {
         let treeNode = presenter.scan(schema: node.schemaNode!, tag: &tag, parentTage: tag)
         
         if let index = stackView.arrangedSubviews.firstIndex(of: child) {
-            manager?.drawAtIndex(treeNode.value, index: index)
+            manager?.draw(treeNode.value)
             for child in treeNode.children {
                 traverse(child)
             }
