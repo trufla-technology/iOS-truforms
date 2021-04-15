@@ -207,11 +207,7 @@ class EurekaManager {
         section.title.text = node.title()
         delegate.addView(view: section)
     }
-    private func createLocationRaw(_ node: SchemaObjectProtocol) -> LocationRow {
-        let locationRow = LocationRow()
-        locationRow.title = node.title()
-        return locationRow
-    }
+
     private func drawMapLocation(_ node: SchemaString) {
         
     }

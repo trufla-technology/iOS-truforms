@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Eureka
 
 
 // Now I will create Swift Clean Arch ... VIP Cycle (and I will break a retain cycle)
@@ -111,9 +110,7 @@ extension SchemaNodeViewController: EurekaManagerDelegate {
     func handleEnumData(model: EnumDataRequest,data: @escaping ([String]) -> Void) {
     }
     
-    //Generic Method to add Row
-    func addRow <R:BaseRow> (_ row:R, at tag: String) {
-    }
+
 
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
 

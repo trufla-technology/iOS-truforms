@@ -58,7 +58,6 @@
 		AB26AB9C25B98CA5001AA5E8 /* SchemaPhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AB9B25B98CA5001AA5E8 /* SchemaPhotoPickerView.swift */; };
 		AB26AB9E25B98D5A001AA5E8 /* SchemaPhotoPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB26AB9D25B98D5A001AA5E8 /* SchemaPhotoPickerView.xib */; };
 		AB479FF21C1D95C9FCF717BE /* Pods_iOS_truforms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9161E40CB68276D1E6760BE /* Pods_iOS_truforms.framework */; };
-		AB4A9E8A245487F1003EB90F /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A9E89245487F1003EB90F /* custom.swift */; };
 		AB4EBA332455E5CA007BD15F /* EnumDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */; };
 		AB6366A425BC4DF3003563FB /* SchemaSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6366A325BC4DF3003563FB /* SchemaSectionView.swift */; };
 		AB6366A625BC4E5D003563FB /* SchemaSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6366A525BC4E5D003563FB /* SchemaSectionView.xib */; };
@@ -153,7 +152,6 @@
 		AB26AB9925B97F4E001AA5E8 /* SchemaEnumTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaEnumTextField.xib; sourceTree = "<group>"; };
 		AB26AB9B25B98CA5001AA5E8 /* SchemaPhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaPhotoPickerView.swift; sourceTree = "<group>"; };
 		AB26AB9D25B98D5A001AA5E8 /* SchemaPhotoPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaPhotoPickerView.xib; sourceTree = "<group>"; };
-		AB4A9E89245487F1003EB90F /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		AB4EBA322455E5CA007BD15F /* EnumDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDataInteractor.swift; sourceTree = "<group>"; };
 		AB6366A325BC4DF3003563FB /* SchemaSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaSectionView.swift; sourceTree = "<group>"; };
 		AB6366A525BC4E5D003563FB /* SchemaSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchemaSectionView.xib; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				5366FBBB23FABE2900174DE7 /* SchemaTextField2.swift */,
-				AB4A9E89245487F1003EB90F /* custom.swift */,
 			);
 			path = SchemaViews;
 			sourceTree = "<group>";
@@ -768,7 +765,6 @@
 				5383F1482434D2190057EACF /* SubmitNode.swift in Sources */,
 				53F8C46F23F1A3360024CED4 /* Responsable.swift in Sources */,
 				5366FBBC23FABE2900174DE7 /* SchemaTextField2.swift in Sources */,
-				AB4A9E8A245487F1003EB90F /* custom.swift in Sources */,
 				AB6366A825BC4E7A003563FB /* SchemaBooleanView.swift in Sources */,
 				5340CE522402BEFB003DBD84 /* SchemaNodeWrapper.swift in Sources */,
 				53F8C48423F1AA780024CED4 /* SchemaNodeInteractor.swift in Sources */,

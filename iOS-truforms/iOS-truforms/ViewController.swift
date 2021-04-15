@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Eureka
 
 class ViewController: BaseViewController {
     
@@ -156,12 +155,7 @@ extension ViewController: EurekaManagerDelegate {
     func handleEnumData(model: EnumDataRequest,data: @escaping ([String]) -> Void) {
         
     }
-    
-    //Generic Method to add Row
-    func addRow <R:BaseRow> (_ row:R, at tag: String) {
-        
-    }
-    
+
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
         var sectionTitle = ""
         if !ignoreTitle && !title.isEmpty {

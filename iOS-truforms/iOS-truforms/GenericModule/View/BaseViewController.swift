@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Eureka
 protocol BaseViewProtocol: class {
     func display(error: String)
 }

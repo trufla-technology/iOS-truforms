@@ -7,8 +7,6 @@ target 'iOS-truforms' do
 
   # Pods for iOS-truforms
   pod 'Moya'
-  pod 'Eureka'
-  pod 'ImageRow', '~> 4.0'
   pod 'MaterialComponents/TextFields'
   target 'iOS-truformsTests' do
     inherit! :search_paths

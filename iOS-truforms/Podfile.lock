@@ -1,8 +1,5 @@
 PODS:
   - Alamofire (4.9.1)
-  - Eureka (5.2.0)
-  - ImageRow (4.0.0):
-    - Eureka (~> 5.0)
   - MaterialComponents/AnimationTiming (104.0.1)
   - MaterialComponents/Availability (104.0.1)
   - MaterialComponents/Buttons (104.0.1):
@@ -61,8 +58,6 @@ PODS:
   - Result (4.1.0)
 
 DEPENDENCIES:
-  - Eureka
-  - ImageRow (~> 4.0)
   - MaterialComponents/TextFields
   - Moya
   - Nimble
@@ -71,8 +66,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Eureka
-    - ImageRow
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -83,8 +76,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Eureka: 820a761c700f6eaab3b60758f138e0d9b99072b3
-  ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
   MaterialComponents: 5f68750c41b8c191c605a9296586717b2f92da93
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -93,6 +84,6 @@ SPEC CHECKSUMS:
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 940f30c42e2e2a3e89c6e6248e7c61364271a65c
+PODFILE CHECKSUM: 5fcad3795c4d3e40c7429609671d9ff98633242a
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.3
