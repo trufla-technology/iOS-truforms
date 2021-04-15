@@ -131,9 +131,6 @@ extension ViewController: AppendViewDelegate {
 }
 
 extension ViewController: EurekaManagerDelegate {
-    func addViewInstance<Instance>(view: SchemaBaseView<Instance>) where Instance : SchemaObjectProtocol {
-        
-    }
     
     func addView<T, V>(view: V) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
         if let v = view as? SchemaArrayView {
@@ -142,20 +139,7 @@ extension ViewController: EurekaManagerDelegate {
         stackView.addArrangedSubview(view)
     }
     
-    func insertSection(_ childTag: String) {
-        
-    }
     
-    func addArraySection(view: SchemaArrayView, with tag: String, at parentTag: String, ignoreTitle: Bool) {
-        view.delegate = self
-        stackView.addArrangedSubview(view)
-    }
-    
-    // Fetch Enum Data
-    func handleEnumData(model: EnumDataRequest,data: @escaping ([String]) -> Void) {
-        
-    }
-
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
         var sectionTitle = ""
         if !ignoreTitle && !title.isEmpty {

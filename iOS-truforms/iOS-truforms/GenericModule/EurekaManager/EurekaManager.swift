@@ -13,12 +13,6 @@ protocol EurekaManagerDelegate: class {
     
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
-    func addArraySection(view: SchemaArrayView, with tag: String, at parentTag: String, ignoreTitle: Bool)
-    
-    func insertSection(_ childTag: String)
-    
-    func handleEnumData(model: EnumDataRequest, data: @escaping ([String]) -> Void)
-    
     func drawEnumDataPicker(node: SchemaEnumData)
     
     func addView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V) 
