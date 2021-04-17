@@ -13,7 +13,7 @@ struct SchemaNodeWrapper<T: Decodable>: Decodable {
     init(from decoder: Decoder) throws {
         wrapper = try Wrapper(from: decoder)
     }
-
+    
     // Class wrapper to provide the actual indirection.
     private final class Wrapper: Decodable {
         var value: T
@@ -22,7 +22,7 @@ struct SchemaNodeWrapper<T: Decodable>: Decodable {
             value = try container.decode(T.self)
         }
     }
-
+    
     var value: T {
         get {
             return wrapper.value

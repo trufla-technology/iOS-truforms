@@ -85,7 +85,6 @@ extension SchemaNode: Decodable {
         maxLength = try container.decodeWrapper(key: .maxLength, defaultValue: nil)
         minLength = try container.decodeWrapper(key: .minLength, defaultValue: nil)
     }
-    
 }
 
 extension SchemaNode: Comparable {

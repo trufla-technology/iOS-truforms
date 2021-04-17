@@ -29,7 +29,6 @@ class SchemaArrayView: SchemaBaseView<SchemaArray> {
     }
     
     @IBAction func addOrDeleteView(_ sender: Any) {
-        print(instance.arrayItem())
         delegate.append(child: self, node: instance)
     }
 }

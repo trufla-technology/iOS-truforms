@@ -13,9 +13,9 @@ protocol EurekaManagerDelegate: class {
     
     func addSection(title:String, with tag: String, at parentTag: String, ignoreTitle: Bool)
     
-    func drawEnumDataPicker(node: SchemaEnumData)
+    func addView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V)
     
-    func addView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V) 
+    func createView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V, index: Int)
 }
 
 class EurekaManager {
@@ -36,7 +36,44 @@ class EurekaManager {
             drawEnumDataPicker(node)
         }
         if let node = node as? SchemaString {
-            drawString(node,index: nil)
+            drawString(node)
+        }
+    }
+    
+    func drawAtIndex(_ node: SchemaObjectProtocol, index: Int) {
+        if let node = node as? SchemaObject {
+            //               drawObject(node)
+            let s = SchemaObjectView()
+            s.title.text = node.title()
+            s.instance = node
+            delegate.createView(view: s, index: index)
+        }
+        
+        if let node = node as? SchemaArray {
+            let schemaArray = SchemaArrayView()
+            schemaArray.instance = node
+            schemaArray.title.text = node.title()
+            delegate.createView(view: schemaArray,index: index)
+        }
+        
+        if let node = node as? SchemaEnum {
+            let items = node.itemsToDisplay()
+            let picker = SchemaEnumTextField()
+            picker.textField.placeholder = node.title()
+            picker.instance = node
+            delegate.createView(view: picker,index: index)
+        }
+        
+        if let node = node as? SchemaEnumData {
+            let schemaEnumDataTextField = SchemaEnumDataTextField()
+            schemaEnumDataTextField.textField.placeholder = node.title()
+            schemaEnumDataTextField.instance = node
+            schemaEnumDataTextField.loadData()
+            delegate.createView(view: schemaEnumDataTextField, index: index)
+        }
+        
+        if let node = node as? SchemaString {
+            drawString(node,index: index)
         }
     }
     
@@ -103,11 +140,11 @@ class EurekaManager {
     }
     
     private func drawEnumDataPicker(_ node: SchemaEnumData) {
-        let s = SchemaEnumDataTextField()
-        s.textField.placeholder = node.title()
-        s.instance = node
-        s.loadData()
-        delegate.addView(view: s)
+        let schemaEnumDataTextField = SchemaEnumDataTextField()
+        schemaEnumDataTextField.textField.placeholder = node.title()
+        schemaEnumDataTextField.instance = node
+        schemaEnumDataTextField.loadData()
+        delegate.addView(view: schemaEnumDataTextField)
     }
     
     private func drawEnum(_ node: SchemaEnum) {
@@ -126,7 +163,7 @@ class EurekaManager {
         //        }
     }
     
-    private func drawString(_ node: SchemaString, index: Int?) {
+    private func drawString(_ node: SchemaString) {
         let formats = SchemaNodeConstants.StringFormats.self
         switch node.format {
         case formats.DATE:
@@ -145,6 +182,27 @@ class EurekaManager {
             drawTime(node)
         default:
             drawTextField(node)
+        }
+    }
+    private func drawString(_ node: SchemaString,index: Int) {
+        let formats = SchemaNodeConstants.StringFormats.self
+        switch node.format {
+        case formats.DATE:
+            drawDate(node,index: index)
+        case formats.DATETIME:
+            drawDateTime(node,index: index)
+        case formats.EMAIL:
+            drawEmail(node,index: index)
+        case formats.MAPLOCATION:
+            drawMapLocation(node,index: index)
+        case formats.PHONE:
+            drawPhone(node,index: index)
+        case formats.PHOTO:
+            drawPhoto(node,index: index)
+        case formats.TIME:
+            drawTime(node,index: index)
+        default:
+            drawTextField(node,index: index)
         }
     }
     
@@ -201,8 +259,66 @@ class EurekaManager {
         section.title.text = node.title()
         delegate.addView(view: section)
     }
-
+    
     private func drawMapLocation(_ node: SchemaString) {
+        
+    }
+    
+    private func drawTextField(_ node: SchemaString,index:Int) {
+        let schemaTextField = SchemaTextField()
+        schemaTextField.instance = node
+        schemaTextField.textField.placeholder = node.title()
+        delegate.createView(view: schemaTextField, index: index)
+    }
+    
+    private func drawDate(_ node: SchemaString,index:Int) {
+        let schemaDatePicker = SchemaDatePicker()
+        schemaDatePicker.instance = node
+        schemaDatePicker.dateTextField.placeholder = node.title()
+        delegate.createView(view: schemaDatePicker, index: index)
+    }
+    
+    private func drawDateTime(_ node: SchemaString,index:Int) {
+        //        let dateTimeRow = createDateTimeRow(node)
+        //        delegate.addRow(dateTimeRow, at: node.parentTag)
+    }
+    
+    private func drawTime(_ node: SchemaString,index:Int) {
+        let timePicker = SchemaTimePicker()
+        timePicker.instance = node
+        timePicker.dateTextField.placeholder = node.title()
+        delegate.createView(view: timePicker, index: index)
+    }
+    
+    
+    private func drawEmail(_ node: SchemaString,index:Int) {
+        let schemaTextField = SchemaTextField()
+        schemaTextField.instance = node
+        schemaTextField.textField.placeholder = node.title()
+        delegate.createView(view: schemaTextField, index: index)
+    }
+    
+    private func drawPhone(_ node: SchemaString,index:Int) {
+        let schemaTextField = SchemaTextField()
+        schemaTextField.instance = node
+        schemaTextField.textField.placeholder = node.title()
+        delegate.createView(view: schemaTextField, index: index)
+    }
+    
+    private func drawPhoto(_ node: SchemaString,index:Int) {
+        let photoPickerView = SchemaPhotoPickerView()
+        photoPickerView.instance = node
+        delegate.createView(view: photoPickerView, index: index)
+    }
+    
+    private func drawLabel(_ node: SchemaObject,index:Int) {
+        let section = SchemaObjectView()
+        section.instance = node
+        section.title.text = node.title()
+        delegate.createView(view: section, index: index)
+    }
+    
+    private func drawMapLocation(_ node: SchemaString, index:Int) {
         
     }
 }

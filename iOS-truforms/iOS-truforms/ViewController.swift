@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: BaseViewController {
+    var arr = [Any]()
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -27,6 +28,14 @@ class ViewController: BaseViewController {
     
     lazy var contentView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var submitButton: UIButton = {
+        let view = UIButton()
+        view.setTitle("Submit", for: .normal)
+        view.backgroundColor = .orange
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -56,10 +65,18 @@ class ViewController: BaseViewController {
         }
     }
     
+    func traverseAtIndex(_ root: TreeNode<SchemaObjectProtocol>,index: Int) {
+        manager?.drawAtIndex(root.value, index: index)
+        for child in root.children.reversed() {
+            traverseAtIndex(child,index: index)
+        }
+    }
+    
     private func setupViews() {
         scrollView.backgroundColor = .lightGray
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
+        stackView.addArrangedSubview(submitButton)
         contentView.addSubview(stackView)
     }
     
@@ -82,6 +99,25 @@ class ViewController: BaseViewController {
         stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        
+        //Submit Button
+        submitButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        submitButton.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        submitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        submitButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -20).isActive = true
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        print(stackView.arrangedSubviews.count)
+        print("Do Submit...")
+        for view in arr {
+            if let v  = view as? UIView {
+                stackView.removeArrangedSubview(v)
+                v.removeFromSuperview()
+            }
+        }
     }
 }
 
@@ -108,10 +144,7 @@ extension ViewController: AppendViewDelegate {
         let treeNode = presenter.scan(schema: node.schemaNode!, tag: &tag, parentTage: tag)
         
         if let index = stackView.arrangedSubviews.firstIndex(of: child) {
-            manager?.draw(treeNode.value)
-            for child in treeNode.children {
-                traverse(child)
-            }
+            traverseAtIndex(treeNode,index: index + 1)
         }
     }
     
@@ -124,13 +157,21 @@ extension ViewController: AppendViewDelegate {
             
             UIView.animate(withDuration: 0.25) { () -> Void in
                 newView.isHidden = false
-                //            scrollv.contentOffset = offset
+                //scrollv.contentOffset = offset
             }
         }
     }
 }
 
 extension ViewController: EurekaManagerDelegate {
+    func createView<T, V>(view: V, index: Int) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
+        arr.append(view)
+        view.isHidden = true
+        stackView.insertArrangedSubview(view, at: index)
+        UIView.animate(withDuration: 0.25) { () -> Void in
+            view.isHidden = false
+        }
+    }
     
     func addView<T, V>(view: V) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
         if let v = view as? SchemaArrayView {
@@ -139,47 +180,13 @@ extension ViewController: EurekaManagerDelegate {
         stackView.addArrangedSubview(view)
     }
     
-    
     func addSection(title:String, with tag: String, at parentTag:String, ignoreTitle: Bool)  {
         var sectionTitle = ""
-        if !ignoreTitle && !title.isEmpty {
+        if !ignoreTitle {
             sectionTitle = title
             let s = SchemaObjectView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
             s.title.text = sectionTitle
             stackView.addArrangedSubview(s)
         }
-    }
-    
-    func drawDate(title: String) {
-        let s = SchemaDatePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        s.dateTextField.placeholder = title
-        stackView.addArrangedSubview(s)
-    }
-    
-    func drawTextField(title: String) {
-        let s = SchemaTextField()
-        s.textField.placeholder = title
-        stackView.addArrangedSubview(s)
-    }
-    
-    func drawTimePicker(title: String) {
-        let s = SchemaTimePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        s.dateTextField.placeholder = title
-        stackView.addArrangedSubview(s)
-    }
-    
-    func drawPhotoPikcer(title: String) {
-        let s = SchemaPhotoPickerView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        //s.tit.placeholder = title
-        stackView.addArrangedSubview(s)
-    }
-    
-    
-    func drawEnumDataPicker(node: SchemaEnumData) {
-        let s = SchemaEnumDataTextField(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        s.textField.placeholder = node.title()
-        s.instance = node
-        s.loadData()
-        stackView.addArrangedSubview(s)
     }
 }

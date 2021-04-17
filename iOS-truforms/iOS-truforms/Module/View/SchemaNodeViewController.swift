@@ -60,6 +60,17 @@ extension SchemaNodeViewController: SchemaNodeViewProtocol {
 }
 
 extension SchemaNodeViewController: EurekaManagerDelegate {
+    func createView<T, V>(view: V, index: Int) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
+        
+    }
+    
+    func createView<T, V>(view: V) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
+        
+    }
+    
+    func addViewAtIndex<T, V>(view: V, index: Int) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
+        
+    }
     
     func addView<T, V>(view: V) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
         
