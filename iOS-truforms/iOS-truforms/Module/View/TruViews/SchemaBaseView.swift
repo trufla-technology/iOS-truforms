@@ -33,5 +33,5 @@ class SchemaBaseView<T: SchemaObjectProtocol>: UIView {
     
     func nibSetup() {}
     
-    func getInputValue()-> String {}
+    func getInputValue()-> String { return "" }
 }
