@@ -15,7 +15,7 @@ protocol EurekaManagerDelegate: class {
     
     func addView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V)
     
-    func createView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V, index: Int)
+    func appendView<T:SchemaObjectProtocol, V: SchemaBaseView<T>>(view: V, index: Int)
 }
 
 class EurekaManager {
@@ -46,14 +46,14 @@ class EurekaManager {
             let s = SchemaObjectView()
             s.title.text = node.title()
             s.instance = node
-            delegate.createView(view: s, index: index)
+            delegate.appendView(view: s, index: index)
         }
         
         if let node = node as? SchemaArray {
             let schemaArray = SchemaArrayView()
             schemaArray.instance = node
             schemaArray.title.text = node.title()
-            delegate.createView(view: schemaArray,index: index)
+            delegate.appendView(view: schemaArray,index: index)
         }
         
         if let node = node as? SchemaEnum {
@@ -61,7 +61,7 @@ class EurekaManager {
             let picker = SchemaEnumTextField()
             picker.textField.placeholder = node.title()
             picker.instance = node
-            delegate.createView(view: picker,index: index)
+            delegate.appendView(view: picker,index: index)
         }
         
         if let node = node as? SchemaEnumData {
@@ -69,7 +69,7 @@ class EurekaManager {
             schemaEnumDataTextField.textField.placeholder = node.title()
             schemaEnumDataTextField.instance = node
             schemaEnumDataTextField.loadData()
-            delegate.createView(view: schemaEnumDataTextField, index: index)
+            delegate.appendView(view: schemaEnumDataTextField, index: index)
         }
         
         if let node = node as? SchemaString {
@@ -268,14 +268,14 @@ class EurekaManager {
         let schemaTextField = SchemaTextField()
         schemaTextField.instance = node
         schemaTextField.textField.placeholder = node.title()
-        delegate.createView(view: schemaTextField, index: index)
+        delegate.appendView(view: schemaTextField, index: index)
     }
     
     private func drawDate(_ node: SchemaString,index:Int) {
         let schemaDatePicker = SchemaDatePicker()
         schemaDatePicker.instance = node
         schemaDatePicker.dateTextField.placeholder = node.title()
-        delegate.createView(view: schemaDatePicker, index: index)
+        delegate.appendView(view: schemaDatePicker, index: index)
     }
     
     private func drawDateTime(_ node: SchemaString,index:Int) {
@@ -287,7 +287,7 @@ class EurekaManager {
         let timePicker = SchemaTimePicker()
         timePicker.instance = node
         timePicker.dateTextField.placeholder = node.title()
-        delegate.createView(view: timePicker, index: index)
+        delegate.appendView(view: timePicker, index: index)
     }
     
     
@@ -295,27 +295,27 @@ class EurekaManager {
         let schemaTextField = SchemaTextField()
         schemaTextField.instance = node
         schemaTextField.textField.placeholder = node.title()
-        delegate.createView(view: schemaTextField, index: index)
+        delegate.appendView(view: schemaTextField, index: index)
     }
     
     private func drawPhone(_ node: SchemaString,index:Int) {
         let schemaTextField = SchemaTextField()
         schemaTextField.instance = node
         schemaTextField.textField.placeholder = node.title()
-        delegate.createView(view: schemaTextField, index: index)
+        delegate.appendView(view: schemaTextField, index: index)
     }
     
     private func drawPhoto(_ node: SchemaString,index:Int) {
         let photoPickerView = SchemaPhotoPickerView()
         photoPickerView.instance = node
-        delegate.createView(view: photoPickerView, index: index)
+        delegate.appendView(view: photoPickerView, index: index)
     }
     
     private func drawLabel(_ node: SchemaObject,index:Int) {
         let section = SchemaObjectView()
         section.instance = node
         section.title.text = node.title()
-        delegate.createView(view: section, index: index)
+        delegate.appendView(view: section, index: index)
     }
     
     private func drawMapLocation(_ node: SchemaString, index:Int) {

@@ -23,8 +23,6 @@ class SchemaBaseView<T: SchemaObjectProtocol>: UIView {
         nibSetup()
     }
     
-    func nibSetup() {}
-    
     func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
@@ -32,4 +30,8 @@ class SchemaBaseView<T: SchemaObjectProtocol>: UIView {
         
         return nibView
     }
+    
+    func nibSetup() {}
+    
+    func getInputValue()-> String {}
 }

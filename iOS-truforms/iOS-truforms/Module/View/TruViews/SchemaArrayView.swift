@@ -16,6 +16,8 @@ class SchemaArrayView: SchemaBaseView<SchemaArray> {
     
     var delegate: AppendViewDelegate!
     
+    var childs = [Any]()
+    
     override func nibSetup() {
         // standard initialization logic
         backgroundColor = .clear

@@ -24,4 +24,8 @@ class SchemaTextField: SchemaBaseView<SchemaString> {
         
         addSubview(contentView)
     }
+    
+    override func getInputValue() -> String {
+        return textField.text ?? ""
+    }
 }

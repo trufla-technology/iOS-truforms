@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: BaseViewController {
-    var arr = [Any]()
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -112,12 +111,6 @@ class ViewController: BaseViewController {
     @objc func buttonAction(sender: UIButton!) {
         print(stackView.arrangedSubviews.count)
         print("Do Submit...")
-        for view in arr {
-            if let v  = view as? UIView {
-                stackView.removeArrangedSubview(v)
-                v.removeFromSuperview()
-            }
-        }
     }
 }
 
@@ -164,8 +157,7 @@ extension ViewController: AppendViewDelegate {
 }
 
 extension ViewController: EurekaManagerDelegate {
-    func createView<T, V>(view: V, index: Int) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
-        arr.append(view)
+    func appendView<T, V>(view: V, index: Int) where T : SchemaObjectProtocol, V : SchemaBaseView<T> {
         view.isHidden = true
         stackView.insertArrangedSubview(view, at: index)
         UIView.animate(withDuration: 0.25) { () -> Void in
