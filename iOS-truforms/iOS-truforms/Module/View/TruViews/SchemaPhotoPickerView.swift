@@ -15,6 +15,8 @@ class SchemaPhotoPickerView: SchemaBaseView<SchemaString> {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var imageLabel: UILabel!
+    
     override func nibSetup() {
         // standard initialization logic
           let nib = UINib(nibName: "SchemaPhotoPickerView", bundle: nil)

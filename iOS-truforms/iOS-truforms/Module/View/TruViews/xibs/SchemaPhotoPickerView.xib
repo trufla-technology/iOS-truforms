@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ecs-2h-KUq"/>
+                <outlet property="imageLabel" destination="aXr-fE-DzL" id="tM2-TY-fD7"/>
                 <outlet property="imageView" destination="nT2-M6-Ce0" id="ItD-QZ-7HD"/>
             </connections>
         </placeholder>

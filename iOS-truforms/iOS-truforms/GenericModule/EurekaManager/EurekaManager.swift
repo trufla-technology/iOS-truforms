@@ -250,6 +250,7 @@ class EurekaManager {
     private func drawPhoto(_ node: SchemaString) {
         let photoPickerView = SchemaPhotoPickerView()
         photoPickerView.instance = node
+        photoPickerView.imageLabel.text = node.title()
         delegate.addView(view: photoPickerView)
     }
     
