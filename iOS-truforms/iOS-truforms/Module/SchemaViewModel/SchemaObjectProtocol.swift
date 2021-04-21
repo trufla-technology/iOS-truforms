@@ -17,7 +17,6 @@ protocol SchemaObjectProtocol {
     func title() -> String
     func description() -> String
     func displayOrder() -> Int
-    func arrayItem() -> SchemaNode?
 }
 
 extension SchemaObjectProtocol {
@@ -35,8 +34,5 @@ extension SchemaObjectProtocol {
     }
     func displayOrder() -> Int {
         return schemaNode?.displayOrder ?? -1
-    }
-    func arrayItem() -> SchemaNode? {
-        return schemaNode?.items?.value
     }
 }

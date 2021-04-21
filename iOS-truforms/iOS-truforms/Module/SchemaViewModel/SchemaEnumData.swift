@@ -14,7 +14,7 @@ class SchemaEnumData: SchemaObjectProtocol {
     var parentTag: String = ""
     
     init(schemaNode: SchemaNode, key: String = "") {
-       self.schemaNode = schemaNode
+        self.schemaNode = schemaNode
     }
     
     var data: DataEnum? {
@@ -30,14 +30,14 @@ class SchemaEnumData: SchemaObjectProtocol {
         }
         return href
     }
-
+    
     var id: String {
         guard let id = data?.id else {
             return ""
         }
         return id
     }
-
+    
     var enumNames: [String] {
         guard let enumNames = data?.enumNames else {
             return []

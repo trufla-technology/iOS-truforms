@@ -72,4 +72,8 @@ class SchemaDatePicker: SchemaBaseView<SchemaString> {
         formatter.dateStyle = .none
         formatter.timeStyle = .medium
     }
+    
+    override func getInputValue() -> String {
+        return dateTextField.text ?? ""
+    }
 }

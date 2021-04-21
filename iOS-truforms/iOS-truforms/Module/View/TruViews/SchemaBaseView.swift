@@ -33,5 +33,5 @@ class SchemaBaseView<T: SchemaObjectProtocol>: UIView {
     
     func nibSetup() {}
     
-    func getInputValue()-> String { return "" }
+    func getInputValue()-> String { preconditionFailure("This method must be overridden") }
 }

@@ -60,4 +60,8 @@ class SchemaTimePicker: SchemaBaseView<SchemaString> {
         dateTextField.text = formatter.string(from: datePicker.date)
         self.contentView.endEditing(true)
     }
+    
+    override func getInputValue() -> String {
+        return dateTextField.text ?? ""
+    }
 }

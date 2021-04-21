@@ -49,6 +49,10 @@ class SchemaEnumTextField: SchemaBaseView<SchemaEnum> {
     @objc func donePressed() {
         self.contentView.endEditing(true)
     }
+    
+    override func getInputValue() -> String {
+         return textField.text ?? ""
+     }
 }
 
 extension SchemaEnumTextField: UIPickerViewDelegate, UIPickerViewDataSource {

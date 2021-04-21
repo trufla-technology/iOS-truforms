@@ -42,7 +42,7 @@ class EurekaManager {
     
     func drawAtIndex(_ node: SchemaObjectProtocol, index: Int) {
         if let node = node as? SchemaObject {
-            //               drawObject(node)
+            //drawObject(node)
             let s = SchemaObjectView()
             s.title.text = node.title()
             s.instance = node

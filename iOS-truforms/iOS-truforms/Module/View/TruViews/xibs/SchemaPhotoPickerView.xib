@@ -16,25 +16,38 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="535" height="195"/>
+            <rect key="frame" x="0.0" y="0.0" width="535" height="127"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-M6-Ce0">
-                    <rect key="frame" x="10" y="54" width="515" height="97"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXr-fE-DzL">
+                    <rect key="frame" x="10" y="54" width="80.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-M6-Ce0">
+                    <rect key="frame" x="425" y="11" width="100" height="104.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="4I2-75-Z5F"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nT2-M6-Ce0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="1hX-Ag-ADY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nT2-M6-Ce0" secondAttribute="bottom" constant="10" id="WTK-kk-EcL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nT2-M6-Ce0" secondAttribute="trailing" constant="10" id="YoK-vM-GJ0"/>
-                <constraint firstItem="nT2-M6-Ce0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kEo-xJ-bop"/>
-                <constraint firstItem="nT2-M6-Ce0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="nql-7C-t7b"/>
-                <constraint firstItem="nT2-M6-Ce0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="yWa-Dy-gxv"/>
+                <constraint firstAttribute="bottom" secondItem="nT2-M6-Ce0" secondAttribute="bottom" constant="10" id="16x-Tu-R2F"/>
+                <constraint firstItem="nT2-M6-Ce0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="7EH-CH-i0n"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="aXr-fE-DzL" secondAttribute="bottom" constant="10" id="O4e-I9-h6t"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nT2-M6-Ce0" secondAttribute="trailing" constant="10" id="UTP-1g-gij"/>
+                <constraint firstItem="aXr-fE-DzL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="bcm-SV-6yp"/>
+                <constraint firstItem="aXr-fE-DzL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="bg5-WN-Yo6"/>
+                <constraint firstItem="aXr-fE-DzL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="fAw-oI-t3a"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="136.95652173913044" y="363.28125"/>
+            <point key="canvasLocation" x="136.95652173913044" y="367.96875"/>
         </view>
     </objects>
+    <resources>
+        <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

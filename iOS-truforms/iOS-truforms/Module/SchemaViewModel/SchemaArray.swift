@@ -27,4 +27,8 @@ class SchemaArray: SchemaObjectProtocol {
     var uniqueItems: Bool {
         return schemaNode?.uniqueItems ?? false
     }
+    
+    var arrayItems: SchemaNodeWrapper<SchemaNode>? {
+        return schemaNode?.items
+    }
 }

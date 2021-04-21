@@ -18,6 +18,8 @@ class SchemaArrayView: SchemaBaseView<SchemaArray> {
     
     var childs = [Any]()
     
+    var arrayTree: TreeNode<SchemaObjectProtocol>!
+    
     override func nibSetup() {
         // standard initialization logic
         backgroundColor = .clear

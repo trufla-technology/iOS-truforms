@@ -24,4 +24,12 @@ class SchemaObjectView: SchemaBaseView<SchemaObject> {
         
         addSubview(contentView)
     }
+    
+    override func getInputValue() -> String {
+        let str  =  String(format:"\"%s\":{}", instance.key())
+        //TODO: handle object childs
+        
+        
+        return str
+    }
 }

@@ -34,9 +34,6 @@ class SchemaEnumDataTextField: SchemaBaseView<SchemaEnumData> {
         addSubview(contentView)
     }
     
-    
-    
-    
     func createPicker() {
         textField.textAlignment = .center
         //toolbar
@@ -67,6 +64,16 @@ class SchemaEnumDataTextField: SchemaBaseView<SchemaEnumData> {
     
     @objc func donePressed() {
         self.contentView.endEditing(true)
+    }
+    
+    override func getInputValue() -> String {
+        let item = myPickerData[0] // selected item
+        var str: String = String(format:"\"%s\":\"%s\"", instance.key(), item)
+        
+        if item is NSNumber {
+            str = String(format:"\"%s\":%s", instance.key(), String(item))
+        }
+        return str
     }
 }
 
